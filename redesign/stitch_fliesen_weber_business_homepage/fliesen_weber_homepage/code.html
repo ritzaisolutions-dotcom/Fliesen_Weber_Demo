@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLIESEN WEBER – Meisterbetrieb in Koblenz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-container": "#90001c",
+                        "secondary": "#495d92",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#660011",
+                        "surface": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed-dim": "#b2c5ff",
+                        "surface-tint": "#2d58bf",
+                        "on-surface-variant": "#434653",
+                        "tertiary-fixed": "#ffdad8",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "outline": "#747684",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "secondary-container": "#afc2fe",
+                        "background": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "outline-variant": "#c4c6d5",
+                        "on-error-container": "#93000a",
+                        "primary": "#002975",
+                        "on-tertiary-fixed": "#410007",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "secondary-fixed": "#dae2ff",
+                        "on-secondary-fixed-variant": "#314578",
+                        "primary-container": "#003da5",
+                        "on-tertiary-container": "#ff9694",
+                        "on-primary-container": "#98b1ff",
+                        "on-primary-fixed-variant": "#033ea6",
+                        "tertiary-fixed-dim": "#ffb3b1",
+                        "on-surface": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#001848",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary-container": "#3b4f83",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed-variant": "#92001c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary">
+<!-- NAV (Predicted TopNavBar) -->
+<nav class="fixed top-0 w-full z-50 h-[70px] rounded-none bg-white border-none shadow-none flex justify-between items-center px-12 mx-auto">
+<div class="flex items-center gap-3">
+<svg class="text-primary" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="currentColor" height="6" width="6" x="2" y="2"></rect>
+<rect fill="currentColor" height="6" width="6" x="9" y="2"></rect>
+<rect fill="currentColor" height="6" width="6" x="16" y="2"></rect>
+<rect fill="currentColor" height="6" width="6" x="2" y="9"></rect>
+<rect fill="currentColor" height="6" width="6" x="9" y="9"></rect>
+<rect fill="currentColor" height="6" width="6" x="16" y="9"></rect>
+<rect fill="currentColor" height="6" width="6" x="2" y="16"></rect>
+<rect fill="currentColor" height="6" width="6" x="9" y="16"></rect>
+<rect fill="#660011" height="6" width="6" x="16" y="16"></rect>
+</svg>
+<div class="flex flex-col">
+<span class="text-xl font-black tracking-tighter text-blue-900 uppercase">FLIESEN WEBER</span>
+<span class="text-[10px] font-semibold text-outline tracking-widest uppercase mt-[-4px]">Meisterbetrieb in Koblenz</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8 font-inter text-sm font-bold tracking-[0.1em] uppercase">
+<a class="text-slate-500 hover:text-blue-900 transition-colors duration-200 active:opacity-80" href="#leistungen">Leistungen</a>
+<a class="text-slate-500 hover:text-blue-900 transition-colors duration-200 active:opacity-80" href="#kostenrechner">Kostenrechner</a>
+<a class="text-slate-500 hover:text-blue-900 transition-colors duration-200 active:opacity-80" href="#kontakt">Kontakt</a>
+</div>
+<a class="hidden md:inline-block bg-tertiary text-on-tertiary px-6 py-3 text-sm font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors duration-200" href="#kontakt">
+            Jetzt anfragen
+        </a>
+</nav>
+<!-- HERO -->
+<header class="relative min-h-[921px] flex items-center pt-[70px] bg-primary overflow-hidden">
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-30 mix-blend-overlay" data-alt="close up of pristine white large format porcelain tiles laid perfectly flat with minimalist minimal grout lines modern architectural interior detail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuMz6UnM4tpAqZ4L-HZU4I_LiGtLHPj93CyO3xgEnQz04-q8eiE8_cStbCb-aXjZ2bgESyw4y_GVb0PRqy77tYAqIwOgK8JzuYlzUzDHeKbG2DzsZHrE9FFLYaS2gOptHLv-k-zYmnvMLszWXeMI27GPfMtQ3U9pqR4pSkdZDb0nOtQlk_jELNqInRnjX7cVb_8cbQ2odhTG4PRFHmEe0rFch5T0bttQNkd5OM6qXTN4pRCJj1vqdZ9RYz5AazzOI2NP7QJSr7jH3e');"></div>
+<div class="absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/90 to-transparent"></div>
+<div class="container mx-auto px-6 md:px-12 relative z-10">
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest/10 backdrop-blur-md border border-white/20 mb-8">
+<span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
+<span class="text-xs font-bold text-white tracking-widest uppercase">MEISTERBETRIEB · KOBLENZ &amp; UMGEBUNG</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter leading-[1.1] mb-8 font-headline">
+                    Ihr Meisterbetrieb für<br/>
+<span class="text-on-primary-container">Fliesen &amp; Bodenbeläge</span><br/>
+                    in Koblenz
+                </h1>
+<div class="flex flex-col sm:flex-row gap-4 mb-16">
+<a class="inline-flex justify-center items-center px-8 py-4 bg-tertiary text-white font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors" href="#kontakt">
+                        Kostenlos beraten lassen
+                    </a>
+<a class="inline-flex justify-center items-center px-8 py-4 border-2 border-white/30 text-white font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-colors" href="#kostenrechner">
+                        Preis berechnen
+                    </a>
+</div>
+<div class="flex flex-col md:flex-row gap-8 text-white/80 text-sm font-semibold tracking-wide">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed" data-weight="fill">check_circle</span>
+                        Meistergeführter Betrieb
+                    </div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed" data-weight="fill">check_circle</span>
+                        Über 15 Jahre Erfahrung
+                    </div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed" data-weight="fill">check_circle</span>
+                        Festpreisgarantie
+                    </div>
+</div>
+</div>
+</div>
+</header>
+<!-- STATS BAR -->
+<section class="bg-primary-container text-white py-12">
+<div class="container mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/20">
+<div class="flex flex-col items-center justify-center pt-8 md:pt-0">
+<span class="text-4xl font-black mb-2">350+</span>
+<span class="text-xs font-bold tracking-widest uppercase text-white/70">Abgeschlossene Projekte</span>
+</div>
+<div class="flex flex-col items-center justify-center pt-8 md:pt-0">
+<span class="text-4xl font-black mb-2">15</span>
+<span class="text-xs font-bold tracking-widest uppercase text-white/70">Jahre Erfahrung</span>
+</div>
+<div class="flex flex-col items-center justify-center pt-8 md:pt-0">
+<span class="text-4xl font-black mb-2 flex items-center gap-1">4,9 <span class="material-symbols-outlined text-amber-400" data-weight="fill">star</span></span>
+<span class="text-xs font-bold tracking-widest uppercase text-white/70">Ø Kundenbewertung</span>
+</div>
+</div>
+</div>
+</section>
+<!-- LEISTUNGEN -->
+<section class="py-32 bg-surface-container-low" id="leistungen">
+<div class="container mx-auto px-6 md:px-12">
+<div class="mb-24 max-w-2xl">
+<p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">UNSERE LEISTUNGEN</p>
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline">Was wir für Sie tun</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 border-t-4 border-primary hover:bg-surface-bright transition-colors group">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-primary">
+<span class="material-symbols-outlined text-3xl">grid_on</span>
+</div>
+<h3 class="text-xl font-bold mb-4 font-headline">Fliesen verlegen</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Präzise Verlegung von Wand- und Bodenfliesen für Bad, Küche und Wohnbereiche. Fachgerecht und langlebig.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#">
+                        Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 border-t-4 border-tertiary hover:bg-surface-bright transition-colors group">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-tertiary">
+<span class="material-symbols-outlined text-3xl">layers</span>
+</div>
+<h3 class="text-xl font-bold mb-4 font-headline">Bodenbeläge</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Hochwertige Bodenbeläge aller Art. Von Naturstein über Laminat bis hin zu modernem Vinyl – meisterhaft verlegt.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#">
+                        Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 border-t-4 border-emerald-700 hover:bg-surface-bright transition-colors group">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-emerald-700">
+<span class="material-symbols-outlined text-3xl">plumbing</span>
+</div>
+<h3 class="text-xl font-bold mb-4 font-headline">Sanierung &amp; Renovierung</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Komplette Badsanierungen und Altbaurenovierungen aus einer Hand. Zuverlässig, sauber und termingerecht.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#">
+                        Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 border-t-4 border-amber-600 hover:bg-surface-bright transition-colors group">
+<div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-amber-600">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<h3 class="text-xl font-bold mb-4 font-headline">Beratung &amp; Planung</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Umfassende Beratung vor Ort. Wir planen Ihr Projekt detailliert und finden die optimalen Materialien für Ihre Bedürfnisse.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#">
+                        Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- KOSTENRECHNER -->
+<section class="py-32 bg-surface-container-lowest" id="kostenrechner">
+<div class="container mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+<div>
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-8">Was kostet Ihr Projekt?</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12">Nutzen Sie unseren Online-Rechner für eine erste, unverbindliche Kostenschätzung. Transparenz ist uns wichtig.</p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-bold text-on-surface">Schnelle Schätzung</h4>
+<p class="text-sm text-on-surface-variant">Erhalten Sie in wenigen Sekunden einen realistischen Preisrahmen.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-bold text-on-surface">Alle Materialien inklusive</h4>
+<p class="text-sm text-on-surface-variant">Unsere Schätzung umfasst Arbeitszeit und Standardmaterialien.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-bold text-on-surface">Unverbindlich</h4>
+<p class="text-sm text-on-surface-variant">Die Berechnung verpflichtet Sie zu nichts.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-weight="fill">check_circle</span>
+<div>
+<h4 class="font-bold text-on-surface">Exaktes Angebot auf Anfrage</h4>
+<p class="text-sm text-on-surface-variant">Nach einer Vor-Ort-Besichtigung erhalten Sie ein Festpreisangebot.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-8 md:p-12">
+<form class="space-y-8">
+<div>
+<label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3">Was planen Sie?</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface">
+<option>Neues Badezimmer</option>
+<option>Küchenspiegel</option>
+<option>Wohnbereich Boden</option>
+<option>Terrasse / Außenbereich</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3">Fliesentyp</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface">
+<option>Keramik (Standard)</option>
+<option>Feinsteinzeug</option>
+<option>Naturstein</option>
+<option>Mosaik</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3">Fläche in m²</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface" placeholder="z.B. 25" type="number"/>
+</div>
+<div class="space-y-4 pt-4">
+<label class="flex items-center gap-3">
+<input class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-semibold text-on-surface">Alte Fliesen entfernen &amp; entsorgen</span>
+</label>
+<label class="flex items-center gap-3">
+<input class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-semibold text-on-surface">Untergrundvorbereitung / Ausgleichsmasse</span>
+</label>
+</div>
+<div class="bg-primary-container p-6 mt-8">
+<p class="text-xs font-bold tracking-widest uppercase text-on-primary-container mb-2">Geschätzter Preisrahmen</p>
+<p class="text-2xl font-black text-white">€1.800 – €2.300*</p>
+<p class="text-[10px] text-white/60 mt-2 uppercase tracking-wide">*Unverbindliche Schätzung inkl. MwSt.</p>
+</div>
+<button class="w-full bg-primary text-white font-bold tracking-widest uppercase py-4 hover:bg-primary-container transition-colors" type="button">
+                            Verbindliches Angebot anfragen
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- KONTAKT -->
+<section class="py-32 bg-surface-container-low" id="kontakt">
+<div class="container mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-12">Sprechen wir über Ihr Projekt</h2>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Telefon</h4>
+<p class="text-xl font-bold text-on-surface">+49 (0) 261 123 456</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">E-Mail</h4>
+<p class="text-xl font-bold text-on-surface">info@fliesen-weber-koblenz.de</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Standort</h4>
+<p class="text-lg font-semibold text-on-surface">Musterstraße 12<br/>56068 Koblenz</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Öffnungszeiten</h4>
+<p class="text-lg font-semibold text-on-surface">Mo-Fr: 08:00 - 17:00 Uhr<br/>Sa: Nach Vereinbarung</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 md:p-12 shadow-[0_20px_40px_-15px_rgba(0,41,117,0.05)] border-t-4 border-tertiary">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2">Name</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2">Telefon</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2">E-Mail</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required="" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2">Nachricht</label>
+<textarea class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface resize-none transition-colors" required="" rows="4"></textarea>
+</div>
+<button class="w-full bg-tertiary text-white font-bold tracking-widest uppercase py-4 mt-4 hover:bg-tertiary-container transition-colors" type="submit">
+                            Nachricht Senden
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER (Predicted) -->
+<footer class="bg-[#001a4d] w-full rounded-none mt-auto">
+<div class="flex flex-col gap-8 md:flex-row justify-between items-center px-12 py-16 w-full max-w-7xl mx-auto">
+<div class="text-lg font-black text-white">
+                FLIESEN WEBER
+            </div>
+<div class="flex flex-wrap justify-center gap-6 font-inter text-xs tracking-widest uppercase">
+<a class="text-slate-400 hover:text-white transition-all" href="#">Impressum</a>
+<a class="text-slate-400 hover:text-white transition-all" href="#">Datenschutz</a>
+<a class="text-slate-400 hover:text-white transition-all" href="#">AGB</a>
+<a class="text-slate-400 hover:text-white transition-all" href="#leistungen">Leistungen</a>
+<a class="text-slate-400 hover:text-white transition-all" href="#kontakt">Kontakt</a>
+</div>
+<div class="font-inter text-xs tracking-widest uppercase text-slate-400">
+                © 2026 Fliesen Weber
+            </div>
+</div>
+</footer>
+</body></html>

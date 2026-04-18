@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "mcp__stitch__list_screens",
+      "Bash(git commit -m ' *)",
+      "Bash(awk '{print $5, $9}')"
+    ]
+  }
+}
