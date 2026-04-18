@@ -1,16 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Only bathrooms and work-in-progress shots — floor-only pics excluded
     var images = [
-        'images/hero/hero-1.jpg',
-        'images/hero/hero-2.jpg',
-        'images/hero/hero-3.jpg',
-        'images/hero/hero-4.jpg',
-        'images/hero/hero-5.jpg',
-        'images/hero/hero-6.jpg',
-        'images/hero/hero-7.jpg',
-        'images/hero/hero-8.jpg',
-        'images/hero/hero-9.jpg',
-        'images/hero/hero-10.jpg',
-        'images/hero/hero-11.jpg'
+        'images/hero/hero-1.jpg',   // bath1
+        'images/hero/hero-2.jpg',   // bath2
+        'images/hero/hero-3.jpg',   // bath3
+        'images/hero/hero-8.jpg',   // work1
+        'images/hero/hero-9.jpg',   // work2
+        'images/hero/hero-10.jpg',  // work3
+        'images/hero/hero-11.jpg'   // work4
     ];
 
     var container = document.createElement('div');
