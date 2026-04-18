@@ -1,42 +1,32 @@
-(function () {
-  var TILE_PRICES = { standard: 40, premium: 70, naturstein: 90 };
-  var EXTRA_PRICES = { altbelag: 15, abdichtung: 20 };
+function calculatePrice() {
+    var flaeche = parseFloat(document.getElementById('flaeche').value) || 0;
+    var fliesentyp = document.getElementById('fliesentyp').value;
+    var altbelag = document.getElementById('altbelag').checked;
+    var abdichtung = document.getElementById('abdichtung').checked;
+    var output = document.getElementById('priceOutput');
 
-  var selAnliegen  = document.getElementById('calc-anliegen');
-  var inputFlaeche = document.getElementById('calc-flaeche');
-  var selTyp       = document.getElementById('calc-typ');
-  var cbAltbelag   = document.getElementById('calc-altbelag');
-  var cbAbdichtung = document.getElementById('calc-abdichtung');
-  var resultPrice  = document.getElementById('calc-result-price');
-
-  function fmt(n) {
-    return n.toLocaleString('de-DE');
-  }
-
-  function calculate() {
-    var flaeche = parseFloat(inputFlaeche.value);
-
-    if (!flaeche || flaeche < 5) {
-      resultPrice.textContent = '€ \u2013';
-      return;
+    if (flaeche < 5) {
+        output.textContent = '€ –';
+        return;
     }
 
-    var basePerQm  = TILE_PRICES[selTyp.value] || 40;
-    var extrasPerQm = 0;
-    if (cbAltbelag.checked)   extrasPerQm += EXTRA_PRICES.altbelag;
-    if (cbAbdichtung.checked) extrasPerQm += EXTRA_PRICES.abdichtung;
+    var prices = { standard: 40, premium: 70, naturstein: 90 };
 
-    var totalPerQm = basePerQm + extrasPerQm;
-    var minPrice   = Math.round(flaeche * totalPerQm);
-    var maxPrice   = Math.round(minPrice * 1.15);
+    var basePrice = flaeche * (prices[fliesentyp] || 40);
+    if (altbelag)   basePrice += flaeche * 15;
+    if (abdichtung) basePrice += flaeche * 20;
 
-    resultPrice.textContent = '\u20AC\u202f' + fmt(minPrice) + ' \u2013 \u20AC\u202f' + fmt(maxPrice);
-  }
+    var minPrice = Math.round(basePrice * 0.95);
+    var maxPrice = Math.round(basePrice * 1.10);
 
-  [selAnliegen, inputFlaeche, selTyp, cbAltbelag, cbAbdichtung].forEach(function (el) {
-    if (el) el.addEventListener('input', calculate);
-  });
+    function fmt(n) { return '€' + n.toLocaleString('de-DE'); }
 
-  // Run once on load in case fields have pre-filled values
-  calculate();
-})();
+    output.textContent = fmt(minPrice) + ' – ' + fmt(maxPrice);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('flaeche').addEventListener('input', calculatePrice);
+    document.getElementById('fliesentyp').addEventListener('change', calculatePrice);
+    document.getElementById('altbelag').addEventListener('change', calculatePrice);
+    document.getElementById('abdichtung').addEventListener('change', calculatePrice);
+});

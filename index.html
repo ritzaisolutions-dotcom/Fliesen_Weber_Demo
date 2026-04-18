@@ -294,8 +294,8 @@
       <div class="bg-surface-container-low p-8 md:p-12">
         <form class="space-y-8" id="calcForm">
           <div>
-            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3" for="calc-anliegen">Was planen Sie?</label>
-            <select id="calc-anliegen" class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface">
+            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3" for="anliegen">Was planen Sie?</label>
+            <select id="anliegen" class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface">
               <option value="bad">Badezimmer fliesen</option>
               <option value="kueche">Küche fliesen</option>
               <option value="balkon">Balkon fliesen</option>
@@ -304,30 +304,30 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3" for="calc-typ">Fliesentyp / Material</label>
-            <select id="calc-typ" class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface">
+            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3" for="fliesentyp">Fliesentyp / Material</label>
+            <select id="fliesentyp" class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface">
               <option value="standard">Standard – ca. 40 €/m²</option>
               <option value="premium">Premium – ca. 70 €/m²</option>
               <option value="naturstein">Naturstein – ca. 90 €/m²</option>
             </select>
           </div>
           <div>
-            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3" for="calc-flaeche">Fläche in m²</label>
-            <input id="calc-flaeche" class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface" min="5" max="200" placeholder="z.B. 25" type="number"/>
+            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3" for="flaeche">Fläche in m²</label>
+            <input id="flaeche" class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface" min="5" max="200" placeholder="z.B. 25" type="number"/>
           </div>
           <div class="space-y-4 pt-4">
             <label class="flex items-center gap-3 cursor-pointer">
-              <input id="calc-altbelag" class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
+              <input id="altbelag" class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
               <span class="text-sm font-semibold text-on-surface">Altbelag entfernen <span class="text-on-surface-variant font-normal">(+15 €/m²)</span></span>
             </label>
             <label class="flex items-center gap-3 cursor-pointer">
-              <input id="calc-abdichtung" class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
+              <input id="abdichtung" class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
               <span class="text-sm font-semibold text-on-surface">Abdichtung (Nassbereich) <span class="text-on-surface-variant font-normal">(+20 €/m²)</span></span>
             </label>
           </div>
           <div class="bg-primary-container p-6 mt-8" id="calc-result-box">
             <p class="text-xs font-bold tracking-widest uppercase text-on-primary-container mb-2">Geschätzter Preisrahmen</p>
-            <p class="text-2xl font-black text-white" id="calc-result-price">€ –</p>
+            <p class="text-2xl font-black text-white" id="priceOutput">€ –</p>
             <p class="text-[10px] text-white/60 mt-2 uppercase tracking-wide">Unverbindliche Schätzung inkl. Material &amp; Arbeit, exkl. MwSt. Finales Angebot nach Besichtigung.</p>
           </div>
           <a href="https://calendly.com/fliesen-weber-demo" target="_blank" rel="noopener"
