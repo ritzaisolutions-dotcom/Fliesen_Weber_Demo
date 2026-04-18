@@ -1,101 +1,111 @@
 <!DOCTYPE html>
-<html lang="de">
+<html class="scroll-smooth" lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
-  <title>Datenschutz – Fliesen Weber</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="robots" content="noindex"/>
+<title>Datenschutzerklärung – Fliesen Weber</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary-container": "#90001c","secondary": "#495d92","on-secondary": "#ffffff","tertiary": "#660011","surface": "#f9f9f9","on-surface-variant": "#434653","error": "#ba1a1a","surface-container-lowest": "#ffffff","outline": "#747684","on-error": "#ffffff","surface-container-low": "#f3f3f3","background": "#f9f9f9","surface-variant": "#e2e2e2","on-background": "#1a1c1c","outline-variant": "#c4c6d5","primary": "#002975","surface-container": "#eeeeee","on-tertiary": "#ffffff","primary-container": "#003da5","on-primary-container": "#98b1ff","on-surface": "#1a1c1c","surface-container-high": "#e8e8e8","on-primary": "#ffffff","surface-bright": "#f9f9f9","surface-container-highest": "#e2e2e2","surface-dim": "#dadada"
+        },
+        "borderRadius": { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px" },
+        "fontFamily": { "headline": ["Inter","sans-serif"], "body": ["Inter","sans-serif"] }
+      }
+    }
+  }
+</script>
+<style>.material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24; }</style>
 </head>
-<body>
+<body class="bg-surface text-on-surface font-body antialiased">
 
-<!-- ─── NAVIGATION ──────────────────────────────────── -->
-<nav class="nav" role="navigation" aria-label="Hauptnavigation">
-  <div class="container nav__inner">
-    <a href="index.html" class="nav__logo" aria-label="Fliesen Weber – Startseite">
-      <svg class="nav__logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="1" y="1" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="14" y="1" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="27" y="1" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="1" y="14" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="14" y="14" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="27" y="14" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="1" y="27" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="14" y="27" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <rect x="27" y="27" width="10" height="10" rx="1" stroke="#003DA5" stroke-width="2"/>
-        <line x1="22" y1="28" x2="30" y2="20" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="18" y1="32" x2="26" y2="24" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
-      </svg>
-      <div class="nav__logo-text">
-        <span class="nav__logo-name">FLIESEN WEBER</span>
-        <span class="nav__logo-tagline">Meisterbetrieb in Koblenz</span>
-      </div>
-    </a>
-    <ul class="nav__links" id="nav-links">
-      <li><a href="index.html#leistungen">Leistungen</a></li>
-      <li><a href="index.html#kostenrechner">Kostenrechner</a></li>
-      <li><a href="index.html#kontakt">Kontakt</a></li>
-      <li><a href="index.html#kontakt" class="btn btn-primary nav__cta">Jetzt anfragen</a></li>
-    </ul>
-    <button class="nav__hamburger" id="nav-hamburger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 h-[70px] bg-white border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-6 md:px-12">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#002975" height="6" width="6" x="2" y="2"/><rect fill="#002975" height="6" width="6" x="9" y="2"/><rect fill="#002975" height="6" width="6" x="16" y="2"/>
+      <rect fill="#002975" height="6" width="6" x="2" y="9"/><rect fill="#002975" height="6" width="6" x="9" y="9"/><rect fill="#002975" height="6" width="6" x="16" y="9"/>
+      <rect fill="#002975" height="6" width="6" x="2" y="16"/><rect fill="#002975" height="6" width="6" x="9" y="16"/><rect fill="#660011" height="6" width="6" x="16" y="16"/>
+    </svg>
+    <div class="flex flex-col">
+      <span class="text-xl font-black tracking-tighter text-blue-900 uppercase">FLIESEN WEBER</span>
+      <span class="text-[10px] font-semibold text-outline tracking-widest uppercase mt-[-4px]">Meisterbetrieb in Koblenz</span>
+    </div>
+  </a>
+  <div class="hidden md:flex items-center gap-8 text-sm font-bold tracking-[0.1em] uppercase">
+    <a class="text-slate-500 hover:text-blue-900 transition-colors" href="index.html#leistungen">Leistungen</a>
+    <a class="text-slate-500 hover:text-blue-900 transition-colors" href="index.html#kostenrechner">Kostenrechner</a>
+    <a class="text-slate-500 hover:text-blue-900 transition-colors" href="index.html#kontakt">Kontakt</a>
   </div>
+  <a class="hidden md:inline-block bg-tertiary text-on-tertiary px-6 py-3 text-sm font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors" href="index.html#kontakt">
+    Jetzt anfragen
+  </a>
 </nav>
 
-<!-- ─── CONTENT ───────────────────────────────────────── -->
-<main style="min-height: 60vh; padding: 80px 0; background: var(--bg, #F5F5F5);">
-  <div class="container" style="max-width: 760px;">
-    <span class="section-label">Rechtliches</span>
-    <h1 class="section-title">Datenschutzerklärung</h1>
+<!-- CONTENT -->
+<main class="pt-[70px] min-h-screen bg-surface-container-low">
+  <div class="container mx-auto px-6 md:px-12 py-24 max-w-3xl">
+    <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">RECHTLICHES</p>
+    <h1 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-16">Datenschutzerklärung</h1>
 
-    <div class="placeholder-content" style="
-      margin-top: 40px;
-      background: white;
-      border-radius: 10px;
-      padding: 48px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      border-left: 4px solid #003DA5;
-    ">
-      <p style="color: #666; font-size: 0.95rem; line-height: 1.7;">
-        Die Datenschutzerklärung wird über <strong>eRecht24</strong> generiert und hier eingebunden.<br/>
-        Dieser Bereich ist ein Platzhalter und wird vor der Veröffentlichung befüllt.
-      </p>
+    <!-- eRecht24 placeholder notice -->
+    <div class="bg-primary-container p-8 mb-12">
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-white/80 flex-shrink-0 mt-0.5">info</span>
+        <div>
+          <p class="text-white font-bold mb-2">Platzhalter</p>
+          <p class="text-white/80 text-sm leading-relaxed">
+            Dieser Abschnitt wird mit eRecht24-generiertem Inhalt gefüllt. Die vollständige Datenschutzerklärung wird bei der finalen Implementierung ergänzt.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div style="margin-top: 32px;">
-      <a href="index.html" class="btn btn-blue">&larr; Zurück zur Startseite</a>
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-4 pb-2 border-b border-outline-variant">1. Datenschutz auf einen Blick</h2>
+        <p class="text-on-surface-variant leading-relaxed italic">[eRecht24-Inhalt folgt]</p>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-4 pb-2 border-b border-outline-variant">2. Hosting</h2>
+        <p class="text-on-surface-variant leading-relaxed italic">[eRecht24-Inhalt folgt]</p>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-4 pb-2 border-b border-outline-variant">3. Allgemeine Hinweise und Pflichtinformationen</h2>
+        <p class="text-on-surface-variant leading-relaxed italic">[eRecht24-Inhalt folgt]</p>
+      </section>
+    </div>
+
+    <div class="mt-16">
+      <a href="index.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold tracking-widest uppercase px-6 py-3 hover:bg-primary-container transition-colors text-sm">
+        <span class="material-symbols-outlined text-sm">arrow_back</span>
+        Zurück zur Startseite
+      </a>
     </div>
   </div>
 </main>
 
-<!-- ─── FOOTER ────────────────────────────────────────── -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__logo">
-      <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="1" y="1" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="14" y="1" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="27" y="1" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="1" y="14" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="14" y="14" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="27" y="14" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="1" y="27" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="14" y="27" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <rect x="27" y="27" width="10" height="10" rx="1" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-        <line x1="22" y1="28" x2="30" y2="20" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="18" y1="32" x2="26" y2="24" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
-      </svg>
-      <span class="footer__logo-name">FLIESEN WEBER</span>
+<!-- FOOTER -->
+<footer class="bg-[#001a4d] w-full">
+  <div class="flex flex-col gap-8 md:flex-row justify-between items-center px-6 md:px-12 py-16 w-full max-w-7xl mx-auto">
+    <div class="text-lg font-black text-white tracking-tight">FLIESEN WEBER</div>
+    <div class="flex flex-wrap justify-center gap-6 text-xs tracking-widest uppercase">
+      <a class="text-slate-400 hover:text-white transition-all" href="impressum.html">Impressum</a>
+      <a class="text-slate-400 hover:text-white transition-all" href="datenschutz.html">Datenschutz</a>
     </div>
-    <ul class="footer__links">
-      <li><a href="impressum.html">Impressum</a></li>
-      <li><a href="datenschutz.html">Datenschutz</a></li>
-    </ul>
-    <span class="footer__copy">© 2026 Fliesen Weber – Meisterbetrieb in Koblenz</span>
+    <div class="text-xs tracking-widest uppercase text-slate-400">© 2026 Fliesen Weber – Meisterbetrieb in Koblenz</div>
   </div>
 </footer>
 
-<script src="calculator.js"></script>
 </body>
 </html>

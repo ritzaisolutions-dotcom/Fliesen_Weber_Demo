@@ -1,57 +1,42 @@
 (function () {
-  const TILE_PRICES = { standard: 40, premium: 70, naturstein: 90 };
-  const EXTRA_PRICES = { altbelag: 15, abdichtung: 20 };
+  var TILE_PRICES = { standard: 40, premium: 70, naturstein: 90 };
+  var EXTRA_PRICES = { altbelag: 15, abdichtung: 20 };
 
-  const selAnliegen = document.getElementById('calc-anliegen');
-  const inputFlaeche = document.getElementById('calc-flaeche');
-  const selTyp = document.getElementById('calc-typ');
-  const cbAltbelag = document.getElementById('calc-altbelag');
-  const cbAbdichtung = document.getElementById('calc-abdichtung');
-  const result = document.getElementById('calc-result');
-  const resultPrice = document.getElementById('calc-result-price');
+  var selAnliegen  = document.getElementById('calc-anliegen');
+  var inputFlaeche = document.getElementById('calc-flaeche');
+  var selTyp       = document.getElementById('calc-typ');
+  var cbAltbelag   = document.getElementById('calc-altbelag');
+  var cbAbdichtung = document.getElementById('calc-abdichtung');
+  var resultPrice  = document.getElementById('calc-result-price');
 
   function fmt(n) {
     return n.toLocaleString('de-DE');
   }
 
   function calculate() {
-    const flaeche = parseFloat(inputFlaeche.value);
+    var flaeche = parseFloat(inputFlaeche.value);
+
     if (!flaeche || flaeche < 5) {
-      result.classList.remove('visible');
+      resultPrice.textContent = '€ \u2013';
       return;
     }
 
-    const basePerQm = TILE_PRICES[selTyp.value] || 40;
-    let extrasPerQm = 0;
-    if (cbAltbelag.checked) extrasPerQm += EXTRA_PRICES.altbelag;
+    var basePerQm  = TILE_PRICES[selTyp.value] || 40;
+    var extrasPerQm = 0;
+    if (cbAltbelag.checked)   extrasPerQm += EXTRA_PRICES.altbelag;
     if (cbAbdichtung.checked) extrasPerQm += EXTRA_PRICES.abdichtung;
 
-    const totalPerQm = basePerQm + extrasPerQm;
-    const totalMin = Math.round(flaeche * totalPerQm * 0.9);
-    const totalMax = Math.round(flaeche * totalPerQm * 1.15);
+    var totalPerQm = basePerQm + extrasPerQm;
+    var minPrice   = Math.round(flaeche * totalPerQm);
+    var maxPrice   = Math.round(minPrice * 1.15);
 
-    resultPrice.textContent = `€\u202f${fmt(totalMin)} – €\u202f${fmt(totalMax)}`;
-    result.classList.add('visible');
+    resultPrice.textContent = '\u20AC\u202f' + fmt(minPrice) + ' \u2013 \u20AC\u202f' + fmt(maxPrice);
   }
 
   [selAnliegen, inputFlaeche, selTyp, cbAltbelag, cbAbdichtung].forEach(function (el) {
     if (el) el.addEventListener('input', calculate);
   });
 
-  // Mobile nav toggle
-  const hamburger = document.getElementById('nav-hamburger');
-  const navLinks = document.getElementById('nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', function () {
-      hamburger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-  }
+  // Run once on load in case fields have pre-filled values
+  calculate();
 })();
