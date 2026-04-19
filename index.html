@@ -4,7 +4,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="description" content="Fliesen Weber – Ihr Meisterbetrieb für Fliesen und Bodenbeläge in Koblenz. Professionelle Verlegung, Sanierung und Beratung seit 2010."/>
+<meta name="robots" content="noindex, nofollow"/>
 <title>FLIESEN WEBER – Meisterbetrieb in Koblenz</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -93,12 +95,83 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    filter: saturate(0.92) contrast(1.04) brightness(0.7);
+    transition: opacity 1.8s ease-in-out;
   }
   .hero-slideshow img.active {
-    opacity: 0.3;
-    mix-blend-mode: overlay;
+    opacity: 0.62;
+  }
+  .workflow-line {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    top: 2.1rem;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,41,117,0.15), rgba(102,0,17,0.35), rgba(0,41,117,0.15));
+  }
+  .workflow-step {
+    position: relative;
+    padding-top: 4.5rem;
+  }
+  .workflow-dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,41,117,0.18);
+    background: rgba(255,255,255,0.85);
+    color: #002975;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.28em;
+  }
+  .workflow-step:nth-child(2) .workflow-dot {
+    color: #660011;
+    border-color: rgba(102,0,17,0.18);
+  }
+  .workflow-step:nth-child(3) .workflow-dot {
+    color: #176443;
+    border-color: rgba(23,100,67,0.18);
+  }
+  .reference-carousel-track {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .reference-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .reference-slide {
+    flex: 0 0 min(22rem, 78vw);
+  }
+  @media (max-width: 767px) {
+    .workflow-line {
+      left: 2rem;
+      top: 2rem;
+      bottom: 2rem;
+      width: 1px;
+      height: auto;
+      right: auto;
+      background: linear-gradient(180deg, rgba(0,41,117,0.15), rgba(102,0,17,0.35), rgba(0,41,117,0.15));
+    }
+    .workflow-step {
+      padding-top: 0;
+      padding-left: 5.5rem;
+      min-height: 7rem;
+    }
+    .workflow-dot {
+      top: 0;
+      left: 0;
+    }
+    .reference-slide {
+      flex-basis: 88vw;
+    }
   }
 </style>
 </head>
@@ -125,8 +198,9 @@
   </a>
   <div class="hidden md:flex items-center gap-8 font-inter text-sm font-bold tracking-[0.1em] uppercase">
     <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#leistungen">Leistungen</a>
-    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#ueber-uns">Über uns</a>
     <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#kostenrechner">Kostenrechner</a>
+    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#ablauf">Ablauf</a>
+    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#referenzen">Referenzen</a>
     <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#kontakt">Kontakt</a>
   </div>
   <a class="hidden md:inline-block bg-tertiary text-on-tertiary px-6 py-3 text-sm font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors duration-200" href="#kontakt">
@@ -143,44 +217,42 @@
 <!-- Mobile menu -->
 <div class="hidden fixed top-[70px] left-0 right-0 z-40 bg-white border-b border-outline-variant shadow-lg px-6 py-6 flex-col gap-4" id="mobile-menu">
   <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#leistungen">Leistungen</a>
-  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#ueber-uns">Über uns</a>
   <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#kostenrechner">Kostenrechner</a>
+  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#ablauf">Ablauf</a>
+  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#referenzen">Referenzen</a>
   <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#kontakt">Kontakt</a>
   <a class="inline-block bg-tertiary text-white px-6 py-3 text-sm font-bold tracking-widest uppercase text-center mt-2" href="#kontakt">Jetzt anfragen</a>
 </div>
 
 <!-- HERO -->
-<header class="relative min-h-[921px] flex items-center pt-[70px] bg-primary overflow-hidden">
+<header class="relative min-h-[760px] md:min-h-[921px] flex items-center pt-[70px] bg-primary overflow-hidden">
   <!-- Slideshow injected by heroSlideshow.js -->
   <div class="hero-gradient absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/90 to-transparent"></div>
   <div class="container mx-auto px-6 md:px-12 relative z-10">
     <div class="max-w-4xl">
-      <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest/10 backdrop-blur-md border border-white/20 mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest/10 backdrop-blur-md border border-white/20 mb-6 md:mb-8">
         <span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
         <span class="text-xs font-bold text-white tracking-widest uppercase">MEISTERBETRIEB · KOBLENZ &amp; UMGEBUNG</span>
       </div>
-      <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter leading-[1.1] mb-8 font-headline">
+      <h1 class="text-[3.55rem] md:text-7xl font-black text-white tracking-tighter leading-[0.98] md:leading-[1.1] mb-6 md:mb-8 font-headline">
         Ihr Meisterbetrieb für<br/>
         <span class="text-on-primary-container">Fliesen &amp; Bodenbeläge</span><br/>
         in Koblenz
       </h1>
-      <p class="text-white/80 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-        Ihr Bad braucht eine Renovierung? Ihr Boden knarrt? Wir verlegen seit über 15 Jahren Fliesen und Böden in Koblenz – termingerecht, sauber und zum Festpreis.
+      <p class="text-white/80 text-base md:text-xl leading-relaxed mb-8 md:mb-10 max-w-xl md:max-w-2xl">
+        Ob Bad, Küche oder Wohnbereich: Wir verlegen Fliesen und Böden sauber, termintreu und mit klarer Preislinie. Sie wissen früh, was machbar ist, was es kostet und wie es weitergeht.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 mb-16 flex-wrap">
-        <a class="inline-flex justify-center items-center px-8 py-4 bg-tertiary text-white font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors" href="#kontakt">
-          Kostenloses Angebot einholen
-        </a>
+      <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-10 md:mb-16 flex-wrap">
         <a class="inline-flex justify-center items-center px-8 py-4 border-2 border-white/30 text-white font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-colors" href="#kostenrechner">
           Preis berechnen
         </a>
-        <a href="https://calendly.com/fliesen-weber-demo" target="_blank" rel="noopener"
-           class="inline-flex justify-center items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-colors">
+        <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup
+           class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-tertiary text-white font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors">
           <span class="material-symbols-outlined text-base">calendar_month</span>
-          Termin vereinbaren
+          Besichtigungstermin buchen
         </a>
       </div>
-      <div class="flex flex-col md:flex-row gap-8 text-white/80 text-sm font-semibold tracking-wide">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-white/80 text-[13px] md:text-sm font-semibold tracking-wide">
         <div class="flex items-center gap-3">
           <span class="material-symbols-outlined text-tertiary-fixed">check_circle</span>
           Meistergeführter Betrieb
@@ -199,143 +271,90 @@
 </header>
 
 <!-- STATS BAR -->
-<section class="bg-primary-container text-white py-12" data-stats-section>
+<section class="bg-primary-container text-white py-8 md:py-12" data-stats-section>
   <div class="container mx-auto px-6 md:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/20">
-      <div class="flex flex-col items-center justify-center pt-8 md:pt-0">
-        <span class="text-4xl font-black mb-2" data-stat="projects">350+</span>
-        <span class="text-xs font-bold tracking-widest uppercase text-white/70">Abgeschlossene Projekte</span>
+    <div class="grid grid-cols-3 gap-3 md:gap-8 md:divide-x divide-white/20">
+      <div class="flex flex-col items-center justify-center border border-white/10 bg-white/5 px-3 py-4 md:border-0 md:bg-transparent md:px-0 md:py-0">
+        <span class="text-3xl md:text-4xl font-black mb-2" data-stat="projects">350+</span>
+        <span class="text-[9px] md:text-xs font-bold tracking-widest uppercase text-white/70 text-center leading-snug">Abgeschlossene Projekte</span>
       </div>
-      <div class="flex flex-col items-center justify-center pt-8 md:pt-0">
-        <span class="text-4xl font-black mb-2" data-stat="years">15</span>
-        <span class="text-xs font-bold tracking-widest uppercase text-white/70">Jahre Erfahrung</span>
+      <div class="flex flex-col items-center justify-center border border-white/10 bg-white/5 px-3 py-4 md:border-0 md:bg-transparent md:px-0 md:py-0">
+        <span class="text-3xl md:text-4xl font-black mb-2" data-stat="years">15</span>
+        <span class="text-[9px] md:text-xs font-bold tracking-widest uppercase text-white/70 text-center leading-snug">Jahre Erfahrung</span>
       </div>
-      <div class="flex flex-col items-center justify-center pt-8 md:pt-0">
-        <span class="text-4xl font-black mb-2 flex items-center gap-1" data-stat="rating">4,9 <span class="material-symbols-outlined text-amber-400" style="font-variation-settings:'FILL' 1">star</span></span>
-        <span class="text-xs font-bold tracking-widest uppercase text-white/70">Ø Kundenbewertung</span>
+      <div class="flex flex-col items-center justify-center border border-white/10 bg-white/5 px-3 py-4 md:border-0 md:bg-transparent md:px-0 md:py-0">
+        <span class="text-3xl md:text-4xl font-black mb-2 flex items-center gap-1" data-stat="rating">4,9 <span class="material-symbols-outlined text-amber-400" style="font-variation-settings:'FILL' 1">star</span></span>
+        <span class="text-[9px] md:text-xs font-bold tracking-widest uppercase text-white/70 text-center leading-snug">Ø Kundenbewertung</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- LEISTUNGEN -->
-<section class="py-32 bg-surface-container-low" id="leistungen">
+<section class="py-20 md:py-32 bg-surface-container-low" id="leistungen">
   <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-24 max-w-2xl">
+    <div class="mb-14 md:mb-24 max-w-2xl">
       <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">UNSERE LEISTUNGEN</p>
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline">Was wir für Sie tun</h2>
+      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline">Was wir für Sie tun</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-      <div class="bg-surface-container-lowest p-8 border-t-4 border-primary hover:bg-surface-bright transition-colors group">
-        <div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-primary">
-          <span class="material-symbols-outlined text-3xl">grid_on</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-8">
+      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-primary hover:bg-surface-bright transition-colors group">
+        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-primary">
+          <span class="material-symbols-outlined text-2xl md:text-3xl">grid_on</span>
         </div>
-        <h3 class="text-xl font-bold mb-4 font-headline">Fliesen verlegen</h3>
+        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Fliesen verlegen</h3>
         <p class="text-on-surface-variant leading-relaxed mb-4">Präzise Verlegung von Wand- und Bodenfliesen für Bad, Küche und Wohnbereiche. Fachgerecht und langlebig.</p>
-        <p class="text-primary text-sm font-semibold mb-8">→ Von der ersten Fuge bis zur Endabnahme: alles aus einer Hand.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
+        <p class="hidden md:block text-primary text-sm font-semibold mb-8">→ Von der ersten Fuge bis zur Endabnahme: alles aus einer Hand.</p>
+        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
           Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
-      <div class="bg-surface-container-lowest p-8 border-t-4 border-tertiary hover:bg-surface-bright transition-colors group">
-        <div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-tertiary">
-          <span class="material-symbols-outlined text-3xl">layers</span>
+      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-tertiary hover:bg-surface-bright transition-colors group">
+        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-tertiary">
+          <span class="material-symbols-outlined text-2xl md:text-3xl">layers</span>
         </div>
-        <h3 class="text-xl font-bold mb-4 font-headline">Bodenbeläge</h3>
+        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Bodenbeläge</h3>
         <p class="text-on-surface-variant leading-relaxed mb-4">Hochwertige Bodenbeläge aller Art. Von Naturstein über Laminat bis hin zu modernem Vinyl – meisterhaft verlegt.</p>
-        <p class="text-tertiary text-sm font-semibold mb-8">→ Keine bösen Überraschungen: Festpreis nach Aufmaß.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
+        <p class="hidden md:block text-tertiary text-sm font-semibold mb-8">→ Keine bösen Überraschungen: Festpreis nach Aufmaß.</p>
+        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
           Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
-      <div class="bg-surface-container-lowest p-8 border-t-4 border-emerald-700 hover:bg-surface-bright transition-colors group">
-        <div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-emerald-700">
-          <span class="material-symbols-outlined text-3xl">plumbing</span>
+      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-emerald-700 hover:bg-surface-bright transition-colors group">
+        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-emerald-700">
+          <span class="material-symbols-outlined text-2xl md:text-3xl">plumbing</span>
         </div>
-        <h3 class="text-xl font-bold mb-4 font-headline">Sanierung &amp; Renovierung</h3>
+        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Sanierung &amp; Renovierung</h3>
         <p class="text-on-surface-variant leading-relaxed mb-4">Komplette Badsanierungen und Altbaurenovierungen aus einer Hand. Zuverlässig, sauber und termingerecht.</p>
-        <p class="text-emerald-700 text-sm font-semibold mb-8">→ Inklusive Entsorgung des alten Belags – Sie haben keine Arbeit.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
+        <p class="hidden md:block text-emerald-700 text-sm font-semibold mb-8">→ Inklusive Entsorgung des alten Belags – Sie haben keine Arbeit.</p>
+        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
           Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
-      <div class="bg-surface-container-lowest p-8 border-t-4 border-amber-600 hover:bg-surface-bright transition-colors group">
-        <div class="w-16 h-16 bg-surface-container flex items-center justify-center mb-8 text-amber-600">
-          <span class="material-symbols-outlined text-3xl">architecture</span>
+      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-amber-600 hover:bg-surface-bright transition-colors group">
+        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-amber-600">
+          <span class="material-symbols-outlined text-2xl md:text-3xl">architecture</span>
         </div>
-        <h3 class="text-xl font-bold mb-4 font-headline">Beratung &amp; Planung</h3>
+        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Beratung &amp; Planung</h3>
         <p class="text-on-surface-variant leading-relaxed mb-4">Umfassende Beratung vor Ort. Wir planen Ihr Projekt detailliert und finden die optimalen Materialien für Ihre Bedürfnisse.</p>
-        <p class="text-amber-600 text-sm font-semibold mb-8">→ Kostenlose Erstberatung, ehrliche Einschätzung, keine versteckten Kosten.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
+        <p class="hidden md:block text-amber-600 text-sm font-semibold mb-8">→ Kostenlose Erstberatung, ehrliche Einschätzung, keine versteckten Kosten.</p>
+        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
           Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- REFERENZEN -->
-<section class="py-32 bg-surface-container-lowest" id="referenzen">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-16">
-      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">REFERENZEN</p>
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline">Unsere Arbeit spricht für sich</h2>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="group relative overflow-hidden aspect-[4/3] bg-surface-container">
-        <img src="images/portfolio/project-1.jpg" alt="Badezimmer Projekt Koblenz" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-colors duration-300 flex items-end">
-          <p class="text-white font-bold tracking-widest uppercase text-sm px-6 py-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">Badezimmer · Koblenz</p>
-        </div>
-      </div>
-      <div class="group relative overflow-hidden aspect-[4/3] bg-surface-container">
-        <img src="images/portfolio/project-2.jpg" alt="Badezimmer Projekt Koblenz" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-colors duration-300 flex items-end">
-          <p class="text-white font-bold tracking-widest uppercase text-sm px-6 py-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">Badezimmer · Koblenz</p>
-        </div>
-      </div>
-      <div class="group relative overflow-hidden aspect-[4/3] bg-surface-container">
-        <img src="images/portfolio/project-3.jpg" alt="Badezimmer Renovierung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-colors duration-300 flex items-end">
-          <p class="text-white font-bold tracking-widest uppercase text-sm px-6 py-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">Badezimmer · Renovierung</p>
-        </div>
-      </div>
-      <div class="group relative overflow-hidden aspect-[4/3] bg-surface-container">
-        <img src="images/portfolio/project-4.jpg" alt="Fliesenverlegung in Arbeit" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-colors duration-300 flex items-end">
-          <p class="text-white font-bold tracking-widest uppercase text-sm px-6 py-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">Fliesenverlegung · In Arbeit</p>
-        </div>
-      </div>
-      <div class="group relative overflow-hidden aspect-[4/3] bg-surface-container">
-        <img src="images/portfolio/project-5.jpg" alt="Handwerksarbeit vor Ort" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-colors duration-300 flex items-end">
-          <p class="text-white font-bold tracking-widest uppercase text-sm px-6 py-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">Handwerk · Vor Ort</p>
-        </div>
-      </div>
-      <div class="group relative overflow-hidden aspect-[4/3] bg-surface-container">
-        <img src="images/portfolio/project-6.jpg" alt="Meisterarbeit Fliesen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/60 transition-colors duration-300 flex items-end">
-          <p class="text-white font-bold tracking-widest uppercase text-sm px-6 py-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">Meisterarbeit · Koblenz</p>
-        </div>
-      </div>
-    </div>
-    <div class="mt-12 text-center">
-      <a href="#kontakt" class="inline-flex items-center gap-2 bg-primary text-white font-bold tracking-widest uppercase px-8 py-4 hover:bg-primary-container transition-colors">
-        Eigenes Projekt anfragen <span class="material-symbols-outlined text-base">arrow_forward</span>
-      </a>
     </div>
   </div>
 </section>
 
 <!-- KOSTENRECHNER -->
-<section class="py-32 bg-surface-container-lowest" id="kostenrechner">
+<section class="py-20 md:py-32 bg-surface-container-lowest" id="kostenrechner">
   <div class="container mx-auto px-6 md:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-      <div class="lg:sticky lg:top-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-start">
+      <div class="order-2 lg:order-1 lg:sticky lg:top-24">
         <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">KOSTENRECHNER</p>
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-8">Was kostet Ihr Projekt?</h2>
-        <p class="text-on-surface-variant text-lg leading-relaxed mb-12">Die häufigste Frage am Telefon: „Was kostet das ungefähr?" Sparen Sie sich den Anruf – unser Rechner gibt Ihnen in 30 Sekunden eine realistische Preisspanne.</p>
-        <ul class="space-y-6">
+        <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-6 md:mb-8">Was kostet Ihr Projekt?</h2>
+        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-8 md:mb-12">Die erste Frage ist fast immer dieselbe: Was kostet das ungefähr? Genau dafür ist der Rechner da. In unter 30 Sekunden bekommen Sie einen belastbaren Preisrahmen statt vager Schätzungen.</p>
+        <ul class="space-y-4 md:space-y-6">
           <li class="flex items-start gap-4">
             <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
             <div>
@@ -346,11 +365,18 @@
           <li class="flex items-start gap-4">
             <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
             <div>
+              <h4 class="font-bold text-on-surface">Projektart berücksichtigt</h4>
+              <p class="text-sm text-on-surface-variant">Bad, Küche, Balkon oder Wohnbereich wirken sich unterschiedlich auf Aufwand und Preisrahmen aus.</p>
+            </div>
+          </li>
+          <li class="hidden md:flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+            <div>
               <h4 class="font-bold text-on-surface">Alle Materialien inklusive</h4>
               <p class="text-sm text-on-surface-variant">Unsere Schätzung umfasst Arbeitszeit und Standardmaterialien.</p>
             </div>
           </li>
-          <li class="flex items-start gap-4">
+          <li class="hidden md:flex items-start gap-4">
             <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
             <div>
               <h4 class="font-bold text-on-surface">Unverbindlich</h4>
@@ -366,7 +392,7 @@
           </li>
         </ul>
       </div>
-      <div class="bg-surface-container-low p-8 md:p-12">
+      <div class="order-1 lg:order-2 bg-surface-container-low p-6 md:p-12">
         <form class="space-y-8" id="calcForm">
           <div>
             <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-3" for="anliegen">Was planen Sie?</label>
@@ -396,6 +422,10 @@
               <span class="text-sm font-semibold text-on-surface">Altbelag entfernen <span class="text-on-surface-variant font-normal">(+15 €/m²)</span></span>
             </label>
             <label class="flex items-center gap-3 cursor-pointer">
+              <input id="sockelleisten" class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
+              <span class="text-sm font-semibold text-on-surface">Sockelleisten montieren <span class="text-on-surface-variant font-normal">(+8 €/m²)</span></span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
               <input id="abdichtung" class="w-5 h-5 text-primary border-outline-variant rounded-none focus:ring-primary" type="checkbox"/>
               <span class="text-sm font-semibold text-on-surface">Abdichtung (Nassbereich) <span class="text-on-surface-variant font-normal">(+20 €/m²)</span></span>
             </label>
@@ -403,12 +433,12 @@
           <div class="bg-primary-container p-6 mt-8" id="calc-result-box">
             <p class="text-xs font-bold tracking-widest uppercase text-on-primary-container mb-2">Geschätzter Preisrahmen</p>
             <p class="text-2xl font-black text-white" id="priceOutput">€ –</p>
-            <p class="text-[10px] text-white/60 mt-2 uppercase tracking-wide">Unverbindliche Schätzung inkl. Material &amp; Arbeit, exkl. MwSt. Finales Angebot nach Besichtigung.</p>
+            <p class="text-[10px] text-white/60 mt-2 uppercase tracking-wide">Unverbindliche Schätzung inkl. Material &amp; Arbeit. Untergrund, Zuschnitt und Baustellensituation können den Endpreis verändern.</p>
           </div>
-          <a href="https://calendly.com/fliesen-weber-demo" target="_blank" rel="noopener"
+          <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup
              class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-tertiary text-white font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors">
             <span class="material-symbols-outlined text-base">calendar_month</span>
-            Jetzt Termin vereinbaren
+            Besichtigung zur Preiskalkulation
           </a>
           <a href="#kontakt" class="w-full inline-flex items-center justify-center px-6 py-4 bg-primary text-white font-bold tracking-widest uppercase hover:bg-primary-container transition-colors">
             Verbindliches Angebot anfragen
@@ -419,113 +449,243 @@
   </div>
 </section>
 
-<!-- ÜBER UNS -->
-<section class="py-32 bg-primary relative overflow-hidden" id="ueber-uns">
-  <!-- Subtle tile pattern background -->
-  <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(255,255,255,0.3) 47px, rgba(255,255,255,0.3) 48px), repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(255,255,255,0.3) 47px, rgba(255,255,255,0.3) 48px);"></div>
-  <div class="container mx-auto px-6 md:px-12 relative z-10">
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 mb-8">
-        <span class="material-symbols-outlined text-3xl text-white">grid_on</span>
-      </div>
-      <p class="text-white/60 text-sm font-bold tracking-widest uppercase mb-4">ÜBER UNS</p>
-      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight font-headline">
-        Seit 2010 Ihr Partner in Koblenz
-      </h2>
+<!-- ABLAUF -->
+<section class="py-20 md:py-32 bg-surface-container-low" id="ablauf">
+  <div class="container mx-auto px-6 md:px-12">
+    <div class="mb-14 md:mb-20 max-w-3xl">
+      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">SO LÄUFT ES AB</p>
+      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-6">Vom ersten Preisrahmen bis zur sauberen Umsetzung</h2>
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">So entsteht aus einer ersten Idee ein sauber geplantes Projekt: schnell einschätzen, persönlich klären, verbindlich umsetzen.</p>
     </div>
-    <div class="max-w-4xl mx-auto">
-      <p class="text-white/80 text-lg leading-relaxed mb-10">
-        Was als Ein-Mann-Betrieb begann, ist heute ein Team von vier Fachkräften,
-        das auf über 350 erfolgreich abgeschlossene Projekte zurückblickt. Fliesen Weber
-        steht für Qualität, Zuverlässigkeit und deutsche Handwerkskunst im Raum Koblenz.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <div class="bg-white/10 border border-white/20 p-6">
-          <p class="text-white leading-relaxed">Meister Michael Weber führt persönlich jede Baustelle – vom Erstgespräch bis zur Endabnahme.</p>
+    <div class="relative">
+      <div class="workflow-line"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div class="workflow-step">
+          <div class="workflow-dot">01</div>
+          <p class="text-xs font-bold tracking-[0.24em] uppercase text-primary mb-4">Erster Preisrahmen</p>
+          <h3 class="text-2xl font-black text-on-surface mb-4 font-headline">Projekt grob berechnen</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-4">Sie starten mit einem realistischen Preisrahmen für Fläche, Material und Zusatzleistungen, statt mit offenem Fragezeichen.</p>
+          <p class="text-primary text-sm font-semibold">→ Sie wissen früh, ob das Projekt in Ihren Rahmen passt.</p>
         </div>
-        <div class="bg-white/10 border border-white/20 p-6">
-          <p class="text-white leading-relaxed">Wir legen Wert auf termingerechte Ausführung, saubere Arbeit und faire Festpreise. Kein Subunternehmer, keine Überraschungen.</p>
+        <div class="workflow-step">
+          <div class="workflow-dot">02</div>
+          <p class="text-xs font-bold tracking-[0.24em] uppercase text-tertiary mb-4">Persönliche Klärung</p>
+          <h3 class="text-2xl font-black text-on-surface mb-4 font-headline">Vor-Ort-Termin sichern</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-4">Im Termin klären wir Untergrund, Materialwahl, Zeitplan und alle Punkte, die auf Bildern oder am Telefon offen bleiben.</p>
+          <p class="text-tertiary text-sm font-semibold">→ Sie bekommen Klarheit statt späterer Überraschungen.</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-dot">03</div>
+          <p class="text-xs font-bold tracking-[0.24em] uppercase text-emerald-700 mb-4">Verbindliche Umsetzung</p>
+          <h3 class="text-2xl font-black text-on-surface mb-4 font-headline">Festpreis &amp; Umsetzung</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-4">Auf Basis der Besichtigung erhalten Sie ein verbindliches Angebot. Danach wird sauber gearbeitet, termintreu umgesetzt und klar kommuniziert.</p>
+          <p class="text-emerald-700 text-sm font-semibold">→ Sie wissen, woran Sie sind, bevor es losgeht.</p>
         </div>
       </div>
-      <p class="text-white/70 text-lg leading-relaxed text-center">
-        Unsere Kunden kommen aus Koblenz und dem Umland – viele davon auf Empfehlung.
-        Das ist unser größter Qualitätsbeweis.
-      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN -->
+<section class="py-20 md:py-32 bg-surface-container-lowest" id="referenzen">
+  <div class="container mx-auto px-6 md:px-12">
+    <div class="mb-10 md:mb-12 flex flex-col gap-6 md:gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">REFERENZEN</p>
+        <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-5">Unsere Arbeit spricht für sich</h2>
+        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Einige Beispiele aus typischen Projekten: saubere Verlegung, ruhige Fugenbilder und sichtbare Qualität bis ins Detail.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="reference-carousel-prev inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center border border-outline-variant bg-white text-on-surface transition-colors hover:bg-surface-container-low" type="button" aria-label="Vorherige Referenz">
+          <span class="material-symbols-outlined">west</span>
+        </button>
+        <button class="reference-carousel-next inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center border border-outline-variant bg-white text-on-surface transition-colors hover:bg-surface-container-low" type="button" aria-label="Nächste Referenz">
+          <span class="material-symbols-outlined">east</span>
+        </button>
+      </div>
+    </div>
+    <div class="reference-carousel" data-carousel>
+      <div class="reference-carousel-track flex gap-4 overflow-x-auto pb-3" data-carousel-track>
+        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
+          <img src="images/portfolio/project-1.jpg" alt="Badezimmer Projekt Koblenz" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
+            <div class="px-6 py-5">
+              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Badezimmer · Koblenz</p>
+              <p class="text-white/75 text-sm">Großformatige Wand- und Bodenfliesen mit ruhigem Fugenbild.</p>
+            </div>
+          </div>
+        </article>
+        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
+          <img src="images/portfolio/project-2.jpg" alt="Badezimmer Projekt Koblenz" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
+            <div class="px-6 py-5">
+              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Badmodernisierung · Koblenz</p>
+              <p class="text-white/75 text-sm">Saubere Linien, hochwertige Oberflächen und präzise Anschlüsse.</p>
+            </div>
+          </div>
+        </article>
+        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
+          <img src="images/portfolio/project-3.jpg" alt="Badezimmer Renovierung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
+            <div class="px-6 py-5">
+              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Renovierung · Badezimmer</p>
+              <p class="text-white/75 text-sm">Neuer Belag, klare Kanten und ein sichtbar aufgewerteter Raum.</p>
+            </div>
+          </div>
+        </article>
+        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
+          <img src="images/portfolio/project-4.jpg" alt="Fliesenverlegung in Arbeit" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
+            <div class="px-6 py-5">
+              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Verlegung · Baustelle</p>
+              <p class="text-white/75 text-sm">Saubere Ausführung während der Arbeit, nicht nur im Endbild.</p>
+            </div>
+          </div>
+        </article>
+        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
+          <img src="images/portfolio/project-5.jpg" alt="Handwerksarbeit vor Ort" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
+            <div class="px-6 py-5">
+              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Handwerk · Vor Ort</p>
+              <p class="text-white/75 text-sm">Verlässliche Ausführung mit Blick auf Untergrund und Details.</p>
+            </div>
+          </div>
+        </article>
+        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
+          <img src="images/portfolio/project-6.jpg" alt="Meisterarbeit Fliesen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
+            <div class="px-6 py-5">
+              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Meisterarbeit · Koblenz</p>
+              <p class="text-white/75 text-sm">Hochwertige Optik, klare Fluchten und ruhige Gesamtwirkung.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="mt-10 flex items-center justify-between gap-6 flex-wrap">
+      <p class="text-sm text-on-surface-variant">Vom sanierten Bad bis zur Verlegung vor Ort: gute Arbeit erkennt man nicht an großen Worten, sondern an sauberen Ergebnissen.</p>
+      <a href="#kontakt" class="inline-flex items-center gap-2 bg-primary text-white font-bold tracking-widest uppercase px-8 py-4 hover:bg-primary-container transition-colors">
+        Eigenes Projekt anfragen <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- KONTAKT -->
-<section class="py-32 bg-surface-container-lowest" id="kontakt">
+<section class="py-20 md:py-32 bg-surface-container-lowest" id="kontakt">
   <div class="container mx-auto px-6 md:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-      <div>
-        <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">KONTAKT</p>
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-12">Sprechen wir über Ihr Projekt</h2>
-        <div class="space-y-8">
-          <div class="flex items-start gap-6">
-            <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-              <span class="material-symbols-outlined">call</span>
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-8 md:mb-10">
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-5">Jetzt Besichtigungstermin buchen</h2>
+        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-3xl">
+          Für eine belastbare Preiskalkulation sehen wir uns Ihr Projekt am besten vor Ort an. Oben buchen Sie direkt den Termin. Darunter finden Sie unsere Kontaktdaten. Ganz unten können Sie uns Ihr Vorhaben auch erst schriftlich senden.
+        </p>
+      </div>
+      <div class="space-y-5 md:space-y-6">
+        <div class="bg-tertiary text-white p-6 md:p-10 shadow-[0_24px_50px_-20px_rgba(102,0,17,0.45)] border-t-4 border-tertiary-container">
+          <p class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-white/75 mb-4 bg-white/10 px-3 py-2">Schritt 1 · Kalender oeffnen</p>
+          <h3 class="text-3xl md:text-4xl font-black tracking-tight mb-4 font-headline">Freien Besichtigungstermin waehlen</h3>
+          <p class="text-white/90 leading-relaxed mb-6 max-w-3xl text-base md:text-lg">
+            Klicken Sie auf den Button, waehlen Sie einen freien Termin und erhalten Sie direkt die Bestaetigung. Das ist der schnellste Weg zur Preiskalkulation vor Ort.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
+            <div class="bg-white/10 border border-white/10 px-4 py-4">
+              <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">1</p>
+              <p class="text-sm font-semibold text-white">Kalender oeffnen</p>
             </div>
-            <div>
-              <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Telefon</h4>
-              <a href="tel:+492611234567" class="text-xl font-bold text-on-surface hover:text-primary transition-colors">+49 261 1234567</a>
+            <div class="bg-white/10 border border-white/10 px-4 py-4">
+              <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">2</p>
+              <p class="text-sm font-semibold text-white">Freien Termin waehlen</p>
             </div>
-          </div>
-          <div class="flex items-start gap-6">
-            <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-              <span class="material-symbols-outlined">mail</span>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">E-Mail</h4>
-              <a href="mailto:info@fliesen-weber-koblenz.de" class="text-xl font-bold text-on-surface hover:text-primary transition-colors">info@fliesen-weber-koblenz.de</a>
-            </div>
-          </div>
-          <div class="flex items-start gap-6">
-            <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-              <span class="material-symbols-outlined">location_on</span>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Standort</h4>
-              <p class="text-lg font-semibold text-on-surface">Musterstraße 12<br/>56068 Koblenz</p>
+            <div class="bg-white/10 border border-white/10 px-4 py-4">
+              <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">3</p>
+              <p class="text-sm font-semibold text-white">Bestaetigung erhalten</p>
             </div>
           </div>
-          <div class="flex items-start gap-6">
-            <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-              <span class="material-symbols-outlined">schedule</span>
+          <div class="flex flex-col gap-4">
+            <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup class="inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-4 font-bold tracking-widest uppercase text-tertiary transition-colors hover:bg-surface-container-lowest">
+              <span class="material-symbols-outlined text-base">calendar_month</span>
+              Jetzt freien Termin waehlen
+            </a>
+            <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" class="text-sm font-semibold text-white/85 hover:text-white transition-colors">
+              Termin alternativ direkt im neuen Tab öffnen
+            </a>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-6 md:p-10 shadow-[0_20px_40px_-15px_rgba(0,41,117,0.05)] border-t-4 border-primary">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">Direkte Kontaktdaten</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+                <span class="material-symbols-outlined">call</span>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Telefon</h4>
+                <a href="tel:+4915129755134" class="text-xl font-bold text-on-surface hover:text-primary transition-colors">+49 151 29755134</a>
+              </div>
             </div>
-            <div>
-              <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Öffnungszeiten</h4>
-              <p class="text-lg font-semibold text-on-surface">Mo–Fr: 08:00 – 17:00 Uhr<br/>Sa: Nach Vereinbarung</p>
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+                <span class="material-symbols-outlined">mail</span>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">E-Mail</h4>
+                <a href="mailto:fliesen.weber.koblenz@gmail.com" class="text-xl font-bold text-on-surface hover:text-primary transition-colors">fliesen.weber.koblenz@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+                <span class="material-symbols-outlined">calendar_month</span>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Online-Terminbuchung</h4>
+                <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup class="text-lg font-semibold text-on-surface hover:text-primary transition-colors">Besichtigungstermin zur Preiskalkulation</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Region</h4>
+                <p class="text-lg font-semibold text-on-surface">Koblenz &amp; Rheinland-Pfalz<br/>auch für Bonn, Wiesbaden und Umgebung</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="bg-surface-container-low p-8 md:p-12 shadow-[0_20px_40px_-15px_rgba(0,41,117,0.05)] border-t-4 border-tertiary">
-        <form class="space-y-6" id="contactForm" novalidate>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="name">Name *</label>
-              <input id="name" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required type="text" placeholder="Max Mustermann" autocomplete="name"/>
+        <div class="bg-surface-container-low p-6 md:p-10 shadow-[0_20px_40px_-15px_rgba(0,41,117,0.05)] border-t-4 border-primary">
+          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">Kontaktformular</p>
+          <h3 class="text-2xl font-black text-on-surface tracking-tight mb-3 font-headline">Lieber erst schreiben?</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-8">
+            Senden Sie uns Ihr Vorhaben kurz vorab. Wir melden uns zeitnah zurück und klären den passenden nächsten Schritt.
+          </p>
+          <form class="space-y-6" id="contactForm" novalidate>
+            <input type="hidden" name="access_key" value="d2ed1dac-2a1c-4afe-a43d-2744e56c3fdd"/>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="name">Name *</label>
+                <input id="name" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required type="text" placeholder="Max Mustermann" autocomplete="name"/>
+              </div>
+              <div>
+                <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="phone">Telefon</label>
+                <input id="phone" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" type="tel" placeholder="+49 261 …" autocomplete="tel"/>
+              </div>
             </div>
             <div>
-              <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="phone">Telefon</label>
-              <input id="phone" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" type="tel" placeholder="+49 261 …" autocomplete="tel"/>
+              <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="email">E-Mail *</label>
+              <input id="email" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required type="email" placeholder="ihre@email.de" autocomplete="email"/>
             </div>
-          </div>
-          <div>
-            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="email">E-Mail *</label>
-            <input id="email" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required type="email" placeholder="ihre@email.de" autocomplete="email"/>
-          </div>
-          <div>
-            <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="message">Nachricht *</label>
-            <textarea id="message" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface resize-none transition-colors" required rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben…"></textarea>
-          </div>
-          <button class="w-full bg-tertiary text-white font-bold tracking-widest uppercase py-4 mt-4 hover:bg-tertiary-container transition-colors" type="submit">
-            Nachricht Senden
-          </button>
-          <p class="text-xs text-on-surface-variant text-center">* Pflichtfelder · Ihre Daten werden nicht an Dritte weitergegeben.</p>
-        </form>
+            <div>
+              <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="message">Nachricht *</label>
+              <textarea id="message" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface resize-none transition-colors" required rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben…"></textarea>
+            </div>
+            <button class="w-full bg-primary text-white font-bold tracking-widest uppercase py-4 mt-4 hover:bg-primary-container transition-colors" type="submit">
+              Nachricht senden
+            </button>
+            <div class="hidden border px-4 py-4 text-sm" id="contactStatus" aria-live="polite"></div>
+            <p class="text-xs text-on-surface-variant text-center">* Pflichtfelder</p>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -541,7 +701,7 @@
       <a class="text-slate-400 hover:text-white transition-all" href="#leistungen">Leistungen</a>
       <a class="text-slate-400 hover:text-white transition-all" href="#kontakt">Kontakt</a>
     </div>
-    <div class="text-xs tracking-widest uppercase text-slate-400">© 2026 Fliesen Weber – Meisterbetrieb in Koblenz</div>
+    <div class="text-xs tracking-widest uppercase text-slate-400">© 2026 Fliesen Weber · Koblenz &amp; Rheinland-Pfalz</div>
   </div>
 </footer>
 
@@ -561,6 +721,64 @@
     a.addEventListener('click', function() {
       mobileMenu.classList.add('hidden');
       mobileMenu.classList.remove('flex');
+    });
+  });
+
+  var calendlyLoaded = false;
+  var calendlyLoading = false;
+
+  function loadCalendly(callback) {
+    if (calendlyLoaded) { callback(); return; }
+    if (calendlyLoading) { document.addEventListener('calendly-ready', callback, { once: true }); return; }
+    calendlyLoading = true;
+
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(css);
+
+    var script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.onload = function() {
+      calendlyLoaded = true;
+      calendlyLoading = false;
+      document.dispatchEvent(new Event('calendly-ready'));
+      callback();
+    };
+    document.head.appendChild(script);
+  }
+
+  document.querySelectorAll('[data-calendly-popup]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      var url = link.href;
+      loadCalendly(function() {
+        window.Calendly.initPopupWidget({ url: url });
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-carousel]').forEach(function(carousel) {
+    const track = carousel.querySelector('[data-carousel-track]');
+    const prevButton = carousel.parentElement.querySelector('.reference-carousel-prev');
+    const nextButton = carousel.parentElement.querySelector('.reference-carousel-next');
+
+    if (!track || !prevButton || !nextButton) return;
+
+    function getScrollAmount() {
+      const firstSlide = track.querySelector('.reference-slide');
+      if (!firstSlide) return 320;
+      const slideStyles = window.getComputedStyle(firstSlide);
+      const gap = parseFloat(slideStyles.marginRight || 0);
+      return firstSlide.getBoundingClientRect().width + gap + 16;
+    }
+
+    prevButton.addEventListener('click', function() {
+      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextButton.addEventListener('click', function() {
+      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     });
   });
 </script>

@@ -1,22 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Only bathrooms and work-in-progress shots — floor-only pics excluded
-    var images = [
-        'images/hero/hero-1.jpg',   // bath1
-        'images/hero/hero-2.jpg',   // bath2
-        'images/hero/hero-3.jpg',   // bath3
-        'images/hero/hero-8.jpg',   // work1
-        'images/hero/hero-9.jpg',   // work2
-        'images/hero/hero-10.jpg',  // work3
-        'images/hero/hero-11.jpg'   // work4
+    var slides = [
+        {
+            src: 'visuals_ref/work2_ref.jpg',
+            alt: 'Team bei der Verlegung großformatiger Marmor-Wandfliesen',
+            position: 'center center'
+        },
+        {
+            src: 'visuals_ref/work7_ref.jpg',
+            alt: 'Fliesenleger beim professionellen Verlegen von Bodenfliesen',
+            position: 'center 35%'
+        },
+        {
+            src: 'visuals_ref/work1_ref.jpg',
+            alt: 'Großformatige Marmorfliesen mit Nivelliersystem auf dem Boden',
+            position: 'center 40%'
+        },
+        {
+            src: 'visuals_ref/work6_ref.jpg',
+            alt: 'Präzises Verlegen von Fliesen in Kleberbett',
+            position: 'center 45%'
+        }
     ];
 
     var container = document.createElement('div');
     container.className = 'hero-slideshow';
 
-    images.forEach(function (src, index) {
+    slides.forEach(function (slide, index) {
         var img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Projekt ' + (index + 1);
+        img.src = slide.src;
+        img.alt = slide.alt;
+        img.style.objectPosition = slide.position;
         if (index === 0) img.classList.add('active');
         container.appendChild(img);
     });

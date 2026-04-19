@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var stats = [
-        { el: document.querySelector('[data-stat="projects"]'), target: 350, suffix: '+', decimals: 0, duration: 2000 },
-        { el: document.querySelector('[data-stat="years"]'),    target: 15,  suffix: '',  decimals: 0, duration: 1500 },
-        { el: document.querySelector('[data-stat="rating"]'),   target: 4.9, suffix: '',  decimals: 1, duration: 2000, star: true }
+        { el: document.querySelector('[data-stat="projects"]'), target: 350, suffix: '+', decimals: 0, duration: 3600 },
+        { el: document.querySelector('[data-stat="years"]'),    target: 15,  suffix: '',  decimals: 0, duration: 3000 },
+        { el: document.querySelector('[data-stat="rating"]'),   target: 4.9, suffix: '',  decimals: 1, duration: 3400, star: true }
     ];
 
     var hasAnimated = false;
@@ -10,11 +10,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function animateStat(stat) {
         var startTime = null;
 
+        function easeInOutCubic(progress) {
+            return progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        }
+
         function step(ts) {
             if (!startTime) startTime = ts;
             var elapsed = ts - startTime;
             var progress = Math.min(elapsed / stat.duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3);
+            var eased = easeInOutCubic(progress);
             var current = stat.target * eased;
             var text = current.toFixed(stat.decimals) + stat.suffix;
             if (stat.star) {
