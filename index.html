@@ -173,6 +173,113 @@
       flex-basis: 88vw;
     }
   }
+  /* Ablauf — kompaktere Proportionen auf Desktop */
+  @media (min-width: 768px) {
+    .workflow-dot {
+      width: 2.75rem;
+      height: 2.75rem;
+      font-size: 0.6rem;
+    }
+    .workflow-step {
+      padding-top: 3.5rem;
+    }
+  }
+  /* Lightbox */
+  #lb {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+    padding: 2rem;
+  }
+  #lb.lb-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #lb-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 78vh;
+  }
+  #lb-img {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    display: block;
+  }
+  #lb-prev, #lb-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  #lb-prev:hover, #lb-next:hover { background: rgba(255,255,255,0.18); }
+  #lb-prev { left: 1rem; }
+  #lb-next { right: 1rem; }
+  #lb-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  #lb-close:hover { background: rgba(255,255,255,0.2); }
+  #lb-cap {
+    margin-top: 1.25rem;
+    text-align: center;
+  }
+  #lb-title {
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  #lb-desc {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.8rem;
+  }
+  /* Reviews Carousel */
+  .reviews-scroll-outer {
+    overflow: hidden;
+  }
+  .reviews-scroll-track {
+    display: flex;
+    animation: reviews-auto-scroll 60s linear infinite;
+    animation-play-state: paused;
+    will-change: transform;
+  }
+  @keyframes reviews-auto-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary">
@@ -450,35 +557,35 @@
 </section>
 
 <!-- ABLAUF -->
-<section class="py-20 md:py-32 bg-surface-container-low" id="ablauf">
+<section class="py-14 md:py-20 bg-surface-container-low" id="ablauf">
   <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-14 md:mb-20 max-w-3xl">
-      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">SO LÄUFT ES AB</p>
-      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-6">Vom ersten Preisrahmen bis zur sauberen Umsetzung</h2>
-      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">So entsteht aus einer ersten Idee ein sauber geplantes Projekt: schnell einschätzen, persönlich klären, verbindlich umsetzen.</p>
+    <div class="mb-8 md:mb-12 max-w-3xl">
+      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-3">SO LÄUFT ES AB</p>
+      <h2 class="text-2xl md:text-3xl font-black text-on-surface tracking-tight font-headline mb-3">Vom ersten Preisrahmen bis zur sauberen Umsetzung</h2>
+      <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">So entsteht aus einer ersten Idee ein sauber geplantes Projekt: schnell einschätzen, persönlich klären, verbindlich umsetzen.</p>
     </div>
     <div class="relative">
       <div class="workflow-line"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <div class="workflow-step">
           <div class="workflow-dot">01</div>
-          <p class="text-xs font-bold tracking-[0.24em] uppercase text-primary mb-4">Erster Preisrahmen</p>
-          <h3 class="text-2xl font-black text-on-surface mb-4 font-headline">Projekt grob berechnen</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-4">Sie starten mit einem realistischen Preisrahmen für Fläche, Material und Zusatzleistungen, statt mit offenem Fragezeichen.</p>
+          <p class="text-xs font-bold tracking-[0.24em] uppercase text-primary mb-2">Erster Preisrahmen</p>
+          <h3 class="text-lg md:text-xl font-black text-on-surface mb-2 font-headline">Projekt grob berechnen</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-3">Sie starten mit einem realistischen Preisrahmen für Fläche, Material und Zusatzleistungen, statt mit offenem Fragezeichen.</p>
           <p class="text-primary text-sm font-semibold">→ Sie wissen früh, ob das Projekt in Ihren Rahmen passt.</p>
         </div>
         <div class="workflow-step">
           <div class="workflow-dot">02</div>
-          <p class="text-xs font-bold tracking-[0.24em] uppercase text-tertiary mb-4">Persönliche Klärung</p>
-          <h3 class="text-2xl font-black text-on-surface mb-4 font-headline">Vor-Ort-Termin sichern</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-4">Im Termin klären wir Untergrund, Materialwahl, Zeitplan und alle Punkte, die auf Bildern oder am Telefon offen bleiben.</p>
+          <p class="text-xs font-bold tracking-[0.24em] uppercase text-tertiary mb-2">Persönliche Klärung</p>
+          <h3 class="text-lg md:text-xl font-black text-on-surface mb-2 font-headline">Vor-Ort-Termin sichern</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-3">Im Termin klären wir Untergrund, Materialwahl, Zeitplan und alle Punkte, die auf Bildern oder am Telefon offen bleiben.</p>
           <p class="text-tertiary text-sm font-semibold">→ Sie bekommen Klarheit statt späterer Überraschungen.</p>
         </div>
         <div class="workflow-step">
           <div class="workflow-dot">03</div>
-          <p class="text-xs font-bold tracking-[0.24em] uppercase text-emerald-700 mb-4">Verbindliche Umsetzung</p>
-          <h3 class="text-2xl font-black text-on-surface mb-4 font-headline">Festpreis &amp; Umsetzung</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-4">Auf Basis der Besichtigung erhalten Sie ein verbindliches Angebot. Danach wird sauber gearbeitet, termintreu umgesetzt und klar kommuniziert.</p>
+          <p class="text-xs font-bold tracking-[0.24em] uppercase text-emerald-700 mb-2">Verbindliche Umsetzung</p>
+          <h3 class="text-lg md:text-xl font-black text-on-surface mb-2 font-headline">Festpreis &amp; Umsetzung</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed mb-3">Auf Basis der Besichtigung erhalten Sie ein verbindliches Angebot. Danach wird sauber gearbeitet, termintreu umgesetzt und klar kommuniziert.</p>
           <p class="text-emerald-700 text-sm font-semibold">→ Sie wissen, woran Sie sind, bevor es losgeht.</p>
         </div>
       </div>
@@ -567,6 +674,123 @@
       <a href="#kontakt" class="inline-flex items-center gap-2 bg-primary text-white font-bold tracking-widest uppercase px-8 py-4 hover:bg-primary-container transition-colors">
         Eigenes Projekt anfragen <span class="material-symbols-outlined text-base">arrow_forward</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- KUNDENSTIMMEN -->
+<section class="py-20 md:py-32 bg-surface-container-low" id="bewertungen">
+  <div class="container mx-auto px-6 md:px-12 mb-10 md:mb-14">
+    <div class="max-w-2xl">
+      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">KUNDENSTIMMEN</p>
+      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-4">Was unsere Kunden sagen</h2>
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Rückmeldungen aus abgeschlossenen Projekten – direkt von unseren Auftraggebern.</p>
+    </div>
+  </div>
+  <div class="reviews-scroll-outer" id="reviewsCarouselOuter">
+    <div class="reviews-scroll-track" id="reviewsCarouselTrack">
+      <div class="flex" id="reviewsScrollSet">
+
+        <!-- Bewertung 1 -->
+        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
+          <div class="flex gap-0.5 mb-4">
+            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-on-surface text-sm leading-relaxed flex-1">„Wir haben unser Badezimmer komplett neu fliesen lassen. Sauberste Arbeit, pünktlich, kein einziger Nachbesserungspunkt. Herr Weber erklärt ruhig, was er macht – und hält, was er verspricht."</p>
+          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
+            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">TR</div>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Thomas R.</p>
+              <p class="text-xs text-on-surface-variant">März 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bewertung 2 -->
+        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
+          <div class="flex gap-0.5 mb-4">
+            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-on-surface text-sm leading-relaxed flex-1">„Küche und Abstellraum in einem Durchgang erledigt. Alles termingerecht, ordentlich, der Festpreis wurde eingehalten. Klare Empfehlung für alle, die keine bösen Überraschungen mögen."</p>
+          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
+            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">SK</div>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Sandra K.</p>
+              <p class="text-xs text-on-surface-variant">Februar 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bewertung 3 -->
+        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
+          <div class="flex gap-0.5 mb-4">
+            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-on-surface text-sm leading-relaxed flex-1">„Badsanierung im Altbau – inklusive Altbelag entfernen. Man hat gemerkt, dass das Handwerk sitzt. Ruhiges Fugenbild, saubere Schnitte an der Wanne. Sehr gerne wieder."</p>
+          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
+            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">MW</div>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Michael W.</p>
+              <p class="text-xs text-on-surface-variant">Januar 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bewertung 4 -->
+        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
+          <div class="flex gap-0.5 mb-4">
+            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-on-surface text-sm leading-relaxed flex-1">„Großformatige Platten im Wohnzimmer verlegt. Kein Spalt, keine unebene Stelle. Das Ergebnis sieht hochwertig aus und fühlt sich im Alltag gut an. Volle Punktzahl."</p>
+          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
+            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">LB</div>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Laura B.</p>
+              <p class="text-xs text-on-surface-variant">Dezember 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bewertung 5 -->
+        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
+          <div class="flex gap-0.5 mb-4">
+            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-on-surface text-sm leading-relaxed flex-1">„Terrasse neu verfliest. Der Termin hat gepasst, die Abdichtung wurde sauber erklärt, das Ergebnis überzeugt. Ich werde Fliesen Weber im Bekanntenkreis weiterempfehlen."</p>
+          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
+            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">JH</div>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Jürgen H.</p>
+              <p class="text-xs text-on-surface-variant">November 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bewertung 6 -->
+        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
+          <div class="flex gap-0.5 mb-4">
+            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-on-surface text-sm leading-relaxed flex-1">„Wir hatten uns schon auf Stress eingestellt – nichts davon. Alles pünktlich, sauber und ohne Aufpreis. Das alte Bad sieht heute aus wie neu, und der Preis war fair."</p>
+          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
+            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">MF</div>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Monika F.</p>
+              <p class="text-xs text-on-surface-variant">Oktober 2025</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-6 md:px-12 mt-10 md:mt-12">
+    <div class="flex items-center gap-3 flex-wrap">
+      <div class="flex gap-0.5">
+        <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
+      </div>
+      <span class="text-sm font-black text-on-surface">4,9 / 5</span>
+      <span class="text-sm text-on-surface-variant">· Durchschnitt aus über 80 Bewertungen</span>
     </div>
   </div>
 </section>
@@ -709,6 +933,8 @@
 <script src="contactForm.js"></script>
 <script src="heroSlideshow.js"></script>
 <script src="statsCounter.js"></script>
+<script src="reviewsCarousel.js"></script>
+<script src="lightbox.js"></script>
 <script>
   // Mobile nav toggle
   const hamburger = document.getElementById('nav-hamburger');
