@@ -8,6 +8,7 @@
   if (!slides.length) return;
 
   var current = 0;
+  var GAP = 20; // matches CSS gap: 20px
 
   var captions = slides.map(function (slide) {
     var ps = slide.querySelectorAll('p');
@@ -26,23 +27,17 @@
     return d;
   });
 
-  function layout() {
-    var mobile  = window.innerWidth < 768;
-    var slideW  = mobile ? 0.84 : 0.68;
-    var gap     = 0.02;
-    var offset  = (1 - slideW) / 2;
-    return { step: (slideW + gap) * window.innerWidth, offset: offset * window.innerWidth };
-  }
-
   function updatePosition(animated) {
-    var l  = layout();
-    var tx = l.offset - current * l.step;
+    var slideH     = slides[0].offsetHeight;
+    var containerH = outer.offsetHeight;
+    var step = slideH + GAP;
+    var ty   = containerH / 2 - slideH / 2 - current * step;
     if (!animated) {
       track.style.transition = 'none';
-      track.style.transform  = 'translateX(' + tx + 'px)';
+      track.style.transform  = 'translateY(' + ty + 'px)';
       requestAnimationFrame(function () { track.style.transition = ''; });
     } else {
-      track.style.transform = 'translateX(' + tx + 'px)';
+      track.style.transform = 'translateY(' + ty + 'px)';
     }
   }
 
@@ -73,15 +68,15 @@
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft')  go(current - 1);
-    if (e.key === 'ArrowRight') go(current + 1);
+    if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  go(current - 1);
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') go(current + 1);
   });
 
-  var touchX = 0;
-  outer.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  var touchY = 0;
+  outer.addEventListener('touchstart', function (e) { touchY = e.touches[0].clientY; }, { passive: true });
   outer.addEventListener('touchend',   function (e) {
-    var dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+    var dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dy) > 50) go(current + (dy < 0 ? 1 : -1));
   });
 
   window.addEventListener('resize', function () { updatePosition(false); });
