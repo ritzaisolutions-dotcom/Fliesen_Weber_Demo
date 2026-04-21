@@ -139,25 +139,22 @@
     color: #176443;
     border-color: rgba(23,100,67,0.18);
   }
-  /* Focus Carousel — vertikal */
+  /* Focus Carousel — Hochformat */
   .focus-carousel-outer {
     position: relative;
     overflow: hidden;
     user-select: none;
-    height: clamp(320px, 58vw, 74vh);
   }
   .focus-carousel-track {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    flex-direction: row;
+    gap: 2vw;
     transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
   }
   .focus-slide {
-    width: min(860px, 86vw);
-    height: clamp(210px, 44vw, 62vh);
-    flex-shrink: 0;
+    flex: 0 0 62vw;
+    height: clamp(200px, 38vw, 58vh);
     position: relative;
     overflow: hidden;
     opacity: 0.32;
@@ -168,8 +165,8 @@
   .focus-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .focus-arrow {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
     background: white;
     border: none;
@@ -184,8 +181,8 @@
     transition: background 0.15s;
   }
   .focus-arrow:hover { background: #f3f3f3; }
-  .focus-arrow-prev { top: 0.75rem; }
-  .focus-arrow-next { bottom: 0.75rem; }
+  .focus-arrow-prev { left: calc(19vw + 1rem); }
+  .focus-arrow-next { right: calc(19vw + 1rem); }
   .focus-dot {
     width: 8px;
     height: 8px;
@@ -198,8 +195,9 @@
   }
   .focus-dot.is-active { background: #002975; width: 24px; }
   @media (max-width: 767px) {
-    .focus-carousel-outer { height: clamp(260px, 72vw, 68vh); }
-    .focus-slide { width: 92vw; height: clamp(180px, 54vw, 54vh); }
+    .focus-slide { flex: 0 0 84vw; height: clamp(180px, 52vw, 50vh); }
+    .focus-arrow-prev { left: calc(8vw + 0.5rem); }
+    .focus-arrow-next { right: calc(8vw + 0.5rem); }
   }
   @media (max-width: 767px) {
     .workflow-line {
@@ -335,8 +333,13 @@
 </head>
 <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary">
 
+<!-- DEMO NOTICE -->
+<div class="w-full bg-surface-container-low border-b border-outline-variant/20 py-1.5 text-center">
+  <p class="text-xs italic text-outline/60 tracking-wide">Demo-Ansicht · Fotos, Texte und Bewertungen werden auf Ihren Betrieb angepasst.</p>
+</div>
+
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 h-[70px] bg-white border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-6 md:px-12">
+<nav class="fixed top-[33px] w-full z-50 h-[70px] bg-white border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-6 md:px-12">
   <a href="index.html" class="flex items-center gap-3">
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
       <rect fill="#002975" height="6" width="6" x="2" y="2"></rect>
@@ -373,7 +376,7 @@
 </nav>
 
 <!-- Mobile menu -->
-<div class="hidden fixed top-[70px] left-0 right-0 z-40 bg-white border-b border-outline-variant shadow-lg px-6 py-6 flex-col gap-4" id="mobile-menu">
+<div class="hidden fixed top-[103px] left-0 right-0 z-40 bg-white border-b border-outline-variant shadow-lg px-6 py-6 flex-col gap-4" id="mobile-menu">
   <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#leistungen">Leistungen</a>
   <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#kostenrechner">Kostenrechner</a>
   <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#ablauf">Ablauf</a>
@@ -383,7 +386,7 @@
 </div>
 
 <!-- HERO -->
-<header class="relative min-h-[760px] md:min-h-[921px] flex items-center pt-[70px] bg-primary overflow-hidden">
+<header class="relative min-h-[760px] md:min-h-[921px] flex items-center pt-[103px] bg-primary overflow-hidden">
   <!-- Slideshow injected by heroSlideshow.js -->
   <div class="hero-gradient absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/90 to-transparent"></div>
   <div class="container mx-auto px-6 md:px-12 relative z-10">
@@ -449,57 +452,75 @@
 </section>
 
 <!-- LEISTUNGEN -->
-<section class="py-20 md:py-32 bg-surface-container-low" id="leistungen">
+<section class="py-20 md:py-28 bg-surface-container-low" id="leistungen">
   <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-14 md:mb-24 max-w-2xl">
+    <div class="mb-10 md:mb-14 max-w-2xl">
       <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">UNSERE LEISTUNGEN</p>
       <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline">Was wir für Sie tun</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-8">
-      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-primary hover:bg-surface-bright transition-colors group">
-        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-primary">
-          <span class="material-symbols-outlined text-2xl md:text-3xl">grid_on</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+
+      <!-- Hero-Karte: Fliesen verlegen -->
+      <div class="md:col-span-3 relative overflow-hidden min-h-[22rem] md:min-h-[26rem] group">
+        <img src="images/hero/hero-6.jpg" alt="Fliesen verlegen" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+        <div class="absolute inset-0 bg-primary/80"></div>
+        <div class="relative z-10 h-full flex flex-col md:flex-row md:items-end md:justify-between gap-8 p-8 md:p-12">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-10 h-10 bg-white/10 flex items-center justify-center text-white/70">
+                <span class="material-symbols-outlined text-xl">grid_on</span>
+              </div>
+              <span class="text-xs font-bold tracking-widest uppercase text-white/50">Leistung 01</span>
+            </div>
+            <h3 class="text-2xl md:text-4xl font-black text-white mb-4 font-headline">Fliesen verlegen</h3>
+            <p class="text-white/80 leading-relaxed mb-3 max-w-lg">Präzise Verlegung von Wand- und Bodenfliesen für Bad, Küche und Wohnbereiche. Fachgerecht und langlebig.</p>
+            <p class="text-white/55 text-sm font-semibold">→ Von der ersten Fuge bis zur Endabnahme: alles aus einer Hand.</p>
+          </div>
+          <a class="inline-flex items-center gap-2 bg-white text-primary font-bold tracking-widest uppercase px-6 py-3 hover:bg-surface-container-low transition-colors whitespace-nowrap self-start md:self-auto flex-shrink-0" href="#kontakt">
+            Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
         </div>
-        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Fliesen verlegen</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-4">Präzise Verlegung von Wand- und Bodenfliesen für Bad, Küche und Wohnbereiche. Fachgerecht und langlebig.</p>
-        <p class="hidden md:block text-primary text-sm font-semibold mb-8">→ Von der ersten Fuge bis zur Endabnahme: alles aus einer Hand.</p>
-        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
-          Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
       </div>
+
+      <!-- Karte 2: Bodenbeläge -->
       <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-tertiary hover:bg-surface-bright transition-colors group">
-        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-tertiary">
-          <span class="material-symbols-outlined text-2xl md:text-3xl">layers</span>
+        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-5 text-tertiary">
+          <span class="material-symbols-outlined text-2xl">layers</span>
         </div>
-        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Bodenbeläge</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-4">Hochwertige Bodenbeläge aller Art. Von Naturstein über Laminat bis hin zu modernem Vinyl – meisterhaft verlegt.</p>
-        <p class="hidden md:block text-tertiary text-sm font-semibold mb-8">→ Keine bösen Überraschungen: Festpreis nach Aufmaß.</p>
-        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
-          Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        <h3 class="text-lg font-bold mb-3 font-headline">Bodenbeläge</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Hochwertige Bodenbeläge aller Art. Von Naturstein über Laminat bis hin zu modernem Vinyl – meisterhaft verlegt.</p>
+        <p class="text-tertiary text-sm font-semibold mb-6">→ Festpreis nach Aufmaß.</p>
+        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
+          Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
+
+      <!-- Karte 3: Sanierung -->
       <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-emerald-700 hover:bg-surface-bright transition-colors group">
-        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-emerald-700">
-          <span class="material-symbols-outlined text-2xl md:text-3xl">plumbing</span>
+        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-5 text-emerald-700">
+          <span class="material-symbols-outlined text-2xl">plumbing</span>
         </div>
-        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Sanierung &amp; Renovierung</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-4">Komplette Badsanierungen und Altbaurenovierungen aus einer Hand. Zuverlässig, sauber und termingerecht.</p>
-        <p class="hidden md:block text-emerald-700 text-sm font-semibold mb-8">→ Inklusive Entsorgung des alten Belags – Sie haben keine Arbeit.</p>
-        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
-          Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        <h3 class="text-lg font-bold mb-3 font-headline">Sanierung &amp; Renovierung</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Komplette Badsanierungen und Altbaurenovierungen aus einer Hand. Zuverlässig, sauber und termingerecht.</p>
+        <p class="text-emerald-700 text-sm font-semibold mb-6">→ Inklusive Entsorgung des alten Belags.</p>
+        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
+          Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
+
+      <!-- Karte 4: Beratung -->
       <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-amber-600 hover:bg-surface-bright transition-colors group">
-        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container flex items-center justify-center mb-6 md:mb-8 text-amber-600">
-          <span class="material-symbols-outlined text-2xl md:text-3xl">architecture</span>
+        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-5 text-amber-600">
+          <span class="material-symbols-outlined text-2xl">architecture</span>
         </div>
-        <h3 class="text-lg md:text-xl font-bold mb-4 font-headline">Beratung &amp; Planung</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-4">Umfassende Beratung vor Ort. Wir planen Ihr Projekt detailliert und finden die optimalen Materialien für Ihre Bedürfnisse.</p>
-        <p class="hidden md:block text-amber-600 text-sm font-semibold mb-8">→ Kostenlose Erstberatung, ehrliche Einschätzung, keine versteckten Kosten.</p>
-        <a class="hidden md:inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
-          Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        <h3 class="text-lg font-bold mb-3 font-headline">Beratung &amp; Planung</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Umfassende Beratung vor Ort. Wir planen Ihr Projekt und finden die optimalen Materialien für Ihre Bedürfnisse.</p>
+        <p class="text-amber-600 text-sm font-semibold mb-6">→ Kostenlose Erstberatung, keine versteckten Kosten.</p>
+        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
+          Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
+
     </div>
   </div>
 </section>
@@ -687,10 +708,10 @@
       </article>
     </div>
     <button class="focus-arrow focus-arrow-prev" id="focusPrev" aria-label="Zurück">
-      <span class="material-symbols-outlined">north</span>
+      <span class="material-symbols-outlined">west</span>
     </button>
     <button class="focus-arrow focus-arrow-next" id="focusNext" aria-label="Weiter">
-      <span class="material-symbols-outlined">south</span>
+      <span class="material-symbols-outlined">east</span>
     </button>
   </div>
   <div class="container mx-auto px-6 md:px-12 mt-8 md:mt-10">
@@ -838,29 +859,29 @@
       </div>
       <div class="space-y-5 md:space-y-6">
         <div class="bg-tertiary text-white p-6 md:p-10 shadow-[0_24px_50px_-20px_rgba(102,0,17,0.45)] border-t-4 border-tertiary-container">
-          <p class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-white/75 mb-4 bg-white/10 px-3 py-2">Schritt 1 · Kalender oeffnen</p>
-          <h3 class="text-3xl md:text-4xl font-black tracking-tight mb-4 font-headline">Freien Besichtigungstermin waehlen</h3>
+          <p class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-white/75 mb-4 bg-white/10 px-3 py-2">Schritt 1 · Kalender öffnen</p>
+          <h3 class="text-3xl md:text-4xl font-black tracking-tight mb-4 font-headline">Freien Besichtigungstermin wählen</h3>
           <p class="text-white/90 leading-relaxed mb-6 max-w-3xl text-base md:text-lg">
-            Klicken Sie auf den Button, waehlen Sie einen freien Termin und erhalten Sie direkt die Bestaetigung. Das ist der schnellste Weg zur Preiskalkulation vor Ort.
+            Klicken Sie auf den Button, wählen Sie einen freien Termin und erhalten Sie direkt die Bestätigung. Das ist der schnellste Weg zur Preiskalkulation vor Ort.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
             <div class="bg-white/10 border border-white/10 px-4 py-4">
               <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">1</p>
-              <p class="text-sm font-semibold text-white">Kalender oeffnen</p>
+              <p class="text-sm font-semibold text-white">Kalender öffnen</p>
             </div>
             <div class="bg-white/10 border border-white/10 px-4 py-4">
               <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">2</p>
-              <p class="text-sm font-semibold text-white">Freien Termin waehlen</p>
+              <p class="text-sm font-semibold text-white">Freien Termin wählen</p>
             </div>
             <div class="bg-white/10 border border-white/10 px-4 py-4">
               <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">3</p>
-              <p class="text-sm font-semibold text-white">Bestaetigung erhalten</p>
+              <p class="text-sm font-semibold text-white">Bestätigung erhalten</p>
             </div>
           </div>
           <div class="flex flex-col gap-4">
             <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup class="inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-4 font-bold tracking-widest uppercase text-tertiary transition-colors hover:bg-surface-container-lowest">
               <span class="material-symbols-outlined text-base">calendar_month</span>
-              Jetzt freien Termin waehlen
+              Jetzt freien Termin wählen
             </a>
             <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" class="text-sm font-semibold text-white/85 hover:text-white transition-colors">
               Termin alternativ direkt im neuen Tab öffnen
