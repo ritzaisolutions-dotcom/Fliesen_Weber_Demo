@@ -139,16 +139,64 @@
     color: #176443;
     border-color: rgba(23,100,67,0.18);
   }
-  .reference-carousel-track {
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  /* Focus Carousel */
+  .focus-carousel-outer {
+    position: relative;
+    overflow: hidden;
+    user-select: none;
   }
-  .reference-carousel-track::-webkit-scrollbar {
-    display: none;
+  .focus-carousel-track {
+    display: flex;
+    gap: 2vw;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
   }
-  .reference-slide {
-    flex: 0 0 min(22rem, 78vw);
+  .focus-slide {
+    flex: 0 0 68vw;
+    height: clamp(220px, 40vw, 70vh);
+    position: relative;
+    overflow: hidden;
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
+  }
+  .focus-slide.is-active { opacity: 1; cursor: zoom-in; }
+  .focus-slide:not(.is-active) { cursor: pointer; }
+  .focus-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .focus-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: white;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #002975;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.14);
+    transition: background 0.15s;
+  }
+  .focus-arrow:hover { background: #f3f3f3; }
+  .focus-arrow-prev { left: calc(16vw + 1rem); }
+  .focus-arrow-next { right: calc(16vw + 1rem); }
+  .focus-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(0,41,117,0.2);
+    border: none;
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .focus-dot.is-active { background: #002975; width: 24px; }
+  @media (max-width: 767px) {
+    .focus-slide { flex: 0 0 84vw; }
+    .focus-arrow-prev { left: calc(8vw + 0.5rem); }
+    .focus-arrow-next { right: calc(8vw + 0.5rem); }
   }
   @media (max-width: 767px) {
     .workflow-line {
@@ -594,86 +642,66 @@
 </section>
 
 <!-- REFERENZEN -->
-<section class="py-20 md:py-32 bg-surface-container-lowest" id="referenzen">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-10 md:mb-12 flex flex-col gap-6 md:gap-8 lg:flex-row lg:items-end lg:justify-between">
-      <div class="max-w-2xl">
-        <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">REFERENZEN</p>
-        <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-5">Unsere Arbeit spricht für sich</h2>
-        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Einige Beispiele aus typischen Projekten: saubere Verlegung, ruhige Fugenbilder und sichtbare Qualität bis ins Detail.</p>
-      </div>
-      <div class="flex items-center gap-3">
-        <button class="reference-carousel-prev inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center border border-outline-variant bg-white text-on-surface transition-colors hover:bg-surface-container-low" type="button" aria-label="Vorherige Referenz">
-          <span class="material-symbols-outlined">west</span>
-        </button>
-        <button class="reference-carousel-next inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center border border-outline-variant bg-white text-on-surface transition-colors hover:bg-surface-container-low" type="button" aria-label="Nächste Referenz">
-          <span class="material-symbols-outlined">east</span>
-        </button>
-      </div>
+<section class="py-20 md:py-28 bg-surface-container-lowest" id="referenzen">
+  <div class="container mx-auto px-6 md:px-12 mb-10 md:mb-14">
+    <div class="max-w-2xl">
+      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">REFERENZEN</p>
+      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-5">Unsere Arbeit spricht für sich</h2>
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Einige Beispiele aus typischen Projekten: saubere Verlegung, ruhige Fugenbilder und sichtbare Qualität bis ins Detail.</p>
     </div>
-    <div class="reference-carousel" data-carousel>
-      <div class="reference-carousel-track flex gap-4 overflow-x-auto pb-3" data-carousel-track>
-        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
-          <img src="images/portfolio/project-1.jpg" alt="Badezimmer Projekt Koblenz" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
-            <div class="px-6 py-5">
-              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Badezimmer · Koblenz</p>
-              <p class="text-white/75 text-sm">Großformatige Wand- und Bodenfliesen mit ruhigem Fugenbild.</p>
-            </div>
-          </div>
-        </article>
-        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
-          <img src="images/portfolio/project-2.jpg" alt="Badezimmer Projekt Koblenz" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
-            <div class="px-6 py-5">
-              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Badmodernisierung · Koblenz</p>
-              <p class="text-white/75 text-sm">Saubere Linien, hochwertige Oberflächen und präzise Anschlüsse.</p>
-            </div>
-          </div>
-        </article>
-        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
-          <img src="images/portfolio/project-3.jpg" alt="Badezimmer Renovierung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
-            <div class="px-6 py-5">
-              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Renovierung · Badezimmer</p>
-              <p class="text-white/75 text-sm">Neuer Belag, klare Kanten und ein sichtbar aufgewerteter Raum.</p>
-            </div>
-          </div>
-        </article>
-        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
-          <img src="images/portfolio/project-4.jpg" alt="Fliesenverlegung in Arbeit" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
-            <div class="px-6 py-5">
-              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Verlegung · Baustelle</p>
-              <p class="text-white/75 text-sm">Saubere Ausführung während der Arbeit, nicht nur im Endbild.</p>
-            </div>
-          </div>
-        </article>
-        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
-          <img src="images/portfolio/project-5.jpg" alt="Handwerksarbeit vor Ort" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
-            <div class="px-6 py-5">
-              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Handwerk · Vor Ort</p>
-              <p class="text-white/75 text-sm">Verlässliche Ausführung mit Blick auf Untergrund und Details.</p>
-            </div>
-          </div>
-        </article>
-        <article class="reference-slide group relative overflow-hidden h-[18rem] bg-surface-container">
-          <img src="images/portfolio/project-6.jpg" alt="Meisterarbeit Fliesen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent flex items-end">
-            <div class="px-6 py-5">
-              <p class="text-white font-bold tracking-widest uppercase text-sm mb-1">Meisterarbeit · Koblenz</p>
-              <p class="text-white/75 text-sm">Hochwertige Optik, klare Fluchten und ruhige Gesamtwirkung.</p>
-            </div>
-          </div>
-        </article>
-      </div>
+  </div>
+  <div class="focus-carousel-outer" id="focusCarouselOuter">
+    <div class="focus-carousel-track" id="focusCarouselTrack">
+      <article class="focus-slide" data-lb-slide>
+        <img src="images/portfolio/project-1.jpg" alt="Badezimmer Projekt Koblenz"/>
+        <p hidden>Badezimmer · Koblenz</p>
+        <p hidden>Großformatige Wand- und Bodenfliesen mit ruhigem Fugenbild.</p>
+      </article>
+      <article class="focus-slide" data-lb-slide>
+        <img src="images/portfolio/project-2.jpg" alt="Badezimmer Projekt Koblenz"/>
+        <p hidden>Badmodernisierung · Koblenz</p>
+        <p hidden>Saubere Linien, hochwertige Oberflächen und präzise Anschlüsse.</p>
+      </article>
+      <article class="focus-slide" data-lb-slide>
+        <img src="images/portfolio/project-3.jpg" alt="Badezimmer Renovierung"/>
+        <p hidden>Renovierung · Badezimmer</p>
+        <p hidden>Neuer Belag, klare Kanten und ein sichtbar aufgewerteter Raum.</p>
+      </article>
+      <article class="focus-slide" data-lb-slide>
+        <img src="images/portfolio/project-4.jpg" alt="Fliesenverlegung in Arbeit"/>
+        <p hidden>Verlegung · Baustelle</p>
+        <p hidden>Saubere Ausführung während der Arbeit, nicht nur im Endbild.</p>
+      </article>
+      <article class="focus-slide" data-lb-slide>
+        <img src="images/portfolio/project-5.jpg" alt="Handwerksarbeit vor Ort"/>
+        <p hidden>Handwerk · Vor Ort</p>
+        <p hidden>Verlässliche Ausführung mit Blick auf Untergrund und Details.</p>
+      </article>
+      <article class="focus-slide" data-lb-slide>
+        <img src="images/portfolio/project-6.jpg" alt="Meisterarbeit Fliesen"/>
+        <p hidden>Meisterarbeit · Koblenz</p>
+        <p hidden>Hochwertige Optik, klare Fluchten und ruhige Gesamtwirkung.</p>
+      </article>
     </div>
-    <div class="mt-10 flex items-center justify-between gap-6 flex-wrap">
-      <p class="text-sm text-on-surface-variant">Vom sanierten Bad bis zur Verlegung vor Ort: gute Arbeit erkennt man nicht an großen Worten, sondern an sauberen Ergebnissen.</p>
-      <a href="#kontakt" class="inline-flex items-center gap-2 bg-primary text-white font-bold tracking-widest uppercase px-8 py-4 hover:bg-primary-container transition-colors">
-        Eigenes Projekt anfragen <span class="material-symbols-outlined text-base">arrow_forward</span>
-      </a>
+    <button class="focus-arrow focus-arrow-prev" id="focusPrev" aria-label="Zurück">
+      <span class="material-symbols-outlined">west</span>
+    </button>
+    <button class="focus-arrow focus-arrow-next" id="focusNext" aria-label="Weiter">
+      <span class="material-symbols-outlined">east</span>
+    </button>
+  </div>
+  <div class="container mx-auto px-6 md:px-12 mt-8 md:mt-10">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+      <div>
+        <p id="focusCaptionTitle" class="text-xs font-bold tracking-widest uppercase text-primary mb-1"></p>
+        <p id="focusCaptionDesc" class="text-sm text-on-surface-variant"></p>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2" id="focusDots"></div>
+        <a href="#kontakt" class="inline-flex items-center gap-2 bg-primary text-white font-bold tracking-widest uppercase px-8 py-4 hover:bg-primary-container transition-colors whitespace-nowrap">
+          Projekt anfragen <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -934,6 +962,7 @@
 <script src="heroSlideshow.js"></script>
 <script src="statsCounter.js"></script>
 <script src="reviewsCarousel.js"></script>
+<script src="focusCarousel.js"></script>
 <script src="lightbox.js"></script>
 <script>
   // Mobile nav toggle
@@ -984,29 +1013,6 @@
     });
   });
 
-  document.querySelectorAll('[data-carousel]').forEach(function(carousel) {
-    const track = carousel.querySelector('[data-carousel-track]');
-    const prevButton = carousel.parentElement.querySelector('.reference-carousel-prev');
-    const nextButton = carousel.parentElement.querySelector('.reference-carousel-next');
-
-    if (!track || !prevButton || !nextButton) return;
-
-    function getScrollAmount() {
-      const firstSlide = track.querySelector('.reference-slide');
-      if (!firstSlide) return 320;
-      const slideStyles = window.getComputedStyle(firstSlide);
-      const gap = parseFloat(slideStyles.marginRight || 0);
-      return firstSlide.getBoundingClientRect().width + gap + 16;
-    }
-
-    prevButton.addEventListener('click', function() {
-      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-    });
-
-    nextButton.addEventListener('click', function() {
-      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-    });
-  });
 </script>
 </body>
 </html>

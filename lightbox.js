@@ -1,5 +1,5 @@
 (function () {
-  var slides = Array.from(document.querySelectorAll('.reference-slide'));
+  var slides = Array.from(document.querySelectorAll('[data-lb-slide]'));
   if (!slides.length) return;
 
   var gallery = slides.map(function (slide) {
@@ -60,8 +60,5 @@
     if (e.key === 'ArrowRight') show(current + 1);
   });
 
-  slides.forEach(function (slide, i) {
-    slide.style.cursor = 'zoom-in';
-    slide.addEventListener('click', function () { show(i); });
-  });
+  window.Lightbox = { open: show };
 }());
