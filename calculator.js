@@ -2,23 +2,23 @@
   var state = { step: 1, projekt: null, flaeche: null, material: null, extras: [] };
 
   var PROJECTS = [
-    { id: 'bad',        label: 'Bad fliesen',       icon: 'bathtub',     multi: 1.2  },
-    { id: 'kueche',     label: 'Küche fliesen', icon: 'countertops', multi: 1.08 },
-    { id: 'balkon',     label: 'Balkon / Terrasse', icon: 'deck',        multi: 1.12 },
-    { id: 'wohnzimmer', label: 'Wohnzimmer',        icon: 'weekend',     multi: 1.0  },
-    { id: 'boden',      label: 'Boden verlegen',    icon: 'layers',      multi: 0.95 }
+    { id: 'bad',       label: 'Badezimmer-Sanierung',   icon: 'bathtub',  multi: 1.30 },
+    { id: 'boden',     label: 'Bodenbelag verlegen',     icon: 'layers',   multi: 1.0  },
+    { id: 'terrasse',  label: 'Terrassenbelag',          icon: 'deck',     multi: 1.15 },
+    { id: 'grossform', label: 'Großformat (120×260)', icon: 'grid_on', multi: 1.35 },
+    { id: 'reparatur', label: 'Reparatur / Teilfläche', icon: 'build', multi: 0.90 }
   ];
 
   var MATERIALS = [
-    { id: 'standard',   label: 'Standard',   sub: 'ca. 40 €/m²', price: 40 },
-    { id: 'premium',    label: 'Premium',    sub: 'ca. 70 €/m²', price: 70 },
-    { id: 'naturstein', label: 'Naturstein', sub: 'ca. 90 €/m²', price: 90 }
+    { id: 'feinsteinzeug', label: 'Feinsteinzeug', sub: 'Standardformat ca. 45 €/m²', price: 45 },
+    { id: 'naturstein',    label: 'Naturstein',    sub: 'Marmor / Schiefer ca. 80 €/m²', price: 80 },
+    { id: 'grossformat',   label: 'Großformat', sub: 'bis 120×260 cm ca. 110 €/m²', price: 110 }
   ];
 
   var EXTRAS = [
-    { id: 'altbelag',      label: 'Altbelag entfernen',       price: 15 },
-    { id: 'sockelleisten', label: 'Sockelleisten montieren',  price: 8  },
-    { id: 'abdichtung',    label: 'Abdichtung (Nassbereich)', price: 20 }
+    { id: 'altbelag',   label: 'Altbelag entfernen',       price: 15 },
+    { id: 'abdichtung', label: 'Abdichtung (Nassbereich)',  price: 20 },
+    { id: 'fugenbild',  label: 'Spezialfuge / Fugenfarbe', price: 8  }
   ];
 
   var pg = document.getElementById('calcProjectCards');
