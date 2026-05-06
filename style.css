@@ -722,6 +722,11 @@ p {
   font-size: 64px;
   line-height: 1.02;
   font-weight: 900;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.section-head h2 {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .hero-lead,
@@ -774,6 +779,8 @@ p {
 
 .section-soft {
   background: var(--surface-soft);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='16' cy='5' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='27' cy='5' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='5' cy='16' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='27' cy='16' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='5' cy='27' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='16' cy='27' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3Ccircle cx='27' cy='27' r='2.5' fill='%23002975' fill-opacity='0.07'/%3E%3C/svg%3E");
+  background-size: 32px 32px;
 }
 
 .section-white {
