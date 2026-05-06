@@ -112,52 +112,72 @@
     </section>
 
     <section class="section section-soft" id="kostenrechner">
-      <div class="container split split-wide">
-        <div class="section-head">
+      <div class="container">
+        <div class="section-head" style="text-align:center; max-width:580px; margin:0 auto 40px;">
           <p class="eyebrow">Kostenrechner</p>
-          <h2>Ein Preisrahmen, bevor das erste Telefonat unn&ouml;tig lang wird.</h2>
-          <p>Geben Sie Ihre Eckdaten ein und erhalten Sie sofort eine erste Orientierung &ndash; unverbindlich und in unter 30 Sekunden.</p>
-          <ul class="check-list">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Grobe Einsch&auml;tzung in unter 30 Sekunden.</span></li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Projektart, Material und Zusatzleistungen werden ber&uuml;cksichtigt.</span></li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Der verbindliche Preis folgt nach der Besichtigung.</span></li>
-          </ul>
+          <h2>Was kostet Ihr Projekt?</h2>
+          <p>In 4 Schritten zum Preisrahmen &ndash; unverbindlich und kostenlos.</p>
         </div>
-        <form class="calculator" id="calcForm">
-          <div class="form-grid">
-            <div>
-              <label for="anliegen">Was planen Sie?</label>
-              <select id="anliegen">
-                <option value="bad">Badezimmer fliesen</option>
-                <option value="kueche">K&uuml;che fliesen</option>
-                <option value="balkon">Balkon fliesen</option>
-                <option value="wohnzimmer">Wohnzimmer fliesen</option>
-                <option value="boden">Boden verlegen</option>
-              </select>
-            </div>
-            <div>
-              <label for="fliesentyp">Fliesentyp / Material</label>
-              <select id="fliesentyp">
-                <option value="standard">Standard - ca. 42 &euro;/m&sup2;</option>
-                <option value="premium">Premium - ca. 72 &euro;/m&sup2;</option>
-                <option value="naturstein">Naturstein - ca. 94 &euro;/m&sup2;</option>
-              </select>
-            </div>
-            <div>
-              <label for="flaeche">Fl&auml;che in m&sup2;</label>
-              <input id="flaeche" min="5" max="200" placeholder="z.B. 25" type="number">
-            </div>
-            <label class="checkbox-row" for="altbelag"><input id="altbelag" type="checkbox">Altbelag entfernen (+15 &euro;/m&sup2;)</label>
-            <label class="checkbox-row" for="sockelleisten"><input id="sockelleisten" type="checkbox">Sockelleisten montieren (+8 &euro;/m&sup2;)</label>
-            <label class="checkbox-row" for="abdichtung"><input id="abdichtung" type="checkbox">Abdichtung Nassbereich (+20 &euro;/m&sup2;)</label>
-            <div class="price-box">
-              <p>Gesch&auml;tzter Preisrahmen</p>
-              <strong id="priceOutput">&euro; -</strong>
-              <p>Unverbindlich. Untergrund, Zuschnitt und Baustellensituation werden vor Ort gekl&auml;rt.</p>
-            </div>
-            <a class="button button-red" href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener">Besichtigung zur Preiskalkulation</a>
+        <div class="wizard" id="calcWizard">
+          <div class="wizard-bar">
+            <div class="wizard-dot active" data-step="1">1</div>
+            <div class="wizard-track" data-step="1"></div>
+            <div class="wizard-dot" data-step="2">2</div>
+            <div class="wizard-track" data-step="2"></div>
+            <div class="wizard-dot" data-step="3">3</div>
+            <div class="wizard-track" data-step="3"></div>
+            <div class="wizard-dot" data-step="4">4</div>
           </div>
-        </form>
+          <div class="wizard-body">
+
+            <div id="calcStep1">
+              <p class="wizard-step-label">Schritt 1 von 4</p>
+              <h3 class="wizard-step-title">Was planen Sie?</h3>
+              <div class="wizard-proj-grid" id="calcProjectCards"></div>
+            </div>
+
+            <div id="calcStep2" style="display:none">
+              <p class="wizard-step-label">Schritt 2 von 4</p>
+              <h3 class="wizard-step-title">Fl&auml;che &amp; Material</h3>
+              <label class="wizard-input-label" for="wizFlaeche">Fl&auml;che in m&sup2;</label>
+              <input id="wizFlaeche" class="wizard-input" type="number" min="1" max="500" placeholder="z.B. 12">
+              <p class="wizard-input-label" style="margin-top:20px; margin-bottom:10px;">Fliesentyp / Material</p>
+              <div class="wizard-mat-grid" id="calcMaterialCards"></div>
+              <p id="calcStep2Error" class="wizard-error">Bitte Fl&auml;che eingeben und Material w&auml;hlen.</p>
+            </div>
+
+            <div id="calcStep3" style="display:none">
+              <p class="wizard-step-label">Schritt 3 von 4</p>
+              <h3 class="wizard-step-title">Zusatzleistungen</h3>
+              <p class="wizard-step-sub">Optional &ndash; nichts n&ouml;tig? Einfach weiter.</p>
+              <div id="calcExtrasCards"></div>
+            </div>
+
+            <div id="calcStep4" style="display:none">
+              <p class="wizard-step-label">Schritt 4 von 4</p>
+              <h3 class="wizard-step-title">Ihr Preisrahmen</h3>
+              <p class="wizard-summary" id="calcSummaryText"></p>
+              <div class="wizard-price-box">
+                <p class="wizard-price-label">Gesch&auml;tzter Preisrahmen</p>
+                <p class="wizard-price-output" id="wizPriceOutput">&ndash;</p>
+                <p class="wizard-price-note">Unverbindlich &middot; inkl. Material &amp; Arbeit &middot; Festpreis nach Besichtigung</p>
+              </div>
+              <a class="button button-red" style="width:100%;justify-content:center;margin-bottom:10px;"
+                 href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber"
+                 target="_blank" rel="noopener">
+                <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>Besichtigungstermin buchen
+              </a>
+              <button id="calcReset" class="wizard-reset">&#8592; Neu berechnen</button>
+            </div>
+
+            <div class="wizard-nav" id="calcNav">
+              <button id="calcBack" class="button button-outline" type="button" style="display:none">&#8592; Zur&uuml;ck</button>
+              <span style="flex:1"></span>
+              <button id="calcNext" class="button" type="button" style="display:none">Weiter &#8594;</button>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
