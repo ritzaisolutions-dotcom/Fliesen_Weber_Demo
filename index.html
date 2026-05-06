@@ -1,1312 +1,270 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="de">
+<html lang="de">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Fliesen Weber – Ihr Meisterbetrieb für Fliesen und Bodenbeläge in Koblenz. Professionelle Verlegung, Sanierung und Beratung seit 2010."/>
-<meta name="robots" content="noindex, nofollow"/>
-<title>FLIESEN WEBER – Meisterbetrieb in Koblenz</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "primary-fixed": "#dbe1ff",
-          "tertiary-container": "#90001c",
-          "secondary": "#495d92",
-          "on-secondary": "#ffffff",
-          "tertiary": "#660011",
-          "surface": "#f9f9f9",
-          "inverse-surface": "#2f3131",
-          "secondary-fixed-dim": "#b2c5ff",
-          "surface-tint": "#2d58bf",
-          "on-surface-variant": "#434653",
-          "tertiary-fixed": "#ffdad8",
-          "error": "#ba1a1a",
-          "surface-container-lowest": "#ffffff",
-          "inverse-on-surface": "#f1f1f1",
-          "outline": "#747684",
-          "primary-fixed-dim": "#b4c5ff",
-          "on-primary-fixed": "#00174b",
-          "on-error": "#ffffff",
-          "surface-container-low": "#f3f3f3",
-          "secondary-container": "#afc2fe",
-          "background": "#f9f9f9",
-          "surface-variant": "#e2e2e2",
-          "on-background": "#1a1c1c",
-          "outline-variant": "#c4c6d5",
-          "on-error-container": "#93000a",
-          "primary": "#002975",
-          "on-tertiary-fixed": "#410007",
-          "surface-container": "#eeeeee",
-          "on-tertiary": "#ffffff",
-          "inverse-primary": "#b4c5ff",
-          "secondary-fixed": "#dae2ff",
-          "on-secondary-fixed-variant": "#314578",
-          "primary-container": "#003da5",
-          "on-tertiary-container": "#ff9694",
-          "on-primary-container": "#98b1ff",
-          "on-primary-fixed-variant": "#033ea6",
-          "tertiary-fixed-dim": "#ffb3b1",
-          "on-surface": "#1a1c1c",
-          "error-container": "#ffdad6",
-          "surface-container-high": "#e8e8e8",
-          "on-primary": "#ffffff",
-          "on-secondary-fixed": "#001848",
-          "surface-bright": "#f9f9f9",
-          "on-secondary-container": "#3b4f83",
-          "surface-container-highest": "#e2e2e2",
-          "surface-dim": "#dadada",
-          "on-tertiary-fixed-variant": "#92001c"
-        },
-        "borderRadius": {
-          "DEFAULT": "0px",
-          "lg": "0px",
-          "xl": "0px",
-          "full": "0px"
-        },
-        "fontFamily": {
-          "headline": ["Inter", "sans-serif"],
-          "body": ["Inter", "sans-serif"],
-          "label": ["Inter", "sans-serif"]
-        }
-      }
-    }
-  }
-</script>
-<style>
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-  }
-  .hero-slideshow {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .hero-slideshow img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    opacity: 0;
-    filter: saturate(0.92) contrast(1.04) brightness(0.7);
-    transition: opacity 1.8s ease-in-out;
-  }
-  .hero-slideshow img.active {
-    opacity: 0.62;
-  }
-  .workflow-line {
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    top: 2.1rem;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(0,41,117,0.15), rgba(102,0,17,0.35), rgba(0,41,117,0.15));
-  }
-  .workflow-step {
-    position: relative;
-    padding-top: 4.5rem;
-  }
-  .workflow-dot {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4rem;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(0,41,117,0.18);
-    background: rgba(255,255,255,0.85);
-    color: #002975;
-    font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 0.28em;
-  }
-  .workflow-step:nth-child(2) .workflow-dot {
-    color: #660011;
-    border-color: rgba(102,0,17,0.18);
-  }
-  .workflow-step:nth-child(3) .workflow-dot {
-    color: #176443;
-    border-color: rgba(23,100,67,0.18);
-  }
-  /* Focus Carousel — Hochformat */
-  .focus-carousel-outer {
-    position: relative;
-    overflow: hidden;
-    user-select: none;
-  }
-  .focus-carousel-track {
-    display: flex;
-    flex-direction: row;
-    gap: 2vw;
-    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-  }
-  .focus-slide {
-    flex: 0 0 62vw;
-    height: clamp(200px, 38vw, 58vh);
-    position: relative;
-    overflow: hidden;
-    opacity: 0.32;
-    transition: opacity 0.4s ease;
-  }
-  .focus-slide.is-active { opacity: 1; cursor: zoom-in; }
-  .focus-slide:not(.is-active) { cursor: pointer; }
-  .focus-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .focus-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: white;
-    border: none;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #002975;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.14);
-    transition: background 0.15s;
-  }
-  .focus-arrow:hover { background: #f3f3f3; }
-  .focus-arrow-prev { left: calc(19vw + 1rem); }
-  .focus-arrow-next { right: calc(19vw + 1rem); }
-  .focus-dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(0,41,117,0.2);
-    border: none;
-    cursor: pointer;
-    transition: width 0.25s ease, background 0.25s ease;
-    padding: 0;
-    flex-shrink: 0;
-  }
-  .focus-dot.is-active { background: #002975; width: 24px; }
-  @media (max-width: 767px) {
-    .focus-slide { flex: 0 0 84vw; height: clamp(180px, 52vw, 50vh); }
-    .focus-arrow-prev { left: calc(8vw + 0.5rem); }
-    .focus-arrow-next { right: calc(8vw + 0.5rem); }
-  }
-  @media (max-width: 767px) {
-    .workflow-line {
-      left: 2rem;
-      top: 2rem;
-      bottom: 2rem;
-      width: 1px;
-      height: auto;
-      right: auto;
-      background: linear-gradient(180deg, rgba(0,41,117,0.15), rgba(102,0,17,0.35), rgba(0,41,117,0.15));
-    }
-    .workflow-step {
-      padding-top: 0;
-      padding-left: 5.5rem;
-      min-height: 7rem;
-    }
-    .workflow-dot {
-      top: 0;
-      left: 0;
-    }
-    .reference-slide {
-      flex-basis: 88vw;
-    }
-  }
-  /* Ablauf — kompaktere Proportionen auf Desktop */
-  @media (min-width: 768px) {
-    .workflow-dot {
-      width: 2.75rem;
-      height: 2.75rem;
-      font-size: 0.6rem;
-    }
-    .workflow-step {
-      padding-top: 3.5rem;
-    }
-  }
-  /* Lightbox */
-  #lb {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(0,0,0,0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.22s ease;
-    padding: 2rem;
-  }
-  #lb.lb-open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  #lb-stage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 90vw;
-    max-height: 78vh;
-  }
-  #lb-img {
-    max-width: 100%;
-    max-height: 78vh;
-    object-fit: contain;
-    display: block;
-  }
-  #lb-prev, #lb-next {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  #lb-prev:hover, #lb-next:hover { background: rgba(255,255,255,0.18); }
-  #lb-prev { left: 1rem; }
-  #lb-next { right: 1rem; }
-  #lb-close {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
-    width: 2.75rem;
-    height: 2.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  #lb-close:hover { background: rgba(255,255,255,0.2); }
-  #lb-cap {
-    margin-top: 1.25rem;
-    text-align: center;
-  }
-  #lb-title {
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
-  }
-  #lb-desc {
-    color: rgba(255,255,255,0.55);
-    font-size: 0.8rem;
-  }
-  /* Kostenrechner Wizard */
-  .calc-option-card.calc-selected { border-color: #002975; background: #fff; }
-  .calc-option-card.calc-selected .material-symbols-outlined { color: #002975; }
-  .calc-extra-card.calc-selected { border-color: #002975; background: #f3f3f3; }
-  .calc-extra-card.calc-selected::after { content: '✓'; font-weight: 900; color: #002975; font-size: 0.85rem; }
-  .calc-extra-card { display: flex; align-items: center; justify-content: space-between; }
-  .calc-option-card { transition: border-color 0.15s, background 0.15s; }
-
-  /* FAQ */
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item[open] summary .material-symbols-outlined { transform: rotate(45deg); }
-
-  /* Reviews Carousel */
-  .reviews-scroll-outer {
-    overflow: hidden;
-  }
-  .reviews-scroll-track {
-    display: flex;
-    animation: reviews-auto-scroll 60s linear infinite;
-    animation-play-state: paused;
-    will-change: transform;
-  }
-  @keyframes reviews-auto-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fliesen Weber in Koblenz: Meisterbetrieb f&uuml;r Fliesen, Bodenbel&auml;ge, Badrenovierung und saubere Projektplanung mit Preisrahmen.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Fliesen Weber Koblenz | Meisterbetrieb f&uuml;r Fliesen &amp; Bodenbel&auml;ge</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary">
-
-<!-- DEMO NOTICE -->
-<div class="w-full bg-surface-container-low border-b border-outline-variant/20 py-1.5 text-center">
-  <p class="text-xs italic text-outline/60 tracking-wide">Demo-Ansicht · Fotos, Texte und Bewertungen werden auf Ihren Betrieb angepasst.</p>
-</div>
-
-<!-- NAV -->
-<nav class="fixed top-[33px] w-full z-50 h-[70px] bg-white border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-6 md:px-12">
-  <a href="index.html" class="flex items-center gap-3">
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#002975" height="6" width="6" x="2" y="2"></rect>
-      <rect fill="#002975" height="6" width="6" x="9" y="2"></rect>
-      <rect fill="#002975" height="6" width="6" x="16" y="2"></rect>
-      <rect fill="#002975" height="6" width="6" x="2" y="9"></rect>
-      <rect fill="#002975" height="6" width="6" x="9" y="9"></rect>
-      <rect fill="#002975" height="6" width="6" x="16" y="9"></rect>
-      <rect fill="#002975" height="6" width="6" x="2" y="16"></rect>
-      <rect fill="#002975" height="6" width="6" x="9" y="16"></rect>
-      <rect fill="#660011" height="6" width="6" x="16" y="16"></rect>
-    </svg>
-    <div class="flex flex-col">
-      <span class="text-xl font-black tracking-tighter text-blue-900 uppercase">FLIESEN WEBER</span>
-      <span class="text-[10px] font-semibold text-outline tracking-widest uppercase mt-[-4px]">Meisterbetrieb in Koblenz</span>
-    </div>
-  </a>
-  <div class="hidden md:flex items-center gap-8 font-inter text-sm font-bold tracking-[0.1em] uppercase">
-    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#leistungen">Leistungen</a>
-    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#kostenrechner">Kostenrechner</a>
-    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#ablauf">Ablauf</a>
-    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#referenzen">Referenzen</a>
-    <a class="text-slate-500 hover:text-blue-900 transition-colors duration-200" href="#kontakt">Kontakt</a>
-  </div>
-  <a class="hidden md:inline-block bg-tertiary text-on-tertiary px-6 py-3 text-sm font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors duration-200" href="#kontakt">
-    Jetzt anfragen
-  </a>
-  <!-- Mobile hamburger -->
-  <button class="md:hidden flex flex-col gap-[5px] p-2" id="nav-hamburger" aria-label="Menü öffnen">
-    <span class="block w-6 h-0.5 bg-on-surface transition-all"></span>
-    <span class="block w-6 h-0.5 bg-on-surface transition-all"></span>
-    <span class="block w-6 h-0.5 bg-on-surface transition-all"></span>
-  </button>
-</nav>
-
-<!-- Mobile menu -->
-<div class="hidden fixed top-[103px] left-0 right-0 z-40 bg-white border-b border-outline-variant shadow-lg px-6 py-6 flex-col gap-4" id="mobile-menu">
-  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#leistungen">Leistungen</a>
-  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#kostenrechner">Kostenrechner</a>
-  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#ablauf">Ablauf</a>
-  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#referenzen">Referenzen</a>
-  <a class="text-sm font-bold tracking-widest uppercase text-on-surface hover:text-primary" href="#kontakt">Kontakt</a>
-  <a class="inline-block bg-tertiary text-white px-6 py-3 text-sm font-bold tracking-widest uppercase text-center mt-2" href="#kontakt">Jetzt anfragen</a>
-</div>
-
-<!-- HERO -->
-<header class="relative min-h-[760px] md:min-h-[921px] flex items-center pt-[103px] bg-primary overflow-hidden">
-  <!-- Slideshow injected by heroSlideshow.js -->
-  <div class="hero-gradient absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/90 to-transparent"></div>
-  <div class="container mx-auto px-6 md:px-12 relative z-10">
-    <div class="max-w-4xl">
-      <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest/10 backdrop-blur-md border border-white/20 mb-6 md:mb-8">
-        <span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
-        <span class="text-xs font-bold text-white tracking-widest uppercase">MEISTERBETRIEB · KOBLENZ &amp; UMGEBUNG</span>
+<body>
+  <header class="site-header">
+    <div class="demo-notice">Demo-Ansicht: Fotos, Texte und Bewertungen werden auf Ihren Betrieb angepasst.</div>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a class="brand" href="index.html" aria-label="Fliesen Weber Startseite">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        <span><span class="brand-title">Fliesen Weber</span><span class="brand-subtitle">Meisterbetrieb in Koblenz</span></span>
+      </a>
+      <div class="nav-links" aria-label="Seiten">
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">&Uuml;ber uns</a>
+        <a href="referenzen.html">Referenzen</a>
+        <a href="kontakt.html">Kontakt</a>
       </div>
-      <h1 class="text-[2.4rem] md:text-7xl font-black text-white tracking-tighter leading-[1.05] md:leading-[1.1] mb-6 md:mb-8 font-headline">
-        Ihr Meisterbetrieb für<br/>
-        <span class="text-on-primary-container">Fliesen &amp; Bodenbeläge</span><br/>
-        in Koblenz
-      </h1>
-      <p class="text-white/80 text-base md:text-xl leading-relaxed mb-8 md:mb-10 max-w-xl md:max-w-2xl">
-        Ob Bad, Küche oder Wohnbereich: Wir verlegen Fliesen und Böden sauber, termintreu und mit klarer Preislinie. Sie wissen früh, was machbar ist, was es kostet und wie es weitergeht.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-10 md:mb-16 flex-wrap">
-        <a class="inline-flex justify-center items-center px-8 py-4 border-2 border-white/30 text-white font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-colors" href="#kostenrechner">
-          Preis berechnen
-        </a>
-        <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup
-           class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-tertiary text-white font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors">
-          <span class="material-symbols-outlined text-base">calendar_month</span>
-          Besichtigungstermin buchen
+      <div class="nav-actions">
+        <a class="button button-red" href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>Besichtigung buchen
         </a>
       </div>
-      <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-white/80 text-[13px] md:text-sm font-semibold tracking-wide">
-        <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed">check_circle</span>
-          Meistergeführter Betrieb
-        </div>
-        <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed">check_circle</span>
-          Über 15 Jahre Erfahrung
-        </div>
-        <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed">check_circle</span>
-          Festpreisgarantie
-        </div>
-      </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Men&uuml; &ouml;ffnen">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="leistungen.html">Leistungen</a>
+      <a href="ueber-uns.html">&Uuml;ber uns</a>
+      <a href="referenzen.html">Referenzen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a class="button button-red" href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener">Besichtigung buchen</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- STATS BAR -->
-<section class="bg-primary-container text-white py-8 md:py-12" data-stats-section>
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="grid grid-cols-3 gap-3 md:gap-8 md:divide-x divide-white/20">
-      <div class="flex flex-col items-center justify-center border border-white/10 bg-white/5 px-3 py-4 md:border-0 md:bg-transparent md:px-0 md:py-0">
-        <span class="text-3xl md:text-4xl font-black mb-2" data-stat="projects">350+</span>
-        <span class="text-[9px] md:text-xs font-bold tracking-widest uppercase text-white/70 text-center leading-snug">Abgeschlossene Projekte</span>
-      </div>
-      <div class="flex flex-col items-center justify-center border border-white/10 bg-white/5 px-3 py-4 md:border-0 md:bg-transparent md:px-0 md:py-0">
-        <span class="text-3xl md:text-4xl font-black mb-2" data-stat="years">15</span>
-        <span class="text-[9px] md:text-xs font-bold tracking-widest uppercase text-white/70 text-center leading-snug">Jahre Erfahrung</span>
-      </div>
-      <div class="flex flex-col items-center justify-center border border-white/10 bg-white/5 px-3 py-4 md:border-0 md:bg-transparent md:px-0 md:py-0">
-        <span class="text-3xl md:text-4xl font-black mb-2 flex items-center gap-1" data-stat="rating">4,9 <span class="material-symbols-outlined text-amber-400" style="font-variation-settings:'FILL' 1">star</span></span>
-        <span class="text-[9px] md:text-xs font-bold tracking-widest uppercase text-white/70 text-center leading-snug">Ø Kundenbewertung</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MATERIALPARTNER -->
-<section class="py-8 md:py-10 bg-surface-container-lowest border-b border-outline-variant/20">
-  <div class="container mx-auto px-6 md:px-12">
-    <p class="text-[10px] font-bold tracking-widest uppercase text-outline/60 text-center mb-6">UNSERE MATERIALPARTNER</p>
-    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 md:gap-x-16">
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">MAPEI</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">SCHLÜTER</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">VILLEROY &amp; BOCH</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">WEDI</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">WEBER</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">LITHOFIN</span>
-    </div>
-  </div>
-</section>
-
-<!-- LEISTUNGEN -->
-<section class="py-20 md:py-28 bg-surface-container-low" id="leistungen">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-10 md:mb-14 max-w-2xl">
-      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">UNSERE LEISTUNGEN</p>
-      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline">Was wir für Sie tun</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-
-      <!-- Hero-Karte: Fliesen verlegen -->
-      <div class="md:col-span-3 relative overflow-hidden min-h-[22rem] md:min-h-[26rem] group">
-        <img src="images/hero/hero-6.jpg" alt="Fliesen verlegen" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-primary/80"></div>
-        <div class="relative z-10 h-full flex flex-col md:flex-row md:items-end md:justify-between gap-8 p-8 md:p-12">
-          <div class="max-w-2xl">
-            <div class="flex items-center gap-3 mb-5">
-              <div class="w-10 h-10 bg-white/10 flex items-center justify-center text-white/70">
-                <span class="material-symbols-outlined text-xl">grid_on</span>
-              </div>
-              <span class="text-xs font-bold tracking-widest uppercase text-white/50">Leistung 01</span>
-            </div>
-            <h3 class="text-2xl md:text-4xl font-black text-white mb-4 font-headline">Fliesen verlegen</h3>
-            <p class="text-white/80 leading-relaxed mb-3 max-w-lg">Präzise Verlegung von Wand- und Bodenfliesen für Bad, Küche und Wohnbereiche. Fachgerecht und langlebig.</p>
-            <p class="text-white/55 text-sm font-semibold">→ Von der ersten Fuge bis zur Endabnahme: alles aus einer Hand.</p>
-          </div>
-          <a class="inline-flex items-center gap-2 bg-white text-primary font-bold tracking-widest uppercase px-6 py-3 hover:bg-surface-container-low transition-colors whitespace-nowrap self-start md:self-auto flex-shrink-0" href="#kontakt">
-            Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Karte 2: Bodenbeläge -->
-      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-tertiary hover:bg-surface-bright transition-colors group">
-        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-5 text-tertiary">
-          <span class="material-symbols-outlined text-2xl">layers</span>
-        </div>
-        <h3 class="text-lg font-bold mb-3 font-headline">Bodenbeläge</h3>
-        <p class="hidden md:block text-on-surface-variant text-sm leading-relaxed mb-3">Hochwertige Bodenbeläge aller Art. Von Naturstein über Laminat bis hin zu modernem Vinyl – meisterhaft verlegt.</p>
-        <p class="text-tertiary text-sm font-semibold mb-6">→ Festpreis nach Aufmaß.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
-          Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-
-      <!-- Karte 3: Sanierung -->
-      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-emerald-700 hover:bg-surface-bright transition-colors group">
-        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-5 text-emerald-700">
-          <span class="material-symbols-outlined text-2xl">plumbing</span>
-        </div>
-        <h3 class="text-lg font-bold mb-3 font-headline">Sanierung &amp; Renovierung</h3>
-        <p class="hidden md:block text-on-surface-variant text-sm leading-relaxed mb-3">Komplette Badsanierungen und Altbaurenovierungen aus einer Hand. Zuverlässig, sauber und termingerecht.</p>
-        <p class="text-emerald-700 text-sm font-semibold mb-6">→ Inklusive Entsorgung des alten Belags.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
-          Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-
-      <!-- Karte 4: Beratung -->
-      <div class="bg-surface-container-lowest p-6 md:p-8 border-t-4 border-amber-600 hover:bg-surface-bright transition-colors group">
-        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-5 text-amber-600">
-          <span class="material-symbols-outlined text-2xl">architecture</span>
-        </div>
-        <h3 class="text-lg font-bold mb-3 font-headline">Beratung &amp; Planung</h3>
-        <p class="hidden md:block text-on-surface-variant text-sm leading-relaxed mb-3">Umfassende Beratung vor Ort. Wir planen Ihr Projekt und finden die optimalen Materialien für Ihre Bedürfnisse.</p>
-        <p class="text-amber-600 text-sm font-semibold mb-6">→ Kostenlose Erstberatung, keine versteckten Kosten.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors" href="#kontakt">
-          Anfragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- KOSTENRECHNER -->
-<section class="py-20 md:py-28 bg-surface-container-lowest" id="kostenrechner">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="max-w-xl mx-auto">
-
-      <div class="text-center mb-8 md:mb-10">
-        <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-3">KOSTENRECHNER</p>
-        <h2 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight font-headline mb-3">Was kostet Ihr Projekt?</h2>
-        <p class="text-on-surface-variant text-sm md:text-base">In 4 Schritten zum Preisrahmen — unverbindlich und kostenlos.</p>
-      </div>
-
-      <!-- Step bar -->
-      <div class="flex items-center mb-8">
-        <div class="flex-1 h-0.5 calc-track bg-outline-variant/30" data-step="1"></div>
-        <div class="w-8 h-8 flex items-center justify-center text-xs font-black border-2 calc-dot bg-primary border-primary text-white" data-step="1">1</div>
-        <div class="flex-1 h-0.5 calc-track bg-outline-variant/30" data-step="2"></div>
-        <div class="w-8 h-8 flex items-center justify-center text-xs font-black border-2 calc-dot border-outline-variant/40 text-outline" data-step="2">2</div>
-        <div class="flex-1 h-0.5 calc-track bg-outline-variant/30" data-step="3"></div>
-        <div class="w-8 h-8 flex items-center justify-center text-xs font-black border-2 calc-dot border-outline-variant/40 text-outline" data-step="3">3</div>
-        <div class="flex-1 h-0.5 calc-track bg-outline-variant/30" data-step="4"></div>
-        <div class="w-8 h-8 flex items-center justify-center text-xs font-black border-2 calc-dot border-outline-variant/40 text-outline" data-step="4">4</div>
-        <div class="flex-1 h-0.5 calc-track bg-outline-variant/30" data-step="4"></div>
-      </div>
-
-      <div class="bg-surface-container-low p-6 md:p-10">
-
-        <!-- Step 1: Projektart -->
-        <div id="calcStep1">
-          <p class="text-[10px] font-black tracking-[0.22em] uppercase text-outline mb-1">SCHRITT 1 VON 4</p>
-          <h3 class="text-xl font-black text-on-surface mb-6">Was planen Sie?</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="calcProjectCards"></div>
-        </div>
-
-        <!-- Step 2: Fläche + Material -->
-        <div id="calcStep2" class="hidden">
-          <p class="text-[10px] font-black tracking-[0.22em] uppercase text-outline mb-1">SCHRITT 2 VON 4</p>
-          <h3 class="text-xl font-black text-on-surface mb-6">Fläche &amp; Material</h3>
-          <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="wizFlaeche">Fläche in m²</label>
-          <input id="wizFlaeche" type="number" min="1" max="500" placeholder="z.B. 12"
-            class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary focus:ring-0 focus:border-tertiary px-4 py-4 text-on-surface mb-8"/>
-          <p class="text-xs font-bold tracking-widest uppercase text-on-surface mb-3">Fliesentyp / Material</p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="calcMaterialCards"></div>
-          <p id="calcStep2Error" class="hidden text-xs text-tertiary mt-3 font-semibold">Bitte Fläche eingeben und Material wählen.</p>
-        </div>
-
-        <!-- Step 3: Extras -->
-        <div id="calcStep3" class="hidden">
-          <p class="text-[10px] font-black tracking-[0.22em] uppercase text-outline mb-1">SCHRITT 3 VON 4</p>
-          <h3 class="text-xl font-black text-on-surface mb-2">Zusatzleistungen</h3>
-          <p class="text-sm text-on-surface-variant mb-6">Optional — nichts nötig? Einfach weiter.</p>
-          <div class="space-y-3" id="calcExtrasCards"></div>
-        </div>
-
-        <!-- Step 4: Ergebnis -->
-        <div id="calcStep4" class="hidden">
-          <p class="text-[10px] font-black tracking-[0.22em] uppercase text-outline mb-1">SCHRITT 4 VON 4</p>
-          <h3 class="text-xl font-black text-on-surface mb-2">Ihr Preisrahmen</h3>
-          <p class="text-sm text-on-surface-variant mb-6" id="calcSummaryText"></p>
-          <div class="bg-primary p-6 mb-6">
-            <p class="text-[10px] font-black tracking-[0.22em] uppercase text-white/60 mb-2">GESCHÄTZTER PREISRAHMEN</p>
-            <p class="text-3xl md:text-4xl font-black text-white mb-2" id="wizPriceOutput">–</p>
-            <p class="text-[10px] text-white/50 uppercase tracking-wide">Unverbindlich · inkl. Material &amp; Arbeit · Festpreis nach Besichtigung</p>
-          </div>
-          <div class="space-y-3">
-            <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber"
-               target="_blank" rel="noopener" data-calendly-popup
-               class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-tertiary text-white font-bold tracking-widest uppercase hover:bg-tertiary-container transition-colors">
-              <span class="material-symbols-outlined text-base">calendar_month</span>
-              Besichtigungstermin buchen
+  <main>
+    <section class="hero">
+      <img src="images/hero/hero-2.jpg" alt="Fliesenleger bei pr&auml;ziser Arbeit im Bad">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Meisterbetrieb in Koblenz</p>
+          <h1>Fliesen Weber Koblenz</h1>
+          <p class="hero-lead">Saubere Fliesenarbeiten, Bodenbel&auml;ge und Badrenovierungen mit klarer Planung, verbindlichem Ablauf und einem fr&uuml;hen Preisrahmen.</p>
+          <div class="hero-actions">
+            <a class="button button-red" href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener">
+              <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>Besichtigung buchen
             </a>
-            <a href="#kontakt" class="w-full inline-flex items-center justify-center px-6 py-4 bg-primary text-white font-bold tracking-widest uppercase hover:bg-primary-container transition-colors">
-              Verbindliches Angebot anfragen
+            <a class="button button-light" href="#kostenrechner">
+              <span class="material-symbols-outlined" aria-hidden="true">calculate</span>Preis berechnen
             </a>
           </div>
-          <button id="calcReset" class="w-full mt-5 text-sm text-on-surface-variant hover:text-primary transition-colors text-center">
-            ← Neu berechnen
-          </button>
-        </div>
-
-        <!-- Navigation -->
-        <div class="flex items-center justify-between mt-8" id="calcNav">
-          <button id="calcBack" type="button" class="hidden text-sm font-bold tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-2">
-            <span class="material-symbols-outlined text-base">arrow_back</span> Zurück
-          </button>
-          <div class="flex-1"></div>
-          <button id="calcNext" type="button" class="hidden bg-primary text-white font-bold tracking-widest uppercase px-8 py-3 hover:bg-primary-container transition-colors inline-flex items-center gap-2">
-            Weiter <span class="material-symbols-outlined text-base">arrow_forward</span>
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <script>
-  (function () {
-    var state = { step: 1, projekt: null, flaeche: null, material: null, extras: [] };
-    var PROJECTS = [
-      { id: 'bad',        label: 'Bad fliesen',       icon: 'bathtub',    multi: 1.2  },
-      { id: 'kueche',     label: 'Küche fliesen',     icon: 'countertops',multi: 1.08 },
-      { id: 'balkon',     label: 'Balkon / Terrasse', icon: 'deck',       multi: 1.12 },
-      { id: 'wohnzimmer', label: 'Wohnzimmer',        icon: 'weekend',    multi: 1.0  },
-      { id: 'boden',      label: 'Boden verlegen',    icon: 'layers',     multi: 0.95 }
-    ];
-    var MATERIALS = [
-      { id: 'standard',   label: 'Standard',   sub: 'ca. 40 €/m²', price: 40 },
-      { id: 'premium',    label: 'Premium',    sub: 'ca. 70 €/m²', price: 70 },
-      { id: 'naturstein', label: 'Naturstein', sub: 'ca. 90 €/m²', price: 90 }
-    ];
-    var EXTRAS = [
-      { id: 'altbelag',     label: 'Altbelag entfernen',      price: 15 },
-      { id: 'sockelleisten',label: 'Sockelleisten montieren', price: 8  },
-      { id: 'abdichtung',   label: 'Abdichtung (Nassbereich)',price: 20 }
-    ];
-
-    // Build project cards
-    var pg = document.getElementById('calcProjectCards');
-    PROJECTS.forEach(function (p) {
-      var btn = document.createElement('button');
-      btn.type = 'button'; btn.dataset.id = p.id;
-      btn.className = 'calc-option-card flex flex-col items-center gap-2 p-4 border-2 border-outline-variant/30 bg-surface-container-lowest hover:border-primary transition-all text-center';
-      btn.innerHTML = '<span class="material-symbols-outlined text-2xl text-primary">' + p.icon + '</span><span class="text-xs font-bold text-on-surface leading-snug">' + p.label + '</span>';
-      btn.addEventListener('click', function () {
-        state.projekt = p.id;
-        pg.querySelectorAll('.calc-option-card').forEach(function (c) { c.classList.remove('calc-selected'); });
-        btn.classList.add('calc-selected');
-        setTimeout(function () { goTo(2); }, 200);
-      });
-      pg.appendChild(btn);
-    });
-
-    // Build material cards
-    var mg = document.getElementById('calcMaterialCards');
-    MATERIALS.forEach(function (m) {
-      var btn = document.createElement('button');
-      btn.type = 'button'; btn.dataset.id = m.id;
-      btn.className = 'calc-option-card flex flex-col items-start p-4 border-2 border-outline-variant/30 bg-surface-container-lowest hover:border-primary transition-all';
-      btn.innerHTML = '<span class="font-black text-on-surface text-base mb-1">' + m.label + '</span><span class="text-xs text-on-surface-variant">' + m.sub + '</span>';
-      btn.addEventListener('click', function () {
-        state.material = m.id;
-        mg.querySelectorAll('.calc-option-card').forEach(function (c) { c.classList.remove('calc-selected'); });
-        btn.classList.add('calc-selected');
-        document.getElementById('calcStep2Error').classList.add('hidden');
-      });
-      mg.appendChild(btn);
-    });
-
-    // Build extras
-    var eg = document.getElementById('calcExtrasCards');
-    EXTRAS.forEach(function (e) {
-      var btn = document.createElement('button');
-      btn.type = 'button'; btn.dataset.id = e.id;
-      btn.className = 'calc-extra-card w-full p-4 border-2 border-outline-variant/30 bg-surface-container-lowest hover:border-primary transition-all text-left';
-      btn.innerHTML = '<span class="font-semibold text-on-surface text-sm">' + e.label + '</span><span class="text-xs font-bold text-on-surface-variant">+ ' + e.price + ' €/m²</span>';
-      btn.addEventListener('click', function () {
-        var i = state.extras.indexOf(e.id);
-        if (i === -1) { state.extras.push(e.id); btn.classList.add('calc-selected'); }
-        else { state.extras.splice(i, 1); btn.classList.remove('calc-selected'); }
-      });
-      eg.appendChild(btn);
-    });
-
-    function goTo(n) {
-      if (n === 3) {
-        var fl = parseFloat(document.getElementById('wizFlaeche').value);
-        if (!fl || fl < 1 || !state.material) {
-          document.getElementById('calcStep2Error').classList.remove('hidden');
-          return;
-        }
-        state.flaeche = fl;
-      }
-      if (n === 4) { computeResult(); }
-      state.step = n;
-      [1, 2, 3, 4].forEach(function (s) {
-        document.getElementById('calcStep' + s).classList.toggle('hidden', s !== n);
-      });
-      refreshNav();
-      refreshBar();
-      document.getElementById('kostenrechner').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function computeResult() {
-      var mat  = MATERIALS.find(function (m) { return m.id === state.material; });
-      var proj = PROJECTS.find(function (p) { return p.id === state.projekt; });
-      var base = state.flaeche * (mat ? mat.price : 40) * (proj ? proj.multi : 1);
-      EXTRAS.forEach(function (e) { if (state.extras.indexOf(e.id) !== -1) base += state.flaeche * e.price; });
-      var min = Math.round(base * 0.93 / 10) * 10;
-      var max = Math.round(base * 1.12 / 10) * 10;
-      document.getElementById('wizPriceOutput').textContent = '€ ' + min.toLocaleString('de-DE') + ' – € ' + max.toLocaleString('de-DE');
-      document.getElementById('calcSummaryText').textContent =
-        (proj ? proj.label : '') + ' · ' + state.flaeche + ' m² · ' + (mat ? mat.label : '') +
-        (state.extras.length ? ' · inkl. Zusatzleistungen' : '');
-    }
-
-    function refreshNav() {
-      var back = document.getElementById('calcBack');
-      var next = document.getElementById('calcNext');
-      var nav  = document.getElementById('calcNav');
-      back.classList.toggle('hidden', state.step <= 1);
-      next.classList.toggle('hidden', state.step === 1 || state.step === 4);
-      nav.classList.toggle('hidden', state.step === 4);
-    }
-
-    function refreshBar() {
-      document.querySelectorAll('.calc-dot').forEach(function (d) {
-        var s = parseInt(d.dataset.step);
-        var active = s <= state.step;
-        d.classList.toggle('bg-primary', active);
-        d.classList.toggle('border-primary', active);
-        d.classList.toggle('text-white', active);
-        d.classList.toggle('border-outline-variant/40', !active);
-        d.classList.toggle('text-outline', !active);
-        d.style.background = active ? '' : 'transparent';
-      });
-      document.querySelectorAll('.calc-track').forEach(function (t) {
-        var s = parseInt(t.dataset.step);
-        t.classList.toggle('bg-primary', s < state.step);
-        t.classList.toggle('bg-outline-variant/30', s >= state.step);
-      });
-    }
-
-    document.getElementById('calcBack').addEventListener('click', function () { goTo(state.step - 1); });
-    document.getElementById('calcNext').addEventListener('click', function () { goTo(state.step + 1); });
-    document.getElementById('calcReset').addEventListener('click', function () {
-      state = { step: 1, projekt: null, flaeche: null, material: null, extras: [] };
-      document.querySelectorAll('.calc-option-card, .calc-extra-card').forEach(function (c) { c.classList.remove('calc-selected'); });
-      document.getElementById('wizFlaeche').value = '';
-      document.getElementById('calcNav').classList.remove('hidden');
-      goTo(1);
-    });
-
-    refreshNav();
-    refreshBar();
-  })();
-  </script>
-</section>
-
-<!-- ABLAUF -->
-<section class="py-14 md:py-20 bg-surface-container-low" id="ablauf">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-8 md:mb-12 max-w-3xl">
-      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-3">SO LÄUFT ES AB</p>
-      <h2 class="text-2xl md:text-3xl font-black text-on-surface tracking-tight font-headline mb-3">Vom ersten Preisrahmen bis zur sauberen Umsetzung</h2>
-      <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">So entsteht aus einer ersten Idee ein sauber geplantes Projekt: schnell einschätzen, persönlich klären, verbindlich umsetzen.</p>
-    </div>
-    <div class="relative">
-      <div class="workflow-line"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="workflow-step">
-          <div class="workflow-dot">01</div>
-          <p class="text-xs font-bold tracking-[0.24em] uppercase text-primary mb-2">Erster Preisrahmen</p>
-          <h3 class="text-lg md:text-xl font-black text-on-surface mb-2 font-headline">Projekt grob berechnen</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed mb-3">Sie starten mit einem realistischen Preisrahmen für Fläche, Material und Zusatzleistungen, statt mit offenem Fragezeichen.</p>
-          <p class="text-primary text-sm font-semibold">→ Sie wissen früh, ob das Projekt in Ihren Rahmen passt.</p>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-dot">02</div>
-          <p class="text-xs font-bold tracking-[0.24em] uppercase text-tertiary mb-2">Persönliche Klärung</p>
-          <h3 class="text-lg md:text-xl font-black text-on-surface mb-2 font-headline">Vor-Ort-Termin sichern</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed mb-3">Im Termin klären wir Untergrund, Materialwahl, Zeitplan und alle Punkte, die auf Bildern oder am Telefon offen bleiben.</p>
-          <p class="text-tertiary text-sm font-semibold">→ Sie bekommen Klarheit statt späterer Überraschungen.</p>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-dot">03</div>
-          <p class="text-xs font-bold tracking-[0.24em] uppercase text-emerald-700 mb-2">Verbindliche Umsetzung</p>
-          <h3 class="text-lg md:text-xl font-black text-on-surface mb-2 font-headline">Festpreis &amp; Umsetzung</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed mb-3">Auf Basis der Besichtigung erhalten Sie ein verbindliches Angebot. Danach wird sauber gearbeitet, termintreu umgesetzt und klar kommuniziert.</p>
-          <p class="text-emerald-700 text-sm font-semibold">→ Sie wissen, woran Sie sind, bevor es losgeht.</p>
+          <div class="trust-row" aria-label="Kurzfakten">
+            <div class="trust-item"><strong>350+</strong><span>abgeschlossene Projekte</span></div>
+            <div class="trust-item"><strong>15</strong><span>Jahre Erfahrung</span></div>
+            <div class="trust-item"><strong>4,9</strong><span>Kundenbewertung</span></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- FAQ -->
-<section class="py-16 md:py-24 bg-surface-container-low">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="max-w-3xl mx-auto">
-      <div class="mb-10 md:mb-12">
-        <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">HÄUFIGE FRAGEN</p>
-        <h2 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight font-headline">Was Kunden uns am häufigsten fragen</h2>
+    <section class="section section-white" id="leistungen">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Leistungen</p>
+          <h2>Die Startseite zeigt nur, was Kunden sofort verstehen m&uuml;ssen.</h2>
+          <p>Die Details liegen auf der Leistungsseite. Hier bleibt der Fokus auf Orientierung, Vertrauen und dem n&auml;chsten Schritt.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <span class="icon-box material-symbols-outlined" aria-hidden="true">grid_on</span>
+            <h3>Fliesen verlegen</h3>
+            <p>Wand- und Bodenfliesen f&uuml;r Bad, K&uuml;che, Flur und Wohnbereich.</p>
+          </article>
+          <article class="card">
+            <span class="icon-box material-symbols-outlined" aria-hidden="true">layers</span>
+            <h3>Bodenbel&auml;ge</h3>
+            <p>Vinyl, Laminat, Designbelag und robuste Bodenl&ouml;sungen f&uuml;r Alltag und Objekt.</p>
+          </article>
+          <article class="card">
+            <span class="icon-box material-symbols-outlined" aria-hidden="true">plumbing</span>
+            <h3>Sanierung</h3>
+            <p>Badmodernisierung, Altbelag entfernen, Abdichtung und saubere &Uuml;berg&auml;nge.</p>
+          </article>
+          <article class="card">
+            <span class="icon-box material-symbols-outlined" aria-hidden="true">architecture</span>
+            <h3>Planung</h3>
+            <p>Materialberatung, Aufma&szlig;, Terminplanung und realistischer Preisrahmen.</p>
+          </article>
+        </div>
+        <div class="card-actions" style="margin-top: 28px;">
+          <a class="button" href="leistungen.html">Alle Leistungen ansehen</a>
+          <a class="button button-outline" href="#kostenrechner">Projekt grob berechnen</a>
+        </div>
       </div>
-      <div class="space-y-2">
-        <details class="faq-item bg-surface-container-lowest group">
-          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-bold text-on-surface text-base md:text-lg select-none">
-            Was kostet das Fliesen eines Badezimmers?
-            <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform duration-200 group-open:rotate-45">add</span>
-          </summary>
-          <div class="px-6 pb-6 text-sm md:text-base text-on-surface-variant leading-relaxed">
-            Ein Badezimmer mit ca. 8–12 m² kostet in der Regel zwischen <strong>1.800 und 4.500 €</strong> – abhängig von Fliesenformat, Material und ob der Altbelag entfernt werden muss. Unser Kostenrechner gibt Ihnen einen belastbaren Preisrahmen in unter 30 Sekunden. Nach einer Vor-Ort-Besichtigung erhalten Sie ein verbindliches Festpreisangebot.
-          </div>
-        </details>
-        <details class="faq-item bg-surface-container-lowest group">
-          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-bold text-on-surface text-base md:text-lg select-none">
-            Wie lange dauert eine Badsanierung?
-            <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform duration-200 group-open:rotate-45">add</span>
-          </summary>
-          <div class="px-6 pb-6 text-sm md:text-base text-on-surface-variant leading-relaxed">
-            Eine vollständige Badsanierung (Altbelag entfernen, neu fliesen, Fugen, Abdichtung) dauert bei einem durchschnittlichen Bad <strong>3 bis 5 Werktage</strong>. Größere Bäder oder komplexe Arbeiten können bis zu 8 Tage in Anspruch nehmen. Wir kommunizieren den genauen Zeitplan vor Beginn der Arbeiten.
-          </div>
-        </details>
-        <details class="faq-item bg-surface-container-lowest group">
-          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-bold text-on-surface text-base md:text-lg select-none">
-            Was ist im Preis inbegriffen?
-            <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform duration-200 group-open:rotate-45">add</span>
-          </summary>
-          <div class="px-6 pb-6 text-sm md:text-base text-on-surface-variant leading-relaxed">
-            Unser Festpreis umfasst <strong>Arbeitszeit, Standardmaterialien (Kleber, Fugenmasse, Schienen)</strong> sowie die saubere Entsorgung des alten Belags auf Wunsch. Die Fliesen selbst werden separat berechnet – wir helfen Ihnen bei der Materialauswahl und können auf Wunsch Muster organisieren.
-          </div>
-        </details>
-        <details class="faq-item bg-surface-container-lowest group">
-          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-bold text-on-surface text-base md:text-lg select-none">
-            Kann ich während der Sanierung im Haus wohnen?
-            <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform duration-200 group-open:rotate-45">add</span>
-          </summary>
-          <div class="px-6 pb-6 text-sm md:text-base text-on-surface-variant leading-relaxed">
-            Ja – in den meisten Fällen ist das problemlos möglich. Wir arbeiten zügig und halten die Baustelle sauber. Das Bad ist während der Arbeiten nicht nutzbar; bei Bedarf besprechen wir vorab, ob ein zweites WC oder Übergangslösungen benötigt werden.
-          </div>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- REFERENZEN -->
-<section class="py-20 md:py-28 bg-surface-container-lowest" id="referenzen">
-  <div class="container mx-auto px-6 md:px-12 mb-10 md:mb-14">
-    <div class="max-w-2xl">
-      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">REFERENZEN</p>
-      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-5">Unsere Arbeit spricht für sich</h2>
-      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Einige Beispiele aus typischen Projekten: saubere Verlegung, ruhige Fugenbilder und sichtbare Qualität bis ins Detail.</p>
-    </div>
-  </div>
-  <div class="focus-carousel-outer" id="focusCarouselOuter">
-    <div class="focus-carousel-track" id="focusCarouselTrack">
-      <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-1.jpg" alt="Badezimmer Projekt Koblenz"/>
-        <p hidden>Badezimmer · Koblenz</p>
-        <p hidden>Großformatige Wand- und Bodenfliesen mit ruhigem Fugenbild.</p>
-      </article>
-      <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-2.jpg" alt="Badezimmer Projekt Koblenz"/>
-        <p hidden>Badmodernisierung · Koblenz</p>
-        <p hidden>Saubere Linien, hochwertige Oberflächen und präzise Anschlüsse.</p>
-      </article>
-      <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-3.jpg" alt="Badezimmer Renovierung"/>
-        <p hidden>Renovierung · Badezimmer</p>
-        <p hidden>Neuer Belag, klare Kanten und ein sichtbar aufgewerteter Raum.</p>
-      </article>
-      <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-4.jpg" alt="Fliesenverlegung in Arbeit"/>
-        <p hidden>Verlegung · Baustelle</p>
-        <p hidden>Saubere Ausführung während der Arbeit, nicht nur im Endbild.</p>
-      </article>
-      <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-5.jpg" alt="Handwerksarbeit vor Ort"/>
-        <p hidden>Handwerk · Vor Ort</p>
-        <p hidden>Verlässliche Ausführung mit Blick auf Untergrund und Details.</p>
-      </article>
-      <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-6.jpg" alt="Meisterarbeit Fliesen"/>
-        <p hidden>Meisterarbeit · Koblenz</p>
-        <p hidden>Hochwertige Optik, klare Fluchten und ruhige Gesamtwirkung.</p>
-      </article>
-    </div>
-    <button class="focus-arrow focus-arrow-prev" id="focusPrev" aria-label="Zurück">
-      <span class="material-symbols-outlined">west</span>
-    </button>
-    <button class="focus-arrow focus-arrow-next" id="focusNext" aria-label="Weiter">
-      <span class="material-symbols-outlined">east</span>
-    </button>
-  </div>
-  <div class="container mx-auto px-6 md:px-12 mt-8 md:mt-10">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-      <div>
-        <p id="focusCaptionTitle" class="text-xs font-bold tracking-widest uppercase text-primary mb-1"></p>
-        <p id="focusCaptionDesc" class="text-sm text-on-surface-variant"></p>
-      </div>
-      <div class="flex items-center gap-6">
-        <div class="flex items-center gap-2" id="focusDots"></div>
-        <a href="#kontakt" class="inline-flex items-center gap-2 bg-primary text-white font-bold tracking-widest uppercase px-8 py-4 hover:bg-primary-container transition-colors whitespace-nowrap">
-          Projekt anfragen <span class="material-symbols-outlined text-base">arrow_forward</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- KUNDENSTIMMEN -->
-<section class="py-20 md:py-32 bg-surface-container-low" id="bewertungen">
-  <div class="container mx-auto px-6 md:px-12 mb-10 md:mb-14">
-    <div class="max-w-2xl">
-      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">KUNDENSTIMMEN</p>
-      <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-4">Was unsere Kunden sagen</h2>
-      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Rückmeldungen aus abgeschlossenen Projekten – direkt von unseren Auftraggebern.</p>
-    </div>
-  </div>
-  <div class="reviews-scroll-outer" id="reviewsCarouselOuter">
-    <div class="reviews-scroll-track" id="reviewsCarouselTrack">
-      <div class="flex" id="reviewsScrollSet">
-
-        <!-- Bewertung 1 -->
-        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
-          <div class="flex gap-0.5 mb-4">
-            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
-          </div>
-          <p class="text-on-surface text-sm leading-relaxed flex-1">„Wir haben unser Badezimmer komplett neu fliesen lassen. Sauberste Arbeit, pünktlich, kein einziger Nachbesserungspunkt. Herr Weber erklärt ruhig, was er macht – und hält, was er verspricht."</p>
-          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
-            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">TR</div>
+    <section class="section section-soft" id="kostenrechner">
+      <div class="container split split-wide">
+        <div class="section-head">
+          <p class="eyebrow">Kostenrechner</p>
+          <h2>Ein Preisrahmen, bevor das erste Telefonat unn&ouml;tig lang wird.</h2>
+          <p>Der Rechner ist bewusst prominent auf der Startseite. Er senkt die Einstiegsh&uuml;rde und macht aus unklaren Anfragen konkretere Gespr&auml;che.</p>
+          <ul class="check-list">
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Grobe Einsch&auml;tzung in unter 30 Sekunden.</span></li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Projektart, Material und Zusatzleistungen werden ber&uuml;cksichtigt.</span></li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Der verbindliche Preis folgt nach der Besichtigung.</span></li>
+          </ul>
+        </div>
+        <form class="calculator" id="calcForm">
+          <div class="form-grid">
             <div>
-              <p class="text-sm font-bold text-on-surface">Thomas R.</p>
-              <p class="text-xs text-on-surface-variant">März 2026</p>
+              <label for="anliegen">Was planen Sie?</label>
+              <select id="anliegen">
+                <option value="bad">Badezimmer fliesen</option>
+                <option value="kueche">K&uuml;che fliesen</option>
+                <option value="balkon">Balkon fliesen</option>
+                <option value="wohnzimmer">Wohnzimmer fliesen</option>
+                <option value="boden">Boden verlegen</option>
+              </select>
             </div>
-          </div>
-        </div>
-
-        <!-- Bewertung 2 -->
-        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
-          <div class="flex gap-0.5 mb-4">
-            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
-          </div>
-          <p class="text-on-surface text-sm leading-relaxed flex-1">„Küche und Abstellraum in einem Durchgang erledigt. Alles termingerecht, ordentlich, der Festpreis wurde eingehalten. Klare Empfehlung für alle, die keine bösen Überraschungen mögen."</p>
-          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
-            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">SK</div>
             <div>
-              <p class="text-sm font-bold text-on-surface">Sandra K.</p>
-              <p class="text-xs text-on-surface-variant">Februar 2026</p>
+              <label for="fliesentyp">Fliesentyp / Material</label>
+              <select id="fliesentyp">
+                <option value="standard">Standard - ca. 42 &euro;/m&sup2;</option>
+                <option value="premium">Premium - ca. 72 &euro;/m&sup2;</option>
+                <option value="naturstein">Naturstein - ca. 94 &euro;/m&sup2;</option>
+              </select>
             </div>
-          </div>
-        </div>
-
-        <!-- Bewertung 3 -->
-        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
-          <div class="flex gap-0.5 mb-4">
-            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
-          </div>
-          <p class="text-on-surface text-sm leading-relaxed flex-1">„Badsanierung im Altbau – inklusive Altbelag entfernen. Man hat gemerkt, dass das Handwerk sitzt. Ruhiges Fugenbild, saubere Schnitte an der Wanne. Sehr gerne wieder."</p>
-          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
-            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">MW</div>
             <div>
-              <p class="text-sm font-bold text-on-surface">Michael W.</p>
-              <p class="text-xs text-on-surface-variant">Januar 2026</p>
+              <label for="flaeche">Fl&auml;che in m&sup2;</label>
+              <input id="flaeche" min="5" max="200" placeholder="z.B. 25" type="number">
             </div>
-          </div>
-        </div>
-
-        <!-- Bewertung 4 -->
-        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
-          <div class="flex gap-0.5 mb-4">
-            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
-          </div>
-          <p class="text-on-surface text-sm leading-relaxed flex-1">„Großformatige Platten im Wohnzimmer verlegt. Kein Spalt, keine unebene Stelle. Das Ergebnis sieht hochwertig aus und fühlt sich im Alltag gut an. Volle Punktzahl."</p>
-          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
-            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">LB</div>
-            <div>
-              <p class="text-sm font-bold text-on-surface">Laura B.</p>
-              <p class="text-xs text-on-surface-variant">Dezember 2025</p>
+            <label class="checkbox-row" for="altbelag"><input id="altbelag" type="checkbox">Altbelag entfernen (+15 &euro;/m&sup2;)</label>
+            <label class="checkbox-row" for="sockelleisten"><input id="sockelleisten" type="checkbox">Sockelleisten montieren (+8 &euro;/m&sup2;)</label>
+            <label class="checkbox-row" for="abdichtung"><input id="abdichtung" type="checkbox">Abdichtung Nassbereich (+20 &euro;/m&sup2;)</label>
+            <div class="price-box">
+              <p>Gesch&auml;tzter Preisrahmen</p>
+              <strong id="priceOutput">&euro; -</strong>
+              <p>Unverbindlich. Untergrund, Zuschnitt und Baustellensituation werden vor Ort gekl&auml;rt.</p>
             </div>
+            <a class="button button-red" href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener">Besichtigung zur Preiskalkulation</a>
           </div>
-        </div>
-
-        <!-- Bewertung 5 -->
-        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
-          <div class="flex gap-0.5 mb-4">
-            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
-          </div>
-          <p class="text-on-surface text-sm leading-relaxed flex-1">„Terrasse neu verfliest. Der Termin hat gepasst, die Abdichtung wurde sauber erklärt, das Ergebnis überzeugt. Ich werde Fliesen Weber im Bekanntenkreis weiterempfehlen."</p>
-          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
-            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">JH</div>
-            <div>
-              <p class="text-sm font-bold text-on-surface">Jürgen H.</p>
-              <p class="text-xs text-on-surface-variant">November 2025</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bewertung 6 -->
-        <div class="bg-white p-7 flex flex-col border border-outline-variant/40 flex-shrink-0 mr-6" style="width:min(22rem, 80vw)">
-          <div class="flex gap-0.5 mb-4">
-            <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
-          </div>
-          <p class="text-on-surface text-sm leading-relaxed flex-1">„Wir hatten uns schon auf Stress eingestellt – nichts davon. Alles pünktlich, sauber und ohne Aufpreis. Das alte Bad sieht heute aus wie neu, und der Preis war fair."</p>
-          <div class="flex items-center gap-3 mt-5 pt-5 border-t border-outline-variant/30">
-            <div class="w-9 h-9 bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-black">MF</div>
-            <div>
-              <p class="text-sm font-bold text-on-surface">Monika F.</p>
-              <p class="text-xs text-on-surface-variant">Oktober 2025</p>
-            </div>
-          </div>
-        </div>
-
+        </form>
       </div>
-    </div>
-  </div>
-  <div class="container mx-auto px-6 md:px-12 mt-10 md:mt-12">
-    <div class="flex items-center gap-3 flex-wrap">
-      <div class="flex gap-0.5">
-        <span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-lg" style="font-variation-settings:'FILL' 1">star</span>
-      </div>
-      <span class="text-sm font-black text-on-surface">4,9 / 5</span>
-      <span class="text-sm text-on-surface-variant">· Durchschnitt aus über 80 Bewertungen</span>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- BRANCHEN-PARTNER -->
-<section class="py-16 md:py-20 bg-surface-container">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="mb-10 md:mb-12">
-      <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">MITGLIEDSCHAFTEN &amp; ZERTIFIKATE</p>
-      <h2 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight font-headline">Geprüfte Qualität &amp; Verbandsmitglied</h2>
-    </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-      <div class="bg-surface-container-lowest p-4 sm:p-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-5">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary flex-shrink-0 flex items-center justify-center text-white">
-          <span class="material-symbols-outlined text-lg sm:text-xl">school</span>
+    <section class="section section-white" id="ablauf">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Ablauf</p>
+          <h2>Drei Schritte statt endloser Angebotsunsicherheit.</h2>
+          <p>Der Prozess erkl&auml;rt sofort, wie aus einer Anfrage ein sauber geplantes Projekt wird.</p>
         </div>
+        <div class="grid-3 steps">
+          <article class="card step-card">
+            <h3>Preisrahmen berechnen</h3>
+            <p>Der Kunde bekommt ein erstes Gef&uuml;hl f&uuml;r den Aufwand und stellt eine qualifiziertere Anfrage.</p>
+          </article>
+          <article class="card step-card">
+            <h3>Vor Ort kl&auml;ren</h3>
+            <p>Untergrund, Zuschnitt, Material und Terminfenster werden verbindlich gepr&uuml;ft.</p>
+          </article>
+          <article class="card step-card">
+            <h3>Festpreis umsetzen</h3>
+            <p>Nach der Besichtigung folgt ein klares Angebot und eine saubere Umsetzung.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="referenzen">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Referenzen</p>
+          <h2>Auf der Startseite reichen wenige starke Beispiele.</h2>
+          <p>Die vollst&auml;ndige Projektgalerie bekommt eine eigene Seite, damit die Home mobil kurz und verkaufsstark bleibt.</p>
+        </div>
+        <div class="grid-3">
+          <article class="media-card">
+            <img src="images/portfolio/project-1.jpg" alt="Bad mit Marmoroptik-Fliesen">
+            <div class="media-card-body"><h3>Badmodernisierung</h3><p>Gro&szlig;formatige Fliesen, ruhiges Fugenbild, klare Anschl&uuml;sse.</p></div>
+          </article>
+          <article class="media-card">
+            <img src="images/portfolio/project-4.jpg" alt="Fliesenverlegung auf Baustelle">
+            <div class="media-card-body"><h3>Saubere Verlegung</h3><p>Pr&auml;zision w&auml;hrend der Arbeit, nicht nur im Endbild.</p></div>
+          </article>
+          <article class="media-card">
+            <img src="images/portfolio/project-6.jpg" alt="Hochwertige Fliesenarbeit">
+            <div class="media-card-body"><h3>Meisterarbeit</h3><p>Hochwertige Optik, klare Fluchten und belastbare Ausf&uuml;hrung.</p></div>
+          </article>
+        </div>
+        <div class="card-actions" style="margin-top: 28px;">
+          <a class="button" href="referenzen.html">Alle Referenzen ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="bewertungen">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Kundenstimmen</p>
+          <h2>Bewertungen m&uuml;ssen lesbar sein, nicht vorbeilaufen.</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card testimonial">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <p>&bdquo;Saubere Arbeit, p&uuml;nktlich und klar erkl&auml;rt. Wir wussten vor Beginn, was passiert und was es kostet.&ldquo;</p>
+            <div class="quote-author">Thomas R. aus Koblenz</div>
+          </article>
+          <article class="card testimonial">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <p>&bdquo;K&uuml;che und Abstellraum wurden in einem Durchgang erledigt. Der Festpreis wurde eingehalten.&ldquo;</p>
+            <div class="quote-author">Sandra K. aus Vallendar</div>
+          </article>
+          <article class="card testimonial">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <p>&bdquo;Man merkt, dass das Handwerk sitzt. Ruhiges Fugenbild, saubere Kanten, keine Nachbesserung.&ldquo;</p>
+            <div class="quote-author">Michael W. aus Neuwied</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container cta-band">
         <div>
-          <p class="font-black text-on-surface text-sm sm:text-base mb-1">Meisterbetrieb</p>
-          <p class="text-xs sm:text-sm text-on-surface-variant leading-snug">Seit 2010 eingetragen · Handwerkskammer Koblenz</p>
+          <h2>Der n&auml;chste Schritt bleibt immer sichtbar.</h2>
+          <p>Buchen Sie eine Besichtigung oder senden Sie Ihr Projekt schriftlich. Die Kontaktseite enth&auml;lt alle Optionen ohne die Startseite aufzubl&auml;hen.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="button button-light" href="kontakt.html">Kontaktseite &ouml;ffnen</a>
+          <a class="button button-red" href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener">Termin buchen</a>
         </div>
       </div>
-      <div class="bg-surface-container-lowest p-4 sm:p-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-5">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary flex-shrink-0 flex items-center justify-center text-white">
-          <span class="material-symbols-outlined text-lg sm:text-xl">groups</span>
-        </div>
-        <div>
-          <p class="font-black text-on-surface text-sm sm:text-base mb-1">Innungsmitglied</p>
-          <p class="text-xs sm:text-sm text-on-surface-variant leading-snug">Fachverband Fliesen &amp; Naturstein · Koblenz</p>
-        </div>
-      </div>
-      <div class="bg-surface-container-lowest p-4 sm:p-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-5">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary flex-shrink-0 flex items-center justify-center text-white">
-          <span class="material-symbols-outlined text-lg sm:text-xl">account_balance</span>
-        </div>
-        <div>
-          <p class="font-black text-on-surface text-sm sm:text-base mb-1">ZDB-Mitglied</p>
-          <p class="text-xs sm:text-sm text-on-surface-variant leading-snug">Zentralverband Deutsches Baugewerbe</p>
-        </div>
-      </div>
-      <div class="bg-surface-container-lowest p-4 sm:p-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-5">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-tertiary flex-shrink-0 flex items-center justify-center text-white">
-          <span class="material-symbols-outlined text-lg sm:text-xl">verified</span>
-        </div>
-        <div>
-          <p class="font-black text-on-surface text-sm sm:text-base mb-1">Festpreisgarantie</p>
-          <p class="text-xs sm:text-sm text-on-surface-variant leading-snug">Kein Aufpreis nach Aufmaß &amp; Besichtigung</p>
-        </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        <span><span class="brand-title" style="color:#fff;">Fliesen Weber</span><span class="brand-subtitle">Meisterbetrieb in Koblenz</span></span>
+      </a>
+      <div class="footer-links">
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">&Uuml;ber uns</a>
+        <a href="referenzen.html">Referenzen</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- KONTAKT -->
-<section class="py-20 md:py-32 bg-surface-container-lowest" id="kontakt">
-  <div class="container mx-auto px-6 md:px-12">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-8 md:mb-10">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-5">Jetzt Besichtigungstermin buchen</h2>
-        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-3xl">
-          Für eine belastbare Preiskalkulation sehen wir uns Ihr Projekt am besten vor Ort an. Oben buchen Sie direkt den Termin. Darunter finden Sie unsere Kontaktdaten. Ganz unten können Sie uns Ihr Vorhaben auch erst schriftlich senden.
-        </p>
-      </div>
-      <div class="space-y-5 md:space-y-6">
-        <div class="bg-tertiary text-white p-6 md:p-10 shadow-[0_24px_50px_-20px_rgba(102,0,17,0.45)] border-t-4 border-tertiary-container">
-          <p class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-white/75 mb-4 bg-white/10 px-3 py-2">Schritt 1 · Kalender öffnen</p>
-          <h3 class="text-3xl md:text-4xl font-black tracking-tight mb-4 font-headline">Freien Besichtigungstermin wählen</h3>
-          <p class="text-white/90 leading-relaxed mb-6 max-w-3xl text-base md:text-lg">
-            Klicken Sie auf den Button, wählen Sie einen freien Termin und erhalten Sie direkt die Bestätigung. Das ist der schnellste Weg zur Preiskalkulation vor Ort.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
-            <div class="bg-white/10 border border-white/10 px-4 py-4">
-              <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">1</p>
-              <p class="text-sm font-semibold text-white">Kalender öffnen</p>
-            </div>
-            <div class="bg-white/10 border border-white/10 px-4 py-4">
-              <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">2</p>
-              <p class="text-sm font-semibold text-white">Freien Termin wählen</p>
-            </div>
-            <div class="bg-white/10 border border-white/10 px-4 py-4">
-              <p class="text-[11px] font-black tracking-[0.25em] uppercase text-white/70 mb-2">3</p>
-              <p class="text-sm font-semibold text-white">Bestätigung erhalten</p>
-            </div>
-          </div>
-          <div class="flex flex-col gap-4">
-            <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup class="inline-flex w-full items-center justify-center gap-2 bg-white px-6 py-4 font-bold tracking-widest uppercase text-tertiary transition-colors hover:bg-surface-container-lowest">
-              <span class="material-symbols-outlined text-base">calendar_month</span>
-              Jetzt freien Termin wählen
-            </a>
-            <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" class="text-sm font-semibold text-white/85 hover:text-white transition-colors">
-              Termin alternativ direkt im neuen Tab öffnen
-            </a>
-          </div>
-        </div>
-        <div class="bg-surface-container-low p-6 md:p-10 shadow-[0_20px_40px_-15px_rgba(0,41,117,0.05)] border-t-4 border-primary">
-          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">Direkte Kontaktdaten</p>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8">
-              <div class="flex items-start gap-5">
-                <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-                  <span class="material-symbols-outlined">call</span>
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Telefon</h4>
-                  <a href="tel:+4915129755134" class="text-xl font-bold text-on-surface hover:text-primary transition-colors">+49 151 29755134</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-5">
-                <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-                  <span class="material-symbols-outlined">mail</span>
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">E-Mail</h4>
-                  <a href="mailto:fliesen.weber.koblenz@gmail.com" class="text-xl font-bold text-on-surface hover:text-primary transition-colors">fliesen.weber.koblenz@gmail.com</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-5">
-                <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-                  <span class="material-symbols-outlined">calendar_month</span>
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Online-Terminbuchung</h4>
-                  <a href="https://calendly.com/fliesen-weber-koblenz/preiskalkulationsbesichtigung-fliesen-weber" target="_blank" rel="noopener" data-calendly-popup class="text-lg font-semibold text-on-surface hover:text-primary transition-colors">Besichtigungstermin zur Preiskalkulation</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-5">
-                <div class="w-12 h-12 bg-primary flex flex-shrink-0 items-center justify-center text-white">
-                  <span class="material-symbols-outlined">location_on</span>
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1">Region</h4>
-                  <p class="text-lg font-semibold text-on-surface">Koblenz &amp; Rheinland-Pfalz<br/>auch für Bonn, Wiesbaden und Umgebung</p>
-                </div>
-              </div>
-            </div>
-            <div class="relative min-h-[280px] lg:min-h-0 overflow-hidden">
-              <iframe
-                src="https://maps.google.com/maps?q=Koblenz,+Rheinland-Pfalz&output=embed&hl=de&z=11"
-                class="absolute inset-0 w-full h-full border-0"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Einsatzgebiet Koblenz &amp; Rheinland-Pfalz">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="bg-surface-container-low p-6 md:p-10 shadow-[0_20px_40px_-15px_rgba(0,41,117,0.05)] border-t-4 border-primary">
-          <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">Kontaktformular</p>
-          <h3 class="text-2xl font-black text-on-surface tracking-tight mb-3 font-headline">Lieber erst schreiben?</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed mb-8">
-            Senden Sie uns Ihr Vorhaben kurz vorab. Wir melden uns zeitnah zurück und klären den passenden nächsten Schritt.
-          </p>
-          <form class="space-y-6" id="contactForm" novalidate>
-            <input type="hidden" name="access_key" value="d2ed1dac-2a1c-4afe-a43d-2744e56c3fdd"/>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="name">Name *</label>
-                <input id="name" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required type="text" placeholder="Max Mustermann" autocomplete="name"/>
-              </div>
-              <div>
-                <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="phone">Telefon</label>
-                <input id="phone" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" type="tel" placeholder="+49 261 …" autocomplete="tel"/>
-              </div>
-            </div>
-            <div>
-              <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="email">E-Mail *</label>
-              <input id="email" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface transition-colors" required type="email" placeholder="ihre@email.de" autocomplete="email"/>
-            </div>
-            <div>
-              <label class="block text-xs font-bold tracking-widest uppercase text-on-surface mb-2" for="message">Nachricht *</label>
-              <textarea id="message" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-4 py-3 text-on-surface resize-none transition-colors" required rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben…"></textarea>
-            </div>
-            <button class="w-full bg-primary text-white font-bold tracking-widest uppercase py-4 mt-4 hover:bg-primary-container transition-colors" type="submit">
-              Nachricht senden
-            </button>
-            <div class="hidden border px-4 py-4 text-sm" id="contactStatus" aria-live="polite"></div>
-            <p class="text-xs text-on-surface-variant text-center">* Pflichtfelder</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-[#001a4d] w-full">
-  <div class="flex flex-col gap-8 md:flex-row justify-between items-center px-6 md:px-12 py-16 w-full max-w-7xl mx-auto">
-    <div class="text-lg font-black text-white tracking-tight">FLIESEN WEBER</div>
-    <div class="flex flex-wrap justify-center gap-6 text-xs tracking-widest uppercase">
-      <a class="text-slate-400 hover:text-white transition-all" href="impressum.html">Impressum</a>
-      <a class="text-slate-400 hover:text-white transition-all" href="datenschutz.html">Datenschutz</a>
-      <a class="text-slate-400 hover:text-white transition-all" href="#leistungen">Leistungen</a>
-      <a class="text-slate-400 hover:text-white transition-all" href="#kontakt">Kontakt</a>
-    </div>
-    <div class="text-xs tracking-widest uppercase text-slate-400">© 2026 Fliesen Weber · Koblenz &amp; Rheinland-Pfalz</div>
-  </div>
-</footer>
-
-<script src="calculator.js"></script>
-<script src="contactForm.js"></script>
-<script src="heroSlideshow.js"></script>
-<script src="statsCounter.js"></script>
-<script src="reviewsCarousel.js"></script>
-<script src="focusCarousel.js"></script>
-<script src="lightbox.js"></script>
-<script>
-  // Mobile nav toggle
-  const hamburger = document.getElementById('nav-hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', function() {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('flex');
-  });
-  mobileMenu.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('flex');
-    });
-  });
-
-  var calendlyLoaded = false;
-  var calendlyLoading = false;
-
-  function loadCalendly(callback) {
-    if (calendlyLoaded) { callback(); return; }
-    if (calendlyLoading) { document.addEventListener('calendly-ready', callback, { once: true }); return; }
-    calendlyLoading = true;
-
-    var css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.href = 'https://assets.calendly.com/assets/external/widget.css';
-    document.head.appendChild(css);
-
-    var script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.onload = function() {
-      calendlyLoaded = true;
-      calendlyLoading = false;
-      document.dispatchEvent(new Event('calendly-ready'));
-      callback();
-    };
-    document.head.appendChild(script);
-  }
-
-  document.querySelectorAll('[data-calendly-popup]').forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      var url = link.href;
-      loadCalendly(function() {
-        window.Calendly.initPopupWidget({ url: url });
-      });
-    });
-  });
-
-</script>
+  <script src="calculator.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
