@@ -1,4 +1,33 @@
 (function () {
+  // Hero slideshow
+  var slideshow = document.querySelector('.hero-slideshow');
+  if (slideshow) {
+    var slides = slideshow.querySelectorAll('img');
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 6000);
+  }
+
+  // Reviews carousel – clone set for seamless loop
+  var outer = document.getElementById('reviewsCarouselOuter');
+  var track = document.getElementById('reviewsCarouselTrack');
+  var set   = document.getElementById('reviewsScrollSet');
+  if (outer && track && set) {
+    var clone = set.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+    outer.addEventListener('mouseenter', function () {
+      track.style.animationPlayState = 'paused';
+    });
+    outer.addEventListener('mouseleave', function () {
+      track.style.animationPlayState = 'running';
+    });
+  }
+
   var toggle = document.getElementById('nav-toggle');
   var menu = document.getElementById('mobile-menu');
 
