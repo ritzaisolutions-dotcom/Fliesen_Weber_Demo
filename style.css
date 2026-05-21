@@ -1389,3 +1389,164 @@ textarea:focus {
     align-items: flex-start;
   }
 }
+
+/* ─── FOUNDER QUOTE ───────────────────────────────────── */
+.founder-quote-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.founder-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 1.25rem;
+}
+.founder-blockquote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0 0 1.5rem;
+}
+.founder-byline {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+}
+
+/* ─── GOOGLE RATING BADGE ─────────────────────────────── */
+.google-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  margin-top: 1.25rem;
+}
+.google-rating-badge__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-right: 1rem;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+.google-rating-badge__logo span {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #5f6368;
+  text-transform: uppercase;
+}
+.google-rating-badge__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.google-rating-badge__score-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.google-rating-badge__score {
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--ink);
+}
+.google-rating-badge__count {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #5f6368;
+}
+
+/* ─── PARTNER BADGES ──────────────────────────────────── */
+.partner-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+.partner-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--line);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(21,23,25,0.4);
+  background: #fff;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.partner-badge:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* ─── FAQ ─────────────────────────────────────────────── */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.faq-item {
+  background: var(--surface-soft);
+}
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  border: 0;
+  background: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--blue);
+  transition: transform 0.2s ease;
+}
+.faq-item.is-open .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-body {
+  display: none;
+  padding: 0 1.5rem 1.2rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.faq-body p { margin: 0; }
+.faq-item.is-open .faq-body {
+  display: block;
+}
