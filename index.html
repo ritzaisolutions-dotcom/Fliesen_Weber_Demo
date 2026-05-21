@@ -8,341 +8,54 @@
 <title>FLIESEN WEBER – Meisterbetrieb in Koblenz</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="DEMO-CBID-PLACEHOLDER" data-blockingmode="auto" type="text/javascript"></script>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="dist/output.css"/>
+<link rel="stylesheet" href="style.css"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "primary-fixed": "#dbe1ff",
-          "tertiary-container": "#90001c",
-          "secondary": "#495d92",
-          "on-secondary": "#ffffff",
-          "tertiary": "#660011",
-          "surface": "#f9f9f9",
-          "inverse-surface": "#2f3131",
-          "secondary-fixed-dim": "#b2c5ff",
-          "surface-tint": "#2d58bf",
-          "on-surface-variant": "#434653",
-          "tertiary-fixed": "#ffdad8",
-          "error": "#ba1a1a",
-          "surface-container-lowest": "#ffffff",
-          "inverse-on-surface": "#f1f1f1",
-          "outline": "#747684",
-          "primary-fixed-dim": "#b4c5ff",
-          "on-primary-fixed": "#00174b",
-          "on-error": "#ffffff",
-          "surface-container-low": "#f3f3f3",
-          "secondary-container": "#afc2fe",
-          "background": "#f9f9f9",
-          "surface-variant": "#e2e2e2",
-          "on-background": "#1a1c1c",
-          "outline-variant": "#c4c6d5",
-          "on-error-container": "#93000a",
-          "primary": "#002975",
-          "on-tertiary-fixed": "#410007",
-          "surface-container": "#eeeeee",
-          "on-tertiary": "#ffffff",
-          "inverse-primary": "#b4c5ff",
-          "secondary-fixed": "#dae2ff",
-          "on-secondary-fixed-variant": "#314578",
-          "primary-container": "#003da5",
-          "on-tertiary-container": "#ff9694",
-          "on-primary-container": "#98b1ff",
-          "on-primary-fixed-variant": "#033ea6",
-          "tertiary-fixed-dim": "#ffb3b1",
-          "on-surface": "#1a1c1c",
-          "error-container": "#ffdad6",
-          "surface-container-high": "#e8e8e8",
-          "on-primary": "#ffffff",
-          "on-secondary-fixed": "#001848",
-          "surface-bright": "#f9f9f9",
-          "on-secondary-container": "#3b4f83",
-          "surface-container-highest": "#e2e2e2",
-          "surface-dim": "#dadada",
-          "on-tertiary-fixed-variant": "#92001c"
-        },
-        "borderRadius": {
-          "DEFAULT": "0px",
-          "lg": "0px",
-          "xl": "0px",
-          "full": "0px"
-        },
-        "fontFamily": {
-          "headline": ["Inter", "sans-serif"],
-          "body": ["Inter", "sans-serif"],
-          "label": ["Inter", "sans-serif"]
-        }
-      }
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FlooringStore",
+  "name": "Fliesen Weber",
+  "description": "Meisterbetrieb für Fliesen und Bodenbeläge in Koblenz. Badsanierung, Küche, Wohnbereich und Außenflächen.",
+  "url": "https://fliesen-weber-koblenz.de",
+  "telephone": "+49 151 29755134",
+  "email": "fliesen.weber.koblenz@gmail.com",
+  "foundingDate": "1987",
+  "priceRange": "€€",
+  "openingHours": "Mo-Fr 07:30-17:00",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Musterstraße 1",
+    "addressLocality": "Koblenz",
+    "postalCode": "56068",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.3568,
+    "longitude": 7.5979
+  },
+  "areaServed": ["Koblenz", "Neuwied", "Andernach", "Lahnstein", "Bonn", "Wiesbaden"],
+  "founder": {
+    "@type": "Person",
+    "name": "Weber",
+    "jobTitle": "Meister Fliesenlegerhandwerk"
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "Weber",
+    "jobTitle": "Meister Fliesenlegerhandwerk"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "80",
+    "bestRating": "5"
   }
+}
 </script>
-<style>
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-  }
-  .hero-slideshow {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .hero-slideshow img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    opacity: 0;
-    filter: saturate(0.92) contrast(1.04) brightness(0.7);
-    transition: opacity 1.8s ease-in-out;
-  }
-  .hero-slideshow img.active {
-    opacity: 0.62;
-  }
-  .workflow-line {
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    top: 2.1rem;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(0,41,117,0.15), rgba(102,0,17,0.35), rgba(0,41,117,0.15));
-  }
-  .workflow-step {
-    position: relative;
-    padding-top: 4.5rem;
-  }
-  .workflow-dot {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4rem;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(0,41,117,0.18);
-    background: rgba(255,255,255,0.85);
-    color: #002975;
-    font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 0.28em;
-  }
-  .workflow-step:nth-child(2) .workflow-dot {
-    color: #660011;
-    border-color: rgba(102,0,17,0.18);
-  }
-  .workflow-step:nth-child(3) .workflow-dot {
-    color: #176443;
-    border-color: rgba(23,100,67,0.18);
-  }
-  /* Focus Carousel — Hochformat */
-  .focus-carousel-outer {
-    position: relative;
-    overflow: hidden;
-    user-select: none;
-  }
-  .focus-carousel-track {
-    display: flex;
-    flex-direction: row;
-    gap: 2vw;
-    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-  }
-  .focus-slide {
-    flex: 0 0 62vw;
-    height: clamp(200px, 38vw, 58vh);
-    position: relative;
-    overflow: hidden;
-    opacity: 0.32;
-    transition: opacity 0.4s ease;
-  }
-  .focus-slide.is-active { opacity: 1; cursor: zoom-in; }
-  .focus-slide:not(.is-active) { cursor: pointer; }
-  .focus-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .focus-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: white;
-    border: none;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #002975;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.14);
-    transition: background 0.15s;
-  }
-  .focus-arrow:hover { background: #f3f3f3; }
-  .focus-arrow-prev { left: calc(19vw + 1rem); }
-  .focus-arrow-next { right: calc(19vw + 1rem); }
-  .focus-dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(0,41,117,0.2);
-    border: none;
-    cursor: pointer;
-    transition: width 0.25s ease, background 0.25s ease;
-    padding: 0;
-    flex-shrink: 0;
-  }
-  .focus-dot.is-active { background: #002975; width: 24px; }
-  @media (max-width: 767px) {
-    .focus-slide { flex: 0 0 84vw; height: clamp(180px, 52vw, 50vh); }
-    .focus-arrow-prev { left: calc(8vw + 0.5rem); }
-    .focus-arrow-next { right: calc(8vw + 0.5rem); }
-  }
-  @media (max-width: 767px) {
-    .workflow-line {
-      left: 2rem;
-      top: 2rem;
-      bottom: 2rem;
-      width: 1px;
-      height: auto;
-      right: auto;
-      background: linear-gradient(180deg, rgba(0,41,117,0.15), rgba(102,0,17,0.35), rgba(0,41,117,0.15));
-    }
-    .workflow-step {
-      padding-top: 0;
-      padding-left: 5.5rem;
-      min-height: 7rem;
-    }
-    .workflow-dot {
-      top: 0;
-      left: 0;
-    }
-    .reference-slide {
-      flex-basis: 88vw;
-    }
-  }
-  /* Ablauf — kompaktere Proportionen auf Desktop */
-  @media (min-width: 768px) {
-    .workflow-dot {
-      width: 2.75rem;
-      height: 2.75rem;
-      font-size: 0.6rem;
-    }
-    .workflow-step {
-      padding-top: 3.5rem;
-    }
-  }
-  /* Lightbox */
-  #lb {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(0,0,0,0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.22s ease;
-    padding: 2rem;
-  }
-  #lb.lb-open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  #lb-stage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 90vw;
-    max-height: 78vh;
-  }
-  #lb-img {
-    max-width: 100%;
-    max-height: 78vh;
-    object-fit: contain;
-    display: block;
-  }
-  #lb-prev, #lb-next {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  #lb-prev:hover, #lb-next:hover { background: rgba(255,255,255,0.18); }
-  #lb-prev { left: 1rem; }
-  #lb-next { right: 1rem; }
-  #lb-close {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
-    width: 2.75rem;
-    height: 2.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  #lb-close:hover { background: rgba(255,255,255,0.2); }
-  #lb-cap {
-    margin-top: 1.25rem;
-    text-align: center;
-  }
-  #lb-title {
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
-  }
-  #lb-desc {
-    color: rgba(255,255,255,0.55);
-    font-size: 0.8rem;
-  }
-  /* Kostenrechner Wizard */
-  .calc-option-card.calc-selected { border-color: #002975; background: #fff; }
-  .calc-option-card.calc-selected .material-symbols-outlined { color: #002975; }
-  .calc-extra-card.calc-selected { border-color: #002975; background: #f3f3f3; }
-  .calc-extra-card.calc-selected::after { content: '✓'; font-weight: 900; color: #002975; font-size: 0.85rem; }
-  .calc-extra-card { display: flex; align-items: center; justify-content: space-between; }
-  .calc-option-card { transition: border-color 0.15s, background 0.15s; }
-
-  /* FAQ */
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item[open] summary .material-symbols-outlined { transform: rotate(45deg); }
-
-  /* Reviews Carousel */
-  .reviews-scroll-outer {
-    overflow: hidden;
-  }
-  .reviews-scroll-track {
-    display: flex;
-    animation: reviews-auto-scroll 60s linear infinite;
-    animation-play-state: paused;
-    will-change: transform;
-  }
-  @keyframes reviews-auto-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-</style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary">
 
@@ -381,7 +94,7 @@
     Jetzt anfragen
   </a>
   <!-- Mobile hamburger -->
-  <button class="md:hidden flex flex-col gap-[5px] p-2" id="nav-hamburger" aria-label="Menü öffnen">
+  <button class="md:hidden flex flex-col gap-[5px] p-2" id="nav-hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menü öffnen">
     <span class="block w-6 h-0.5 bg-on-surface transition-all"></span>
     <span class="block w-6 h-0.5 bg-on-surface transition-all"></span>
     <span class="block w-6 h-0.5 bg-on-surface transition-all"></span>
@@ -408,7 +121,7 @@
         <span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
         <span class="text-xs font-bold text-white tracking-widest uppercase">MEISTERBETRIEB · KOBLENZ &amp; UMGEBUNG</span>
       </div>
-      <h1 class="text-[2.4rem] md:text-7xl font-black text-white tracking-tighter leading-[1.05] md:leading-[1.1] mb-6 md:mb-8 font-headline">
+      <h1 class="text-[2.4rem] md:text-7xl font-black text-white tracking-tight leading-[1.05] md:leading-[1.1] mb-6 md:mb-8 font-headline">
         Ihr Meisterbetrieb für<br/>
         <span class="text-on-primary-container">Fliesen &amp; Bodenbeläge</span><br/>
         in Koblenz
@@ -465,16 +178,16 @@
 </section>
 
 <!-- MATERIALPARTNER -->
-<section class="py-8 md:py-10 bg-surface-container-lowest border-b border-outline-variant/20">
+<section class="py-10 md:py-12 bg-surface-container-lowest border-b border-outline-variant/20">
   <div class="container mx-auto px-6 md:px-12">
-    <p class="text-[10px] font-bold tracking-widest uppercase text-outline/60 text-center mb-6">UNSERE MATERIALPARTNER</p>
-    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 md:gap-x-16">
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">MAPEI</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">SCHLÜTER</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">VILLEROY &amp; BOCH</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">WEDI</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">WEBER</span>
-      <span class="text-sm font-black tracking-widest uppercase text-on-surface-variant/50 hover:text-on-surface-variant transition-colors">LITHOFIN</span>
+    <p class="text-[10px] font-bold tracking-widest uppercase text-outline/60 text-center mb-8">UNSERE MATERIALPARTNER</p>
+    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+      <div class="partner-badge">MAPEI</div>
+      <div class="partner-badge">SCHLÜTER</div>
+      <div class="partner-badge">VILLEROY &amp; BOCH</div>
+      <div class="partner-badge">WEDI</div>
+      <div class="partner-badge">WEBER</div>
+      <div class="partner-badge">LITHOFIN</div>
     </div>
   </div>
 </section>
@@ -647,147 +360,6 @@
     </div>
   </div>
 
-  <script>
-  (function () {
-    var state = { step: 1, projekt: null, flaeche: null, material: null, extras: [] };
-    var PROJECTS = [
-      { id: 'bad',        label: 'Bad fliesen',       icon: 'bathtub',    multi: 1.2  },
-      { id: 'kueche',     label: 'Küche fliesen',     icon: 'countertops',multi: 1.08 },
-      { id: 'balkon',     label: 'Balkon / Terrasse', icon: 'deck',       multi: 1.12 },
-      { id: 'wohnzimmer', label: 'Wohnzimmer',        icon: 'weekend',    multi: 1.0  },
-      { id: 'boden',      label: 'Boden verlegen',    icon: 'layers',     multi: 0.95 }
-    ];
-    var MATERIALS = [
-      { id: 'standard',   label: 'Standard',   sub: 'ca. 40 €/m²', price: 40 },
-      { id: 'premium',    label: 'Premium',    sub: 'ca. 70 €/m²', price: 70 },
-      { id: 'naturstein', label: 'Naturstein', sub: 'ca. 90 €/m²', price: 90 }
-    ];
-    var EXTRAS = [
-      { id: 'altbelag',     label: 'Altbelag entfernen',      price: 15 },
-      { id: 'sockelleisten',label: 'Sockelleisten montieren', price: 8  },
-      { id: 'abdichtung',   label: 'Abdichtung (Nassbereich)',price: 20 }
-    ];
-
-    // Build project cards
-    var pg = document.getElementById('calcProjectCards');
-    PROJECTS.forEach(function (p) {
-      var btn = document.createElement('button');
-      btn.type = 'button'; btn.dataset.id = p.id;
-      btn.className = 'calc-option-card flex flex-col items-center gap-2 p-4 border-2 border-outline-variant/30 bg-surface-container-lowest hover:border-primary transition-all text-center';
-      btn.innerHTML = '<span class="material-symbols-outlined text-2xl text-primary">' + p.icon + '</span><span class="text-xs font-bold text-on-surface leading-snug">' + p.label + '</span>';
-      btn.addEventListener('click', function () {
-        state.projekt = p.id;
-        pg.querySelectorAll('.calc-option-card').forEach(function (c) { c.classList.remove('calc-selected'); });
-        btn.classList.add('calc-selected');
-        setTimeout(function () { goTo(2); }, 200);
-      });
-      pg.appendChild(btn);
-    });
-
-    // Build material cards
-    var mg = document.getElementById('calcMaterialCards');
-    MATERIALS.forEach(function (m) {
-      var btn = document.createElement('button');
-      btn.type = 'button'; btn.dataset.id = m.id;
-      btn.className = 'calc-option-card flex flex-col items-start p-4 border-2 border-outline-variant/30 bg-surface-container-lowest hover:border-primary transition-all';
-      btn.innerHTML = '<span class="font-black text-on-surface text-base mb-1">' + m.label + '</span><span class="text-xs text-on-surface-variant">' + m.sub + '</span>';
-      btn.addEventListener('click', function () {
-        state.material = m.id;
-        mg.querySelectorAll('.calc-option-card').forEach(function (c) { c.classList.remove('calc-selected'); });
-        btn.classList.add('calc-selected');
-        document.getElementById('calcStep2Error').classList.add('hidden');
-      });
-      mg.appendChild(btn);
-    });
-
-    // Build extras
-    var eg = document.getElementById('calcExtrasCards');
-    EXTRAS.forEach(function (e) {
-      var btn = document.createElement('button');
-      btn.type = 'button'; btn.dataset.id = e.id;
-      btn.className = 'calc-extra-card w-full p-4 border-2 border-outline-variant/30 bg-surface-container-lowest hover:border-primary transition-all text-left';
-      btn.innerHTML = '<span class="font-semibold text-on-surface text-sm">' + e.label + '</span><span class="text-xs font-bold text-on-surface-variant">+ ' + e.price + ' €/m²</span>';
-      btn.addEventListener('click', function () {
-        var i = state.extras.indexOf(e.id);
-        if (i === -1) { state.extras.push(e.id); btn.classList.add('calc-selected'); }
-        else { state.extras.splice(i, 1); btn.classList.remove('calc-selected'); }
-      });
-      eg.appendChild(btn);
-    });
-
-    function goTo(n) {
-      if (n === 3) {
-        var fl = parseFloat(document.getElementById('wizFlaeche').value);
-        if (!fl || fl < 1 || !state.material) {
-          document.getElementById('calcStep2Error').classList.remove('hidden');
-          return;
-        }
-        state.flaeche = fl;
-      }
-      if (n === 4) { computeResult(); }
-      state.step = n;
-      [1, 2, 3, 4].forEach(function (s) {
-        document.getElementById('calcStep' + s).classList.toggle('hidden', s !== n);
-      });
-      refreshNav();
-      refreshBar();
-      document.getElementById('kostenrechner').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function computeResult() {
-      var mat  = MATERIALS.find(function (m) { return m.id === state.material; });
-      var proj = PROJECTS.find(function (p) { return p.id === state.projekt; });
-      var base = state.flaeche * (mat ? mat.price : 40) * (proj ? proj.multi : 1);
-      EXTRAS.forEach(function (e) { if (state.extras.indexOf(e.id) !== -1) base += state.flaeche * e.price; });
-      var min = Math.round(base * 0.93 / 10) * 10;
-      var max = Math.round(base * 1.12 / 10) * 10;
-      document.getElementById('wizPriceOutput').textContent = '€ ' + min.toLocaleString('de-DE') + ' – € ' + max.toLocaleString('de-DE');
-      document.getElementById('calcSummaryText').textContent =
-        (proj ? proj.label : '') + ' · ' + state.flaeche + ' m² · ' + (mat ? mat.label : '') +
-        (state.extras.length ? ' · inkl. Zusatzleistungen' : '');
-    }
-
-    function refreshNav() {
-      var back = document.getElementById('calcBack');
-      var next = document.getElementById('calcNext');
-      var nav  = document.getElementById('calcNav');
-      back.classList.toggle('hidden', state.step <= 1);
-      next.classList.toggle('hidden', state.step === 1 || state.step === 4);
-      nav.classList.toggle('hidden', state.step === 4);
-    }
-
-    function refreshBar() {
-      document.querySelectorAll('.calc-dot').forEach(function (d) {
-        var s = parseInt(d.dataset.step);
-        var active = s <= state.step;
-        d.classList.toggle('bg-primary', active);
-        d.classList.toggle('border-primary', active);
-        d.classList.toggle('text-white', active);
-        d.classList.toggle('border-outline-variant/40', !active);
-        d.classList.toggle('text-outline', !active);
-        d.style.background = active ? '' : 'transparent';
-      });
-      document.querySelectorAll('.calc-track').forEach(function (t) {
-        var s = parseInt(t.dataset.step);
-        t.classList.toggle('bg-primary', s < state.step);
-        t.classList.toggle('bg-outline-variant/30', s >= state.step);
-      });
-    }
-
-    document.getElementById('calcBack').addEventListener('click', function () { goTo(state.step - 1); });
-    document.getElementById('calcNext').addEventListener('click', function () { goTo(state.step + 1); });
-    document.getElementById('calcReset').addEventListener('click', function () {
-      state = { step: 1, projekt: null, flaeche: null, material: null, extras: [] };
-      document.querySelectorAll('.calc-option-card, .calc-extra-card').forEach(function (c) { c.classList.remove('calc-selected'); });
-      document.getElementById('wizFlaeche').value = '';
-      document.getElementById('calcNav').classList.remove('hidden');
-      goTo(1);
-    });
-
-    refreshNav();
-    refreshBar();
-  })();
-  </script>
 </section>
 
 <!-- ABLAUF -->
@@ -823,6 +395,22 @@
           <p class="text-emerald-700 text-sm font-semibold">→ Sie wissen, woran Sie sind, bevor es losgeht.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEISTER QUOTE -->
+<section class="py-14 md:py-20 bg-primary text-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-xs font-bold tracking-widest uppercase text-white/40 mb-6">Meister Weber</p>
+      <blockquote class="text-xl md:text-2xl font-bold leading-relaxed text-white mb-6">
+        "Bevor ich einen Preis nenne, schaue ich mir das Objekt an. Fliesen auf Fliesen ist manchmal möglich —
+        und manchmal eine Zeitbombe. Das sagt man am Telefon nicht, das sieht man vor Ort."
+      </blockquote>
+      <p class="text-sm font-bold tracking-wider uppercase text-white/40">
+        Meister Fliesenlegerhandwerk · Koblenz · seit 1987
+      </p>
     </div>
   </div>
 </section>
@@ -872,6 +460,24 @@
             Ja – in den meisten Fällen ist das problemlos möglich. Wir arbeiten zügig und halten die Baustelle sauber. Das Bad ist während der Arbeiten nicht nutzbar; bei Bedarf besprechen wir vorab, ob ein zweites WC oder Übergangslösungen benötigt werden.
           </div>
         </details>
+        <details class="faq-item bg-surface-container-lowest group">
+          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-bold text-on-surface text-base md:text-lg select-none">
+            Welche Garantie erhalten Sie auf die Arbeit?
+            <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform duration-200 group-open:rotate-45">add</span>
+          </summary>
+          <div class="px-6 pb-6 text-sm md:text-base text-on-surface-variant leading-relaxed">
+            Wir arbeiten nach VOB mit <strong>4 Jahren Gewährleistung</strong> auf handwerkliche Ausführung. Auf verlegtes Material gilt die Herstellergarantie zusätzlich. Beanstandungen nehmen wir direkt an — ohne Diskussion.
+          </div>
+        </details>
+        <details class="faq-item bg-surface-container-lowest group">
+          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-bold text-on-surface text-base md:text-lg select-none">
+            Müssen die alten Fliesen immer entfernt werden?
+            <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform duration-200 group-open:rotate-45">add</span>
+          </summary>
+          <div class="px-6 pb-6 text-sm md:text-base text-on-surface-variant leading-relaxed">
+            Nicht zwingend. Fliesen auf Fliesen ist möglich wenn der Untergrund fest, eben und tragfähig ist. Ob das geht, prüfen wir vor Ort. Wenn es geht, sparen Sie Zeit und Kosten. Wenn nicht, erklären wir warum.
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -889,32 +495,32 @@
   <div class="focus-carousel-outer" id="focusCarouselOuter">
     <div class="focus-carousel-track" id="focusCarouselTrack">
       <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-1.jpg" alt="Badezimmer Projekt Koblenz"/>
+        <img src="images/portfolio/project-1.jpg" alt="Verlegte Bodenfliesen in einem Koblenzer Badezimmer, Meisterbetrieb Weber"/>
         <p hidden>Badezimmer · Koblenz</p>
         <p hidden>Großformatige Wand- und Bodenfliesen mit ruhigem Fugenbild.</p>
       </article>
       <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-2.jpg" alt="Badezimmer Projekt Koblenz"/>
+        <img src="images/portfolio/project-2.jpg" alt="Badsanierung mit großformatigen Wandfliesen, Koblenz"/>
         <p hidden>Badmodernisierung · Koblenz</p>
         <p hidden>Saubere Linien, hochwertige Oberflächen und präzise Anschlüsse.</p>
       </article>
       <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-3.jpg" alt="Badezimmer Renovierung"/>
+        <img src="images/portfolio/project-3.jpg" alt="Renoviertes Badezimmer mit Natursteinboden, Koblenz"/>
         <p hidden>Renovierung · Badezimmer</p>
         <p hidden>Neuer Belag, klare Kanten und ein sichtbar aufgewerteter Raum.</p>
       </article>
       <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-4.jpg" alt="Fliesenverlegung in Arbeit"/>
+        <img src="images/portfolio/project-4.jpg" alt="Fliesenleger bei der sauberen Verlegung auf einer Baustelle"/>
         <p hidden>Verlegung · Baustelle</p>
         <p hidden>Saubere Ausführung während der Arbeit, nicht nur im Endbild.</p>
       </article>
       <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-5.jpg" alt="Handwerksarbeit vor Ort"/>
+        <img src="images/portfolio/project-5.jpg" alt="Meisterhandwerk vor Ort — Detailarbeit an Fliesenfuge"/>
         <p hidden>Handwerk · Vor Ort</p>
         <p hidden>Verlässliche Ausführung mit Blick auf Untergrund und Details.</p>
       </article>
       <article class="focus-slide" data-lb-slide>
-        <img src="images/portfolio/project-6.jpg" alt="Meisterarbeit Fliesen"/>
+        <img src="images/portfolio/project-6.jpg" alt="Fertige Meisterarbeit — Badezimmer Koblenz"/>
         <p hidden>Meisterarbeit · Koblenz</p>
         <p hidden>Hochwertige Optik, klare Fluchten und ruhige Gesamtwirkung.</p>
       </article>
@@ -949,6 +555,21 @@
       <p class="text-tertiary text-sm font-bold tracking-widest uppercase mb-4">KUNDENSTIMMEN</p>
       <h2 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight font-headline mb-4">Was unsere Kunden sagen</h2>
       <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Rückmeldungen aus abgeschlossenen Projekten – direkt von unseren Auftraggebern.</p>
+      <div class="google-rating-badge mt-6">
+        <div class="google-rating-badge__logo">
+          <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 29.9 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.6-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 10.7-1.9 14.3-5.2l-6.6-5.4C29.8 36.1 27 37 24 37c-5.8 0-10.8-3.1-11.8-8.5l-7 5.4C8.7 40.9 15.8 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.6 2.5-2 4.7-3.9 6.4l6.6 5.4c3.8-3.6 6-8.8 6-15.3 0-1.3-.2-2.7-.5-4z"/></svg>
+          <span>Google</span>
+        </div>
+        <div class="google-rating-badge__meta">
+          <div class="flex items-center gap-2">
+            <span class="google-rating-badge__score">4,9</span>
+            <div class="flex gap-0.5">
+              <span class="material-symbols-outlined text-amber-400 text-base" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-base" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-base" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-base" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-amber-400 text-base" style="font-variation-settings:'FILL' 1">star</span>
+            </div>
+          </div>
+          <span class="google-rating-badge__count">80+ Bewertungen</span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="reviews-scroll-outer" id="reviewsCarouselOuter">
@@ -1264,13 +885,16 @@
   const hamburger = document.getElementById('nav-hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   hamburger.addEventListener('click', function() {
+    const isOpen = !mobileMenu.classList.contains('hidden');
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('flex');
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
   });
   mobileMenu.querySelectorAll('a').forEach(function(a) {
     a.addEventListener('click', function() {
       mobileMenu.classList.add('hidden');
       mobileMenu.classList.remove('flex');
+      hamburger.setAttribute('aria-expanded', 'false');
     });
   });
 

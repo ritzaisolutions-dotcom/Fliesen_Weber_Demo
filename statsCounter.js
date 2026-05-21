@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var stats = [
-        { el: document.querySelector('[data-stat="projects"]'), target: 350, suffix: '+', decimals: 0, duration: 3600 },
-        { el: document.querySelector('[data-stat="years"]'),    target: 15,  suffix: '',  decimals: 0, duration: 3000 },
+        { el: document.querySelector('[data-stat="projects"]'), target: 600, suffix: '+', decimals: 0, duration: 3600 },
+        { el: document.querySelector('[data-stat="years"]'),    target: 39,  suffix: '',  decimals: 0, duration: 3000 },
         { el: document.querySelector('[data-stat="rating"]'),   target: 4.9, suffix: '',  decimals: 1, duration: 3400, star: true }
     ];
 
