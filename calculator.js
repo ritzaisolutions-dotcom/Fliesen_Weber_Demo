@@ -10,15 +10,15 @@
   ];
 
   var MATERIALS = [
-    { id: 'feinsteinzeug', label: 'Feinsteinzeug', sub: 'Standardformat ca. 45 €/m²', price: 45 },
-    { id: 'naturstein',    label: 'Naturstein',    sub: 'Marmor / Schiefer ca. 80 €/m²', price: 80 },
-    { id: 'grossformat',   label: 'Großformat', sub: 'bis 120×260 cm ca. 110 €/m²', price: 110 }
+    { id: 'feinsteinzeug', label: 'Feinsteinzeug', sub: 'Standardformat inkl. Verlegung ca. 135 €/m²', price: 135 },
+    { id: 'naturstein',    label: 'Naturstein',    sub: 'Marmor / Schiefer inkl. Verlegung ca. 240 €/m²', price: 240 },
+    { id: 'grossformat',   label: 'Großformat', sub: 'bis 120×260 cm inkl. Verlegung ca. 330 €/m²', price: 330 }
   ];
 
   var EXTRAS = [
-    { id: 'altbelag',   label: 'Altbelag entfernen',       price: 15 },
-    { id: 'abdichtung', label: 'Abdichtung (Nassbereich)',  price: 20 },
-    { id: 'fugenbild',  label: 'Spezialfuge / Fugenfarbe', price: 8  }
+    { id: 'altbelag',   label: 'Altbelag entfernen',       price: 45 },
+    { id: 'abdichtung', label: 'Abdichtung (Nassbereich)',  price: 60 },
+    { id: 'fugenbild',  label: 'Spezialfuge / Fugenfarbe', price: 24  }
   ];
 
   var pg = document.getElementById('calcProjectCards');

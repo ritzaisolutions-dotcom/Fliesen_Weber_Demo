@@ -1439,6 +1439,10 @@ textarea:focus {
   padding-right: 1rem;
   border-right: 1px solid rgba(0,0,0,0.1);
 }
+
+.google-rating-badge__logo svg {
+  flex-shrink: 0;
+}
 .google-rating-badge__logo span {
   font-size: 0.7rem;
   font-weight: 800;
@@ -1549,4 +1553,84 @@ textarea:focus {
 .faq-body p { margin: 0; }
 .faq-item.is-open .faq-body {
   display: block;
+}
+
+/* ─── CERTIFICATIONS ──────────────────────────────────── */
+.cert-card-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cert-card-inner .icon-box {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.cert-title {
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+}
+
+.cert-subtitle {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ─── INLINE STYLE MIGRATIONS ─────────────────────────── */
+
+/* card-actions spacing after grids within sections */
+.section .card-actions {
+  margin-top: 28px;
+}
+
+/* centered section head (calculator) */
+.section-head--center {
+  text-align: center;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+/* wizard nav spacer */
+.wizard-spacer {
+  flex: 1;
+}
+
+/* wizard step 4 full-width CTA */
+.wizard-cta-full {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* material type sub-label in wizard step 2 */
+.wizard-mat-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* google badge stars override — remove inherited margin-bottom */
+.google-rating-badge .stars {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* footer brand text colours */
+.site-footer .brand-title {
+  color: var(--white);
+}
+
+.site-footer .brand-subtitle {
+  color: rgba(255, 255, 255, 0.45);
 }
