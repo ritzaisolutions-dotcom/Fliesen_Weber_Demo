@@ -47,26 +47,50 @@
   // ── Startseite: Hero-Exit + Nav nach Scroll ──
   if (document.body.classList.contains('page-home')) {
     var headerRevealOffset = 72;
-    var heroExitDistance = function () {
-      return Math.max(window.innerHeight * 0.92, hero ? hero.offsetHeight * 0.88 : window.innerHeight);
-    };
+    var heroExitTarget = 0;
+    var heroExitDisplay = 0;
+    var heroExitRaf = 0;
 
-    function updateHeroScroll() {
-      if (!hero) return;
+    function heroExitDistance() {
+      return window.innerHeight * 1.15;
+    }
 
-      var distance = heroExitDistance();
-      var progress = Math.min(1, Math.max(0, window.scrollY / distance));
+    function easeOutCubic(value) {
+      return 1 - Math.pow(1 - value, 3);
+    }
 
-      if (!reducedMotion) {
-        hero.style.setProperty('--hero-exit', progress.toFixed(4));
-        document.documentElement.classList.toggle('is-exiting-hero', progress > 0.04);
-        document.body.classList.toggle('is-scrolling-out', progress > 0.02);
-        document.body.classList.toggle('has-left-hero', progress >= 0.92);
+    function applyHeroExitState(progress) {
+      if (!hero || reducedMotion) return;
+
+      var eased = easeOutCubic(progress);
+      hero.style.setProperty('--hero-exit', eased.toFixed(4));
+      document.body.classList.toggle('has-left-hero', progress >= 0.97);
+    }
+
+    function tickHeroExit() {
+      heroExitRaf = 0;
+      var delta = heroExitTarget - heroExitDisplay;
+
+      if (Math.abs(delta) > 0.001) {
+        heroExitDisplay += delta * 0.16;
+        applyHeroExitState(heroExitDisplay);
+        heroExitRaf = window.requestAnimationFrame(tickHeroExit);
+        return;
       }
 
-      var atHero = progress < 0.06 && window.scrollY < headerRevealOffset;
+      heroExitDisplay = heroExitTarget;
+      applyHeroExitState(heroExitDisplay);
+      updateHomeChrome(heroExitDisplay);
+    }
+
+    function queueHeroExitTick() {
+      if (!heroExitRaf) heroExitRaf = window.requestAnimationFrame(tickHeroExit);
+    }
+
+    function updateHomeChrome(progress) {
+      var atHero = progress < 0.05 && window.scrollY < headerRevealOffset;
       document.body.classList.toggle('is-hero-at-top', atHero);
-      document.body.classList.toggle('header-revealed', progress >= 0.14 || window.scrollY >= headerRevealOffset);
+      document.body.classList.toggle('header-revealed', progress >= 0.12 || window.scrollY >= headerRevealOffset);
 
       if (atHero) {
         var toggle = document.getElementById('nav-toggle');
@@ -77,6 +101,23 @@
           document.body.classList.remove('nav-open');
         }
       }
+    }
+
+    function updateHeroScroll() {
+      if (!hero) return;
+
+      var distance = heroExitDistance();
+      heroExitTarget = Math.min(1, Math.max(0, window.scrollY / distance));
+
+      if (reducedMotion) {
+        heroExitDisplay = heroExitTarget;
+        applyHeroExitState(heroExitDisplay);
+        updateHomeChrome(heroExitDisplay);
+        return;
+      }
+
+      queueHeroExitTick();
+      updateHomeChrome(heroExitTarget);
     }
 
     window.addEventListener('scroll', updateHeroScroll, { passive: true });
@@ -101,12 +142,6 @@
       if (!target) return;
       event.preventDefault();
       target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
-      if (!reducedMotion) {
-        window.setTimeout(function () {
-          document.body.classList.add('has-left-hero');
-          if (hero) hero.style.setProperty('--hero-exit', '1');
-        }, 450);
-      }
     });
   }
 

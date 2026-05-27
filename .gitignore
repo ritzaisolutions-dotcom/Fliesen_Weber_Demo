@@ -1,6 +1,10 @@
 .vercel
 node_modules
 .playwright-cli
+.claude/
 video/_preview/
 video/_frames/
+crop-*.png
+mobile-check*.png
+mobile-full.png
 *.log
