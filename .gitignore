@@ -1,1 +1,6 @@
 .vercel
+node_modules
+.playwright-cli
+video/_preview/
+video/_frames/
+*.log

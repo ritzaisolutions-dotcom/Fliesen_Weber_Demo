@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fliesen-weber-koblenz.de/sitemap.xml
